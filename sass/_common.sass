@@ -47,28 +47,256 @@
 // p
 // 	+jpg(bla)
 
+$bl: #009bc7
+$bll: #00c7ff
+$blll: #e5f9ff
+
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic)
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic)
+=f
+	font-family: "PT Sans", Arial, sans-serif 
+=fn
+	font-family: "PT Sans Narrow", Arial, sans-serif 
 
 body
-	font-family: Arial, sans-serif 
-	font-size: 12px 
-	line-height: 1.4
-
+	min-width: 1020px
+	+f
+	font-size: 13px 
+	line-height: 1.3
+button, input, textarea
+	+f
+a
+	text-decoration: none
+	color: $bll
 
 // common blocks      
+.l-center
+	width: 1020px
+	margin: 0 auto
+	padding: 0 20px
+	+clr
+.l-column
+	float: left
+	width: 230px
+	margin-left: 20px
+	&:first-child
+		margin: 0
 
+.header
+	margin-bottom: 30px
+	.header__middle
+		min-height: 80px
+		+clr
+	.header__title
+		display: table
+		padding: 20px 0
+		+fn
+		font-size: 40px
+		font-weight: bold 
+		line-height: 1
+	.header__banners
+		font-size: 0
+	.social
+		float: right
+		margin: 25px 0 0 30px
 
+.topper
+	height: 50px
+	background: #000
+	.topper__nav
+		float: left
+		margin-right: 20px
+		a
+			float: left
+			margin-left: 20px
+			+fn
+			font-size: 16px
+			font-weight: 700
+			color: #FFF  
+			text-transform: uppercase
+			line-height: 50px
+			&:first-child
+				margin: 0
+	.topper__links
+		float: left
+		a
+			float: left
+			margin-left: 20px
+			+fn
+			font-size: 12px
+			text-transform: uppercase
+			color: #FFF
+			line-height: 50px
+			&:first-child
+				margin: 0
+			&.is-active
+				color: $bll 
+	.topper__logo
+		float: right
+		margin-top: 4px
+		+s(logo)
 
+.top
+	height: 30px
+	background: $blll
+	.top__age
+		float: left
+		margin-right: 25px
+		line-height: 30px
+		+fn
+		font-size: 20px
+		font-weight: 700 
+	.top__nav
+		float: left
+		margin-right: 25px
+		a
+			position: relative
+			float: left
+			margin-left: 20px
+			+fn
+			font-size: 12px
+			text-transform: uppercase
+			color: #000 
+			line-height: 30px
+			&:before
+				content: ""
+				position: absolute
+				top: 13px
+				left: -12px
+				width: 4px
+				height: 4px
+				background: $bll
+				border-radius: 50%  
+			&:first-child
+				margin: 0
+				&:before
+					display: none
+	.top__work
+		float: left
+		margin: 6px 20px 0 0
+		padding: 2px 7px 0
+		border-radius: 3px 
+		background: $bll 
+		text-transform: uppercase
+		+fn
+		font-weight: 700 
+		color: #000 
+	.top__news 
+		float: left
+	.top__news-pic
+		float: left
+		height: 30px
+		margin-right: 8px
+		font-size: 0
+		img
+			position: relative
+			top: -8px
+	.top__news-text
+		float: left
+		line-height: 30px
+		font-size: 11px
+		color: #000 
+	.top__login
+		float: right
+		a
+			float: left
+			+fn
+			text-transform: uppercase
+			line-height: 30px
+			color: #000 
+			&:first-child
+				margin-right: 10px 
+	.top__profile
+		float: right
+		line-height: 30px
+		+fn
+		text-transform: uppercase
+		color: #000
+		span
+			position: relative
+			float: right
+			padding: 2px 4px 0
+			margin: 5px 0 0 7px
+			background:	$bll
+			border-radius: 2px 
+			line-height: 1
+			color: #000
+			font-weight: bold 
+			&:before
+				content: ""
+				position: absolute
+				bottom: -5px
+				left: 3px
+				+arr(5,5,$bll,tl)
 
+.social
+	font-size: 0
+	.social__title, .social__list
+		display: inline-block
+		vertical-align: top
+	.social__title
+		margin-right: 15px
+		+fn
+		font-size: 13px
+		color: #70a8b8 
+		line-height: 30px
+		text-transform: uppercase
+	.social__list
+		a
+			display: inline-block
+			width: 30px
+			height: 30px
+			margin-left: 5px
+			border-radius: 50%
+			border: 2px solid #70a8b8
+			vertical-align: top
+			+vertical
+			&:first-child
+				margin: 0
+			&:hover
+				background: #E5F9FF
+				border-color: #3aaaca 
+		i
+			display: inline-block
+			vertical-align: middle
+	.social__vk
+		+s(vk)
+	.social__fb
+		+s(fb)
+	.social__tw
+		+s(tw)
+	.social__ok
+		+s(ok)
 
+.search
+	margin-bottom: 30px
+	.search__form
+		padding: 20px
+		background: #3AAACA 
+		+clr
+		.input
+			float: left
+			width: 710px 
+		.btn
+			float: right
+			width: 210px
+			
+.btn
+	height: 40px
+	background: #17748F
+	border-radius: 4px
+	+fn
+	font-size: 25px 
+	color: #FFF 
+	&:hover
+		background: #005973 
 
-
-
-
-
-
-
-
-
+.input
+	width: 100%
+	height: 40px
+	padding: 0 12px
+	font-size: 16px
 
 
 
