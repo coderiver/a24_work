@@ -161,7 +161,7 @@ a { text-decoration: none; color: #009bc7; }
 .radio:hover .radio__in:before { border-color: #009bc7; }
 .radio input { position: absolute; top: 0; left: 0; opacity: 0; }
 .radio input:checked + .radio__in:after { content: ""; position: absolute; top: 6px; left: 6px; width: 9px; height: 9px; background: #009bc7; border-radius: 50%; }
-.radio .radio__in { display: block; padding: 2px 0 2px 33px; }
+.radio .radio__in { display: block; padding: 3px 0 2px 33px; }
 .radio .radio__in:before { content: ""; position: absolute; top: 0; left: 0; width: 21px; height: 21px; border: 2px solid #8dc2d1; border-radius: 50%; }
 
 .workers { margin-bottom: 20px; font-size: 0; }
