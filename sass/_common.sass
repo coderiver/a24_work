@@ -48,9 +48,7 @@
 // 	+jpg(bla)
 
 $bl: #009bc7
-$bll: #00c7ff
-$blll: #e5f9ff
-
+$bld: #007292
 
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic)
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic)
@@ -58,6 +56,14 @@ $blll: #e5f9ff
 	font-family: "PT Sans", Arial, sans-serif 
 =fn
 	font-family: "PT Sans Narrow", Arial, sans-serif 
+=smooth
+	-webkit-font-smoothing: antialiased
+=title
+	+fn
+	font-size: 20px 
+	font-weight: bold 
+	color: #007292
+	line-height: 1.1
 
 body
 	min-width: 1020px
@@ -66,23 +72,83 @@ body
 	line-height: 1.3
 button, input, textarea
 	+f
+	font-size: 13px 
+button
+	background: none 
 a
 	text-decoration: none
-	color: $bll
+	color: $bl
 
-// common blocks      
+// common blocks  
+.wrapper
+	position: relative
+    
 .l-center
 	width: 1020px
 	margin: 0 auto
 	padding: 0 20px
 	+clr
-.l-column
-	float: left
-	width: 230px
-	margin-left: 20px
-	&:first-child
-		margin: 0
+	&.l-center_mb25
+		margin-bottom: 25px
+	.l-center
+		padding: 0
+	.l-column
+		float: left
+		width: 230px
+		margin-left: 20px
+		&:first-child
+			margin: 0
+		&.l-column_three
+			width: 730px 
+		&.l-column_two
+			width: 480px 
+	
+.up
+	position: absolute
+	right: 0
+	bottom: 0
+	height: 40px
+	padding: 0 25px
+	background: $bl 
+	font-size: 0
+	&:hover
+		background: #005973 
+	i, span
+		display: inline-block
+	i
+		margin-right: 10px
+		+s(arr-top)
+	span
+		+fn
+		font-size: 20px
+		font-weight: 700 
+		color: #fff 
 
+.bg
+	&.bg_main
+		margin: -65px 0 25px
+		padding-top: 65px
+		background: #e5f9ff 
+		overflow: hidden
+	&.bg_direction
+		position: relative
+		padding: 20px 0 10px
+		background: #8DC2D1
+		&:before, &:after
+			content: ""
+			position: absolute
+			top: 0
+			bottom: 0
+			width: 2000px
+			background: #8DC2D1
+		&:before
+			left: -2000px
+		&:after
+			right: -2000px
+	&.bg_footer
+		padding: 30px 0 60px
+		background: #E5F9FF 
+			
 .header
 	margin-bottom: 30px
 	.header__middle
@@ -131,7 +197,7 @@ a
 			&:first-child
 				margin: 0
 			&.is-active
-				color: $bll 
+				color: #00c7ff 
 	.topper__logo
 		float: right
 		margin-top: 4px
@@ -139,7 +205,7 @@ a
 
 .top
 	height: 30px
-	background: $blll
+	background: #e5f9ff
 	.top__age
 		float: left
 		margin-right: 25px
@@ -166,7 +232,7 @@ a
 				left: -12px
 				width: 4px
 				height: 4px
-				background: $bll
+				background: #00c7ff
 				border-radius: 50%  
 			&:first-child
 				margin: 0
@@ -177,7 +243,7 @@ a
 		margin: 6px 20px 0 0
 		padding: 2px 7px 0
 		border-radius: 3px 
-		background: $bll 
+		background: #00c7ff 
 		text-transform: uppercase
 		+fn
 		font-weight: 700 
@@ -201,12 +267,15 @@ a
 		float: right
 		a
 			float: left
+			padding: 0 5px
 			+fn
 			text-transform: uppercase
 			line-height: 30px
 			color: #000 
-			&:first-child
-				margin-right: 10px 
+			&:hover
+				background: #00c6ff
+				text-decoration: underline 
+				color: #fff 
 	.top__profile
 		float: right
 		line-height: 30px
@@ -218,7 +287,7 @@ a
 			float: right
 			padding: 2px 4px 0
 			margin: 5px 0 0 7px
-			background:	$bll
+			background:	#00c7ff
 			border-radius: 2px 
 			line-height: 1
 			color: #000
@@ -228,7 +297,7 @@ a
 				position: absolute
 				bottom: -5px
 				left: 3px
-				+arr(5,5,$bll,tl)
+				+arr(5,5,#00c7ff,tl)
 
 .social
 	font-size: 0
@@ -281,9 +350,95 @@ a
 		.btn
 			float: right
 			width: 210px
-			
+	.search__head
+		+clr
+	.search__type
+		position: relative
+		float: left
+		width: 53%
+		margin-top: 10px
+		padding: 7px 20px 9px
+		border: 2px solid #3aaaca 
+		border-width: 2px 2px 0
+		z-index: 2 
+		&:first-child
+			width: 47%
+			&.is-active
+				width: 50%
+				&:before
+					left: auto
+					right: -42px
+					border-width: 55px 0 0 40px
+					border-color: transparent transparent transparent #3aaaca
+				& + .search__type
+					width: 50%
+					padding-left: 45px
+		&.is-active
+			margin: 0
+			padding: 12px 18px 9px
+			background: #3aaaca 
+			z-index: 4
+			&:before
+				content: ""
+				position: absolute
+				top: -2px
+				left: -42px
+				+arr(40,55,#3aaaca,br) 
+			.search__title
+				margin-top: -2px
+				font-size: 30px
+				color: #FFF 
+			.search__counter
+				margin-top: 11px
+				color: #FFF 
+			.search__btn
+				margin-top: 5px
+				background: #fff
+				&:hover
+					background: none 
+	.search__title, .search__counter, .search__btn
+		float: left
+	.search__title
+		margin: 2px 30px 0 0
+		+fn
+		font-size: 20px
+		font-weight: bold 
+		color: #000 
+		cursor: pointer
+		line-height: 1
+		+nosel
+	.search__counter
+		margin: 6px 30px 0 0
+		border-bottom: 1px solid
+		font-size: 13px
+		color: #000 
+		&:hover
+			border-width: 2px
+	.search__btn
+		height: 27px
+		padding: 0 8px
+		border-radius: 4px 
+		border: 2px solid #3aaaca
+		color: #3AAACA 
+		&:hover
+			background: #fff
+			border-color: #17748f 
+			color: #17748f 
+			i
+				+s(plus-h)
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			margin-right: 7px
+			+s(plus)
+		span
+			font-size: 13px
+			font-weight: bold 
+					
 .btn
 	height: 40px
+	padding: 0 20px
 	background: #17748F
 	border-radius: 4px
 	+fn
@@ -291,6 +446,8 @@ a
 	color: #FFF 
 	&:hover
 		background: #005973 
+	&.btn_wide
+		width: 100%
 
 .input
 	width: 100%
@@ -298,9 +455,95 @@ a
 	padding: 0 12px
 	font-size: 16px
 
+.title
+	margin-bottom: 25px
+	overflow: hidden
+	&:after
+		content: ""
+		position: relative
+		top: 12px
+		display: block
+		height: 2px
+		background: $bl 
+		overflow: hidden
+	.title__ico	
+		float: right
+		width: 26px
+		height: 26px
+		border-radius: 50% 
+		border: 2px solid $bl
+		+vertical
+		i
+			position: relative
+			display: inline-block
+			vertical-align: middle
+	.title__in
+		float: left
+		margin-right: 8px
+		+fn
+		font-size: 25px
+		font-weight: bold 
+		line-height: 1.1
+		letter-spacing: -.5px
+		+smooth
+	.title__ico-star
+		top: -1px
+		+s(title-star)
+	.title__ico-letter
+		top: -1px
+		+s(title-letter)
+	.title__ico-rhomb
+		+s(title-rhomb)
+	.title__ico-top
+		top: -1px
+		+s(title-top)
+	.title__ico-target
+		top: -1px
+		+s(title-target)
+	.title__ico-list
+		+s(title-list)
+	.title__ico-ok
+		+s(title-ok)
+	.title__ico-news
+		+s(title-news)
+	.title__ico-plus
+		+s(title-plus)
 
-
-
+.radio
+	position: relative
+	display: block
+	cursor: pointer
+	&:hover
+		.radio__in
+			&:before
+				border-color: $bl
+	input
+		position: absolute
+		top: 0
+		left: 0
+		opacity: 0 
+		&:checked + .radio__in
+			&:after
+				content: ""
+				position: absolute
+				top: 6px
+				left: 6px
+				width: 9px
+				height: 9px
+				background: $bl
+				border-radius: 50%  
+	.radio__in
+		display: block
+		padding: 2px 0 2px 33px 
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			width: 21px
+			height: 21px
+			border: 2px solid #8dc2d1
+			border-radius: 50% 
 
 
 

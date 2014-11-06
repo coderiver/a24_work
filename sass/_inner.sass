@@ -1,0 +1,228 @@
+// inner styles
+.workers
+	margin-bottom: 20px
+	font-size: 0
+	.workers__item
+		display: inline-block
+		width: 106px
+		margin-left: 18px
+		vertical-align: top
+		&:first-child
+			margin: 0
+	.workers__pic
+		margin-bottom: 15px
+	.workers__counter
+		font-size: 13px
+		span
+			display: block
+			font-weight: bold
+			
+.direction
+	position: relative
+	z-index: 2 
+	.direction__in
+		margin-top: -25px
+		font-size: 0
+	.direction__item
+		display: inline-block
+		width: 30%
+		margin: 0 3.33% 25px 0
+		font-size: 13px 
+		vertical-align: top
+		&:first-child
+			color: #000 
+	.direction__item
+		color: #fff 
+	.direction__title
+		margin-bottom: 5px
+		+title
+	.direction__salary
+		margin-bottom: 10px
+	.title
+		margin-bottom: 10px
+		&:after
+			display: none
+
+.day
+	position: relative
+	display: block
+	margin-bottom: 30px
+	text-align: center
+	z-index: 4 
+	.day__pic
+		margin-bottom: 20px
+		font-size: 0
+	.day__title
+		margin-bottom: 3px
+		+title
+	.day__text
+		color: #000 
+		
+.banner
+	position: relative
+	font-size: 0
+	&.banner_above
+		z-index: 4 
+
+.hotwork
+	font-size: 0
+	.hotwork__item
+		display: inline-block
+		width: 30%
+		margin: 0 3.33% 25px 0 
+		vertical-align: top
+		font-size: 13px
+	.hotwork__title
+		margin-bottom: 10px
+		+title
+	.hotwork__price
+		margin-bottom: 3px
+		color: #70A8B8
+	.hotwork__salary
+		font-weight: bold 
+	
+.training
+	margin-bottom: 20px
+	text-align: center
+	.training__slider
+		padding-bottom: 20px
+	.training__pic
+		margin-bottom: 15px
+	.training__man
+		margin-bottom: 3px
+		+title 
+	.training__text
+		margin-bottom: 3px
+		color: #000 
+	.training__date
+		color: $bld
+	.training__dots
+		text-align: center
+		font-size: 0
+		span
+			display: inline-block
+			width: 9px
+			height: 9px
+			margin: 0 8px
+			background: #C4E4EE
+			border-radius: 50%  
+			vertical-align: top
+			cursor: pointer
+			&:hover
+				background: #55B5D1 
+			&.is-active
+				background: $bl 
+
+.articles
+	margin-bottom: 30px
+	.articles__slider
+		margin-bottom: 25px
+	.articles__item
+		display: block
+		overflow: hidden
+	.articles__pic
+		float: left
+		width: 230px
+		margin-right: 20px
+		font-size: 0
+	.articles__data
+		overflow: hidden
+	.articles__title
+		margin-bottom: 10px
+		+title
+	.articles__text
+		color: #000
+	.articles__nav
+		text-align: center
+		font-size: 0
+	.articles__prev,
+	.articles__next
+		vertical-align: middle
+	.articles__prev
+		margin-right: 8px
+		+s(prev)
+	.articles__next
+		margin-left: 8px
+		+s(next)
+	.articles__dots
+		display: inline-block
+		vertical-align: middle
+		span
+			display: inline-block
+			width: 9px
+			height: 9px
+			margin: 0 8px
+			background: #C4E4EE
+			border-radius: 50%  
+			vertical-align: top
+			cursor: pointer
+			&:hover
+				background: #55B5D1 
+			&.is-active
+				background: $bl 
+
+.newwork
+	font-size: 0
+	.newwork__title, .btn
+		display: inline-block
+		width: 230px
+		vertical-align: middle
+	.newwork__title	
+		margin-right: 20px
+		font-size: 13px
+		color: $bld 
+	.btn
+		padding-top: 1px
+		i
+			position: relative
+			top: -2px
+			display: inline-block
+			margin-left: 10px
+			+s(yandex)
+			vertical-align: middle
+
+.vote
+	.vote__title
+		margin-bottom: 15px
+		+title
+	.vote__list
+		margin-bottom: 30px
+	.vote__question
+		margin-bottom: 10px 
+	.vote__scale
+		margin-bottom: 20px
+		font-size: 0
+	.vote__values, .vote__line
+		display: inline-block
+		vertical-align: middle
+	.vote__values
+		color: $bl 
+		font-size: 13px
+		span
+			font-weight: 700 
+	.vote__line
+		height: 6px
+		margin-right: 10px
+		background: $bl  
+	.radio
+		margin-bottom: 20px
+		
+.news
+	.news__link
+		display: block
+		padding: 5px 0
+		border-top: 1px solid #B7E6F4 
+		color: #000 
+		&:first-child
+			padding: 0 0 5px
+			border: none
+
+
+
+
+
+
+
+
+
+
