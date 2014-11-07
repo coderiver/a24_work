@@ -1,6 +1,6 @@
 // inner styles
 .workers
-	margin-bottom: 20px
+	margin-bottom: 25px
 	font-size: 0
 	.workers__item
 		display: inline-block
@@ -10,18 +10,19 @@
 		&:first-child
 			margin: 0
 	.workers__pic
-		margin-bottom: 15px
+		margin-bottom: 20px
 	.workers__counter
 		font-size: 13px
 		span
 			display: block
+			margin-bottom: 5px
 			font-weight: bold
 			
 .direction
 	position: relative
 	z-index: 2 
 	.direction__in
-		margin-top: -25px
+		margin-top: -15px
 		font-size: 0
 	.direction__item
 		display: inline-block
@@ -39,18 +40,18 @@
 	.direction__salary
 		margin-bottom: 10px
 	.title
-		margin-bottom: 10px
+		margin: -5px 0 10px
 		&:after
 			display: none
 
 .day
 	position: relative
 	display: block
-	margin-bottom: 30px
+	margin-bottom: 40px
 	text-align: center
 	z-index: 4 
 	.day__pic
-		margin-bottom: 20px
+		margin-bottom: 27px
 		font-size: 0
 	.day__title
 		margin-bottom: 3px
@@ -69,7 +70,7 @@
 	.hotwork__item
 		display: inline-block
 		width: 30%
-		margin: 0 3.33% 25px 0 
+		margin: 0 3.33% 30px 0 
 		vertical-align: top
 		font-size: 13px
 	.hotwork__title
@@ -77,22 +78,23 @@
 		+title
 	.hotwork__price
 		margin-bottom: 3px
-		color: #70A8B8
+		color: $blg
 	.hotwork__salary
 		font-weight: bold 
 	
 .training
-	margin-bottom: 20px
+	margin: -10px 0 20px
 	text-align: center
 	.training__slider
-		padding-bottom: 20px
+		margin-bottom: 25px
 	.training__pic
-		margin-bottom: 15px
+		margin-bottom: 12px
+		font-size: 0
 	.training__man
 		margin-bottom: 3px
 		+title 
 	.training__text
-		margin-bottom: 3px
+		margin-bottom: 7px
 		color: #000 
 	.training__date
 		color: $bld
@@ -183,7 +185,7 @@
 
 .vote
 	.vote__title
-		margin-bottom: 15px
+		margin-bottom: 20px
 		+title
 	.vote__list
 		margin-bottom: 30px
@@ -204,10 +206,13 @@
 		height: 6px
 		margin-right: 10px
 		background: $bl  
+	.vote__result
+		display: none
 	.radio
 		margin-bottom: 20px
 		
 .news
+	margin-top: -7px
 	.news__link
 		display: block
 		padding: 5px 0
@@ -217,7 +222,221 @@
 			padding: 0 0 5px
 			border: none
 
+.subscribe
+	float: left
+	margin-right: 80px
+	color: $blg 
+	&:hover
+		color: $bld
+		i
+			+s(subscribe-h)
+		span
+			border-color: $bld
+	i, span
+		float: left
+	span
+		border-bottom: 1px solid transparent 
+		line-height: 1
+	i
+		position: relative
+		top: -2px
+		margin-right: 7px 
+		+s(subscribe)
 
+.sorting
+	float: left
+	margin-top: -2px
+	color: $blg 
+	.sorting__title, .sorting__list
+		display: inline-block
+	.sorting__title
+		margin-right: 8px
+	.sorting__list
+		a
+			display: inline-block
+			margin-left: 12px
+			border-bottom: 1px dashed
+			line-height: 1 
+			&:first-child
+				margin: 0
+			&.is-active
+				border: none
+				font-weight: bold
+				color: $bld  
+				i
+					+s(arr-sorting-h)
+		span, i
+			display: inline-block
+			line-height: 1
+		i
+			margin-left: 2px
+			+s(arr-sorting)
+
+.sv
+	.sv__hot
+		background: $blg
+		.sv__item
+			padding: 16px 20px 15px
+			border: none
+			&:after
+				content: ""
+				position: absolute
+				top: 0
+				left: 20px
+				right: 20px
+				height: 1px
+				background: #8DB9C6 
+			&:first-child
+				padding: 15px 20px
+				&:after
+					display: none
+		.sv__title, .sv__man, .sv__salary
+			color: #FFF
+			a
+				color: #FFF 
+		.sv__toggle
+			button
+				&.is-active
+					i
+					+s(arr-toggle-top)
+				span
+					color: #fff 
+				i
+					+s(arr-toggle-down-l)
+		.sv__fav
+			button
+				&:hover
+					+s(fav-l)
+		.sv__new-window
+			a
+				&:hover
+					+s(new-window-l)
+	.sv__item
+		position: relative
+		padding: 15px 20px
+		border-bottom: 1px solid #CCEBF4 
+		overflow: hidden
+		&.is-open
+			background: #E5F9FF 
+			>.sv__ava, .sv__man
+				display: none
+	.sv__ava
+		float: left
+		width: 44px
+		height: 44px
+		margin-right: 20px
+		border: 3px solid #8dc2d1
+		font-size: 0
+	.sv__right
+		float: right
+		width: 130px
+		margin-left: 15px
+	.sv__salary
+		font-weight: bold
+		font-size: 15px
+		color: $bll  
+	.sv__toggle
+		button
+			&:hover
+				span
+					border-color: $bld
+					color: $bld 
+				i
+					+s(arr-toggle-down-h)
+			span, i
+				display: inline-block
+				vertical-align: middle
+			span
+				border-bottom: 1px solid transparent 
+				color: $blg
+				line-height: 1
+			i
+				margin-left: 3px
+				+s(arr-toggle-down)
+	.sv__fav
+		float: right
+		margin-left: 15px
+		button
+			+s(fav)
+			&:hover
+				+s(fav-h)
+			&.is-active
+				+s(fav-a)
+	.sv__new-window
+		float: right
+		margin-left: 15px
+		a
+			display: block
+			+s(new-window)
+			&:hover
+				+s(new-window-h)
+	.sv__title
+		margin-bottom: 3px
+		+title
+	.sv__man
+		color: $blg 
+		a
+			color: $blg 
+	.sv__data
+		overflow: hidden
+	.sv__in
+		padding-top: 20px
+		overflow: hidden
+		clear: both
+	.sv__head
+		margin-bottom: 25px
+		overflow: hidden
+		.sv__ava
+			width: 130px
+			height: 130px 
+	.sv__date
+		float: right
+		width: 130px
+		margin-left: 20px
+		color: $blg
+		li
+			margin-bottom: 3px
+	.sv__about
+		overflow: hidden
+		p
+			margin-bottom: 3px
+			color: $blg 
+	.sv__info-title
+		margin-bottom: 10px
+		+fn
+		font-size: 20px
+		font-weight: bold 
+		color: $blg
+		line-height: 1.1 
+	.sv__info-row
+		margin-bottom: 10px
+		overflow: hidden
+		& + .sv__info-title
+			margin-top: 30px
+	.sv__info-item
+		float: left
+		width: 140px
+		margin-right: 20px
+		text-align: right
+		color: $blg 
+	.sv__info-in
+		overflow: hidden
+		ul
+			li
+				position: relative
+				margin-top: 10px
+				padding-left: 15px
+				&:before
+					content: ""
+					position: absolute
+					top: 10px
+					left: 0
+					width: 5px
+					height: 5px
+					background: $blg
+					border-radius: 50%  
+			& + p
+				margin-top: 10px
 
 
 

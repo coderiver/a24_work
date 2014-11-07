@@ -49,6 +49,8 @@
 
 $bl: #009bc7
 $bld: #007292
+$bll: #3aaaca
+$blg: #70a8b8
 
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic)
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic)
@@ -62,8 +64,10 @@ $bld: #007292
 	+fn
 	font-size: 20px 
 	font-weight: bold 
-	color: #007292
+	color: $bld 
 	line-height: 1.1
+	a
+		color: $bld 
 
 body
 	min-width: 1020px
@@ -82,6 +86,7 @@ a
 // common blocks  
 .wrapper
 	position: relative
+	padding-bottom: 50px
     
 .l-center
 	width: 1020px
@@ -91,6 +96,7 @@ a
 	&.l-center_mb25
 		margin-bottom: 25px
 	.l-center
+		width: 100%
 		padding: 0
 	.l-column
 		float: left
@@ -146,7 +152,7 @@ a
 		&:after
 			right: -2000px
 	&.bg_footer
-		padding: 30px 0 60px
+		padding: 30px 0
 		background: #E5F9FF 
 			
 .header
@@ -241,13 +247,14 @@ a
 	.top__work
 		float: left
 		margin: 6px 20px 0 0
-		padding: 2px 7px 0
+		padding: 0 7px
 		border-radius: 3px 
 		background: #00c7ff 
 		text-transform: uppercase
 		+fn
 		font-weight: 700 
 		color: #000 
+		line-height: 18px
 	.top__news 
 		float: left
 	.top__news-pic
@@ -308,7 +315,7 @@ a
 		margin-right: 15px
 		+fn
 		font-size: 13px
-		color: #70a8b8 
+		color: $blg
 		line-height: 30px
 		text-transform: uppercase
 	.social__list
@@ -318,14 +325,14 @@ a
 			height: 30px
 			margin-left: 5px
 			border-radius: 50%
-			border: 2px solid #70a8b8
+			border: 2px solid $blg
 			vertical-align: top
 			+vertical
 			&:first-child
 				margin: 0
 			&:hover
 				background: #E5F9FF
-				border-color: #3aaaca 
+				border-color: $bll 
 		i
 			display: inline-block
 			vertical-align: middle
@@ -342,7 +349,7 @@ a
 	margin-bottom: 30px
 	.search__form
 		padding: 20px
-		background: #3AAACA 
+		background: $bll 
 		+clr
 		.input
 			float: left
@@ -358,7 +365,7 @@ a
 		width: 53%
 		margin-top: 10px
 		padding: 7px 20px 9px
-		border: 2px solid #3aaaca 
+		border: 2px solid $bll 
 		border-width: 2px 2px 0
 		z-index: 2 
 		&:first-child
@@ -369,21 +376,21 @@ a
 					left: auto
 					right: -42px
 					border-width: 55px 0 0 40px
-					border-color: transparent transparent transparent #3aaaca
+					border-color: transparent transparent transparent $bll
 				& + .search__type
 					width: 50%
 					padding-left: 45px
 		&.is-active
 			margin: 0
 			padding: 12px 18px 9px
-			background: #3aaaca 
+			background: $bll 
 			z-index: 4
 			&:before
 				content: ""
 				position: absolute
 				top: -2px
 				left: -42px
-				+arr(40,55,#3aaaca,br) 
+				+arr(40,55,$bll,br) 
 			.search__title
 				margin-top: -2px
 				font-size: 30px
@@ -418,8 +425,8 @@ a
 		height: 27px
 		padding: 0 8px
 		border-radius: 4px 
-		border: 2px solid #3aaaca
-		color: #3AAACA 
+		border: 2px solid $bll
+		color: $bll 
 		&:hover
 			background: #fff
 			border-color: #17748f 
@@ -508,6 +515,8 @@ a
 		+s(title-news)
 	.title__ico-plus
 		+s(title-plus)
+	.title__ico-res
+		+s(title-res)
 
 .radio
 	position: relative

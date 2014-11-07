@@ -3,10 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<title>Template</title>
-	<meta name="viewport" content="initial-scale=1">
-	<meta name="format-detection" content="telephone=no">
-	<!-- <meta name="viewport" content="width=1200"> -->
-	<!-- <meta name="viewport" content="initial-scale=1, user-scalable=no"> -->
 	<link rel="stylesheet" media="all" href="css/screen.css" >
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 </head>
@@ -291,7 +287,7 @@
 			<!-- training -->
 			<div class="training">
 				<div class="training__slider cycle-slideshow"
-					data-cycle-timeout="0"
+					data-cycle-timeout="2000"
 					data-cycle-pager=".training__dots"
 					data-cycle-pager-active-class="is-active"
 					data-cycle-slides=".training__item">
@@ -337,7 +333,7 @@
 				<!-- articles -->
 				<div class="articles">
 					<div class="articles__slider cycle-slideshow"
-						data-cycle-timeout="0"
+						data-cycle-timeout="2000"
 						data-cycle-prev=".articles__prev"
 						data-cycle-next=".articles__next"
 						data-cycle-pager=".articles__dots"
@@ -432,7 +428,7 @@
 					<div class="title__ico"><i class="title__ico-ok"></i></div>
 				</div>
 				<!-- vote -->
-				<div class="vote">
+				<div class="vote js-vote">
 					<div class="vote__title">Задерживали ли вам зарплату за последний год?</div>
 					<div class="vote__in">
 						<div class="vote__list">
@@ -444,9 +440,6 @@
 						</div>
 						<button class="btn btn_wide">Проголосовать</button>
 					</div>
-					<!--  -->
-					<br>
-					<!--  -->
 					<div class="vote__result">
 						<div class="vote__question">Да, один-два раза</div>
 						<div class="vote__scale">
