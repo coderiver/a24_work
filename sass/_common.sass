@@ -51,6 +51,9 @@ $bl: #009bc7
 $bld: #007292
 $bll: #3aaaca
 $blg: #70a8b8
+$btn: #17748F
+$btnh: #005973
+$bg: #e5f9ff
 
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic)
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic)
@@ -63,7 +66,7 @@ $blg: #70a8b8
 =title
 	+fn
 	font-size: 20px 
-	font-weight: bold 
+	font-weight: 700 
 	color: $bld 
 	line-height: 1.1
 	a
@@ -89,6 +92,7 @@ a
 	padding-bottom: 50px
     
 .l-center
+	position: relative
 	width: 1020px
 	margin: 0 auto
 	padding: 0 20px
@@ -118,7 +122,7 @@ a
 	background: $bl 
 	font-size: 0
 	&:hover
-		background: #005973 
+		background: $btnh
 	i, span
 		display: inline-block
 	i
@@ -131,11 +135,11 @@ a
 		color: #fff 
 
 .bg
+	overflow: hidden
 	&.bg_main
 		margin: -65px 0 25px
 		padding-top: 65px
-		background: #e5f9ff 
-		overflow: hidden
+		background: $bg 
 	&.bg_direction
 		position: relative
 		padding: 20px 0 10px
@@ -151,9 +155,32 @@ a
 			left: -2000px
 		&:after
 			right: -2000px
+		.l-column
+			position: relative
+			z-index: 2 
 	&.bg_footer
 		padding: 30px 0
-		background: #E5F9FF 
+		background: $bg 
+	&.bg_el
+		margin-top: -70px
+		border-top: 70px solid $bg 
+		.l-column
+			position: relative
+			z-index: 2 
+		.el_single
+			position: relative
+			background: $bg
+			&:before, &:after
+				content: ""
+				position: absolute
+				top: 0
+				bottom: 0
+				width: 2000px
+				background: $bg
+			&:before
+				left: -2000px
+			&:after
+				right: -2000px 
 			
 .header
 	margin-bottom: 30px
@@ -165,7 +192,7 @@ a
 		padding: 20px 0
 		+fn
 		font-size: 40px
-		font-weight: bold 
+		font-weight: 700 
 		line-height: 1
 	.header__banners
 		font-size: 0
@@ -211,7 +238,7 @@ a
 
 .top
 	height: 30px
-	background: #e5f9ff
+	background: $bg
 	.top__age
 		float: left
 		margin-right: 25px
@@ -298,7 +325,7 @@ a
 			border-radius: 2px 
 			line-height: 1
 			color: #000
-			font-weight: bold 
+			font-weight: 700 
 			&:before
 				content: ""
 				position: absolute
@@ -331,7 +358,7 @@ a
 			&:first-child
 				margin: 0
 			&:hover
-				background: #E5F9FF
+				background: $bg
 				border-color: $bll 
 		i
 			display: inline-block
@@ -354,14 +381,16 @@ a
 		.input
 			float: left
 			width: 710px 
+			border: none
 		.btn
 			float: right
 			width: 210px
+			font-size: 25px
 	.search__head
 		+clr
 	.search__type
 		position: relative
-		float: left
+		float: right
 		width: 53%
 		margin-top: 10px
 		padding: 7px 20px 9px
@@ -369,6 +398,7 @@ a
 		border-width: 2px 2px 0
 		z-index: 2 
 		&:first-child
+			float: left
 			width: 47%
 			&.is-active
 				width: 50%
@@ -409,7 +439,7 @@ a
 		margin: 2px 30px 0 0
 		+fn
 		font-size: 20px
-		font-weight: bold 
+		font-weight: 700 
 		color: #000 
 		cursor: pointer
 		line-height: 1
@@ -429,8 +459,8 @@ a
 		color: $bll 
 		&:hover
 			background: #fff
-			border-color: #17748f 
-			color: #17748f 
+			border-color: $btn
+			color: $btn
 			i
 				+s(plus-h)
 		i, span
@@ -441,26 +471,95 @@ a
 			+s(plus)
 		span
 			font-size: 13px
-			font-weight: bold 
-					
+			font-weight: 700 
+
+.btn-center
+	text-align: center					
 .btn
 	height: 40px
 	padding: 0 20px
-	background: #17748F
+	background: $btn
 	border-radius: 4px
 	+fn
-	font-size: 25px 
+	font-size: 20px 
 	color: #FFF 
 	&:hover
-		background: #005973 
+		background: $btnh 
+	&.is-disable
+		background: $btn
+		opacity: .3 
+		cursor: default
 	&.btn_wide
 		width: 100%
 
-.input
+.field
+	margin-bottom: 25px
+	.field__label
+		margin-bottom: 10px
+
+.input, .textarea
 	width: 100%
+	border: 1px solid #8DC2D1
+	font-size: 16px
+	&:focus
+		border-color: $bll
+		box-shadow: 0 0 0 1px $bll inset
+.input
 	height: 40px
 	padding: 0 12px
+.textarea
+	display: block
+	height: 150px
+	padding: 8px 12px
+	resize: vertical
+	
+.select
+	position: relative
+	cursor: pointer
 	font-size: 16px
+	+nosel
+	&.is-open
+		z-index: 998 
+		.select__head
+			border-color: $bll
+			box-shadow: 0 0 0 1px $bll inset
+			&:before
+				content: ""
+				position: absolute
+				top: 0px
+				right: 0px
+				bottom: 0px
+				width: 36px
+				background: $bll
+			&:after
+				top: 14px
+				+s(select-arr-a)
+	.select__head
+		position: relative
+		height: 40px
+		padding: 0 50px 0 12px
+		border: 1px solid #8DC2D1
+		line-height: 38px
+		&:after
+			content: ""
+			position: absolute
+			top: 15px
+			right: 11px
+			+s(select-arr)
+	.select__list
+		display: none
+		position: absolute
+		top: 38px
+		left: 0
+		right: 0
+		border: 2px solid $bll
+		background: #FFF 
+		li
+			padding: 10px
+			&:hover
+				background: $bg 
+				color: $btn 
+		
 
 .title
 	margin-bottom: 25px
@@ -489,7 +588,7 @@ a
 		margin-right: 8px
 		+fn
 		font-size: 25px
-		font-weight: bold 
+		font-weight: 700 
 		line-height: 1.1
 		letter-spacing: -.5px
 		+smooth

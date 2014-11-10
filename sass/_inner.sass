@@ -16,7 +16,7 @@
 		span
 			display: block
 			margin-bottom: 5px
-			font-weight: bold
+			font-weight: 700
 			
 .direction
 	position: relative
@@ -62,8 +62,8 @@
 .banner
 	position: relative
 	font-size: 0
-	&.banner_above
-		z-index: 4 
+	&.banner_aside
+		margin-bottom: 55px
 
 .hotwork
 	font-size: 0
@@ -80,11 +80,13 @@
 		margin-bottom: 3px
 		color: $blg
 	.hotwork__salary
-		font-weight: bold 
+		font-weight: 700 
 	
 .training
 	margin: -10px 0 20px
 	text-align: center
+	&.training_aside
+		margin: -10px 0 50px 
 	.training__slider
 		margin-bottom: 25px
 	.training__pic
@@ -261,7 +263,7 @@
 				margin: 0
 			&.is-active
 				border: none
-				font-weight: bold
+				font-weight: 700
 				color: $bld  
 				i
 					+s(arr-sorting-h)
@@ -272,13 +274,46 @@
 			margin-left: 2px
 			+s(arr-sorting)
 
-.sv
-	.sv__hot
-		background: $blg
-		.sv__item
-			padding: 16px 20px 15px
+.el
+	margin-bottom: 30px
+	border-bottom: 2px solid $bl 
+	&.el_single
+		margin-bottom: 25px
+		border: none
+		.el__title
+			font-size: 25px
+			color: #000 
+		.el__in
+			display: block
+		.el__head
+			.el__ava
+				margin-left: 10px
+		.el__row-left
+			width: 150px
+		.el__footer
+			margin: 30px 0 0
+	&.el_similar
+		margin-top: -20px
+		border: none
+	.el__item
+		position: relative
+		padding: 15px 20px
+		border-top: 1px solid #CCEBF4 
+		+clr
+		&:first-child
 			border: none
-			&:after
+		&.is-open
+			background: $bg 
+			>.el__ava, .el__man
+				display: none
+			& + .el__item
+				&:before
+					display: none
+		&.is-hot
+			padding: 16px 20px 15px
+			background: $blg
+			border: none
+			&:before
 				content: ""
 				position: absolute
 				top: 0
@@ -288,54 +323,50 @@
 				background: #8DB9C6 
 			&:first-child
 				padding: 15px 20px
-				&:after
+				&:before
 					display: none
-		.sv__title, .sv__man, .sv__salary
-			color: #FFF
-			a
-				color: #FFF 
-		.sv__toggle
-			button
-				&.is-active
+			& + .el__item
+				border: none
+			.el__title, .el__man, .el__salary
+				color: #FFF
+				a
+					color: #FFF 
+			.el__toggle
+				button
+					&:hover
+						span
+							border-color: #fff
+					&.is-active
+						i
+							+s(arr-toggle-top)
+					span
+						color: #fff 
 					i
-					+s(arr-toggle-top)
-				span
-					color: #fff 
-				i
-					+s(arr-toggle-down-l)
-		.sv__fav
-			button
-				&:hover
-					+s(fav-l)
-		.sv__new-window
-			a
-				&:hover
-					+s(new-window-l)
-	.sv__item
-		position: relative
-		padding: 15px 20px
-		border-bottom: 1px solid #CCEBF4 
-		overflow: hidden
-		&.is-open
-			background: #E5F9FF 
-			>.sv__ava, .sv__man
-				display: none
-	.sv__ava
+						+s(arr-toggle-down-l)
+			.el__fav
+				button
+					&:hover
+						+s(fav-l)
+			.el__new-window
+				a
+					&:hover
+						+s(new-window-l)
+	.el__ava
 		float: left
 		width: 44px
 		height: 44px
 		margin-right: 20px
 		border: 3px solid #8dc2d1
 		font-size: 0
-	.sv__right
+	.el__right
 		float: right
 		width: 130px
 		margin-left: 15px
-	.sv__salary
-		font-weight: bold
+	.el__salary
+		font-weight: 700
 		font-size: 15px
 		color: $bll  
-	.sv__toggle
+	.el__toggle
 		button
 			&:hover
 				span
@@ -343,6 +374,12 @@
 					color: $bld 
 				i
 					+s(arr-toggle-down-h)
+			&.is-active
+				&:hover
+					i
+						+s(arr-toggle-top-h)
+				i
+					+s(arr-toggle-top)
 			span, i
 				display: inline-block
 				vertical-align: middle
@@ -353,7 +390,7 @@
 			i
 				margin-left: 3px
 				+s(arr-toggle-down)
-	.sv__fav
+	.el__fav
 		float: right
 		margin-left: 15px
 		button
@@ -362,7 +399,7 @@
 				+s(fav-h)
 			&.is-active
 				+s(fav-a)
-	.sv__new-window
+	.el__new-window
 		float: right
 		margin-left: 15px
 		a
@@ -370,57 +407,87 @@
 			+s(new-window)
 			&:hover
 				+s(new-window-h)
-	.sv__title
+	.el__title
 		margin-bottom: 3px
 		+title
-	.sv__man
+	.el__man
 		color: $blg 
 		a
 			color: $blg 
-	.sv__data
-		overflow: hidden
-	.sv__in
+	.el__data
+		display: table
+	.el__in
+		display: none
 		padding-top: 20px
-		overflow: hidden
 		clear: both
-	.sv__head
+		+clr
+	.el__in_vacancy
+		padding: 0
+		.el__salary
+			margin-bottom: 15px
+			+fn
+			font-size: 25px
+		.el__date
+			float: none
+			width: auto
+			margin: 0
+	.el__head
 		margin-bottom: 25px
 		overflow: hidden
-		.sv__ava
+		.el__ava
 			width: 130px
 			height: 130px 
-	.sv__date
+			margin-right: 30px 
+	.el__logo
+		float: left
+		margin-right: 30px
+		font-size: 0
+	.el__date
 		float: right
 		width: 130px
 		margin-left: 20px
 		color: $blg
 		li
 			margin-bottom: 3px
-	.sv__about
+	.el__about
 		overflow: hidden
 		p
 			margin-bottom: 3px
 			color: $blg 
-	.sv__info-title
+		a
+			display: inline-block
+			border-bottom: 1px solid 
+			line-height: 1
+	.el__info
+		margin-bottom: 20px
+		padding-bottom: 20px
+		border-bottom: 2px solid $blg 
+	.el__row-title
 		margin-bottom: 10px
 		+fn
 		font-size: 20px
-		font-weight: bold 
+		font-weight: 700 
 		color: $blg
 		line-height: 1.1 
-	.sv__info-row
+	.el__row
 		margin-bottom: 10px
-		overflow: hidden
-		& + .sv__info-title
+		+clr
+		& + .el__row-title
 			margin-top: 30px
-	.sv__info-item
+	.el__row-left
 		float: left
 		width: 140px
 		margin-right: 20px
 		text-align: right
 		color: $blg 
-	.sv__info-in
-		overflow: hidden
+	.el__row-left_social
+		padding-top: 5px
+	.el__row-right
+		display: table
+		max-width: 500px
+	.el__row-content
+		max-width: 550px
+	.el__row-right, .el__row-content
 		ul
 			li
 				position: relative
@@ -429,7 +496,7 @@
 				&:before
 					content: ""
 					position: absolute
-					top: 10px
+					top: 5px
 					left: 0
 					width: 5px
 					height: 5px
@@ -437,11 +504,252 @@
 					border-radius: 50%  
 			& + p
 				margin-top: 10px
+		>a
+			display: inline-block
+			border-bottom: 1px solid
+			line-height: 1
+		.social
+			a
+				&:hover
+					background: #FFF 
+	.el__added
+		margin-top: 25px
+		a
+			display: inline-block
+			border-bottom: 1px solid 
+			color: $bld 
+			line-height: 1
+	.el__contacts
+		+clr
+	.el__contacts-right
+		float: right
+		width: 225px
+		margin-left: 40px
+	.el__a42
+		padding: 10px 20px 0 0
+	.el__contacts-left
+		display: table
+		.el__row-title
+			color: $btn 
+	.el__footer
+		position: relative
+		margin: 10px -20px -15px
+		padding: 15px 20px
+		background: $bll 
+	.el__footer-link
+		display: inline-block
+		margin-left: 35px
+		color: #FFF 
+		font-size: 0
+		line-height: 1
+		&:first-child
+			margin: 0
+		&:hover
+			span
+				border-color: #fff
+		&.is-active
+			.el__ico-fav
+				+s(fav-a)
+			.el__ico-like
+				+s(like-a)
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			position: relative
+			top: -1px
+			margin-right: 7px
+		span
+			border-bottom: 1px solid transparent 
+			font-size: 13px
+		.el__ico-fav
+			top: -3px
+			+s(fav-white)
+		.el__ico-new-window
+			+s(new-window-white) 
+		.el__ico-save
+			+s(save-white)
+		.el__ico-print
+			+s(print-white)
+		.el__ico-like
+			+s(like-white)
+	.el__map
+		a
+			display: inline-block
+		span, i
+			display: inline-block
+			vertical-align: middle
+		span
+			color: $btn
+		i
+			position: relative
+			top: -1px
+			margin-right: 5px
+			+s(marker)
+	.el__company
+		float: right
+		width: 230px
+		margin: 0 0 20px 40px
+		.el__logo
+			float: none
+			margin: 0 0 10px
+		
+.pager
+	text-align: center
+	font-size: 0
+	a
+		display: inline-block
+		height: 30px
+		padding: 0 10px
+		margin: 0 2px
+		border-radius: 4px 
+		vertical-align: top
+		font-size: 13px
+		color: $btn 
+		line-height: 30px
+		&:hover
+			background: $bg
+			font-weight: 700  
+		&.is-active
+			background: $btn
+			color: #fff
+			font-weight: 700   
+			cursor: default
+	.pager__prev, .pager__next
+		background: $btn
+		color: #fff
+		font-weight: 700 
+		&:hover
+			background: $btnh 
+	.pager__prev
+		margin: 0 15px 0 0
+	.pager__next
+		margin: 0 0 0 15px
 
+.filter
+	.filter__head
+		padding: 6px 0 10px 20px
+	.filter__head-title, .filter__head-reset
+		display: inline-block
+	.filter__head-title
+		margin-right: 20px
+		+fn
+		font-size: 16px
+		font-weight: 700 
+	.filter__head-reset
+		border-bottom: 1px dashed 
+		color: $btn 
+		line-height: 1
+	.filter__item
+		border-top: 1px solid #CCEBF4 
+		&:first-child
+			border: none
+	.filter__title
+		padding: 10px 10px 10px 20px
+		+fn
+		font-size: 20px
+		font-weight: 700
+		line-height: 1.1
+		color: $bll 
+		span
+			+f
+			font-size: 13px
+			font-weight: 400 
+	.filter__list
+		padding-bottom: 10px
+		a
+			display: block
+			padding: 8px 10px 2px 20px 
+			+clr
+			&:first-child
+				margin: 0
+			&:hover
+				background: #CCEBF4 
+				span
+					&:first-child
+						border-color: $bld
+			&.is-active
+				span
+					&:first-child
+						font-weight: 700
+						color: $btn  
+		span
+			float: right
+			border-bottom: 1px solid transparent
+			color: $btn
+			line-height: 1
+			&:first-child
+				float: none
+				display: inline-block
+				overflow: hidden
+				color: #000
+		i
+			position: relative
+			top: 1px
+			display: inline-block
+			margin-left: 9px
+			+s(remove)
+	.filter__more
+		margin-top: -5px
+		padding: 0 10px 10px 20px 
+				
+.share
+	display: none
+	position: absolute
+	right: 0
+	bottom: -10px
+	padding: 20px
+	background: #FFF
+	box-shadow: 0 0 27px rgba(23, 116, 143, 0.35)
+	z-index: 10   
+	.share__title
+		margin-bottom: 15px
+		+fn
+		font-size: 20px
+		font-weight: 700
+		line-height: 1.1
+		color: $blg
+	.share__close
+		position: absolute
+		top: 20px
+		right: 20px
+		+s(close)
+		&:hover
+			+sp(close-h)
 
-
-
-
-
+.popup
+	display: none
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	+vertical
+	overflow: auto
+	z-index: 999 
+	.popup__in	
+		position: relative
+		display: inline-block
+		width: 520px 
+		padding: 18px 20px 25px
+		background: #FFF
+		box-shadow: 0 0 27px rgba(23, 116, 143, 0.35) 
+		vertical-align: middle
+		font-size: 13px
+		text-align: left
+	.popup__title
+		margin: 0 50px 15px 0 
+		+fn
+		font-size: 25px
+		color: #000
+		line-height: 1.1
+		font-weight: 700  
+	.popup__close
+		position: absolute
+		top: 20px
+		right: 20px
+		+s(close)
+		&:hover
+			+sp(close-h)
 
 

@@ -7,7 +7,10 @@ head.ready(function() {
 			vote = $('.js-vote'),
 			vote_in = vote.find('.vote__in'),
 			vote_result = vote.find('.vote__result'),
-			vote_btn = vote_in.find('.btn');
+			vote_btn = vote_in.find('.btn'),
+			sv_toggle = $('.js-el-toggle'),
+			share = $('.js-share'),
+			share_close = $('.js-share-close');
 
 	// search
 	search_title.on('click', function () {
@@ -27,5 +30,65 @@ head.ready(function() {
 		vote_in.hide();
 		vote_result.show();
 	});
+
+	// sv
+	sv_toggle.on('click', function () {
+		var item = $(this).parents('.el__item'),
+				text_show = 'развернуть',
+				text_hide = 'свернуть';
+		if (item.hasClass('el__item_hot')) {
+			item.toggleClass('is-hot');
+		}
+		if ($(this).hasClass('is-active')) {
+			$(this).find('span').text(text_show);
+		}
+		else {
+			$(this).find('span').text(text_hide);
+		}
+		$(this).toggleClass('is-active');
+		item.toggleClass('is-open');
+		item.find('.el__in').toggle();
+	});
+
+	// share
+	share.on('click', function () {
+		$(this).next().show();
+		return false;
+	});
+	share_close.on('click', function () {
+		$(this).parent().hide();
+	});
+
+	//select
+	function select() {
+		var el = $('.js-select');
+		el.find('.select__head').on('click', function(){		
+			if ($(this).parent().hasClass('is-open')) {
+				$(this).parent().removeClass('is-open');
+				$(this).next().hide();
+			}
+			else {
+				el.removeClass('is-open');
+				el.find('.select__list').hide();
+				$(this).parent().addClass('is-open');
+				$(this).next().show();
+			}
+		})
+		el.find('.select__list li').bind('click', function(){
+			var val = $(this).text();
+			$(this).parent().prev().html(val);
+			$(this).parent().next().val(val);
+			$(this).parent().hide();
+			$(this).parent().parent().removeClass('is-open');
+		})
+		el.click(function(event){
+			event.stopPropagation();
+		});
+		$(document).click(function() {
+			el.find('.select__list').hide();
+			el.removeClass('is-open');
+		});
+	}
+	select();
 	
 });
