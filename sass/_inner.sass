@@ -275,11 +275,8 @@
 			+s(arr-sorting)
 
 .el
-	margin-bottom: 30px
-	border-bottom: 2px solid $bl 
 	&.el_single
 		margin-bottom: 25px
-		border: none
 		.el__title
 			font-size: 25px
 			color: #000 
@@ -294,7 +291,6 @@
 			margin: 30px 0 0
 	&.el_similar
 		margin-top: -20px
-		border: none
 	.el__item
 		position: relative
 		padding: 15px 20px
@@ -595,6 +591,8 @@
 			margin: 0 0 10px
 		
 .pager
+	padding-top: 30px
+	border-top: 2px solid $bl 
 	text-align: center
 	font-size: 0
 	a
@@ -751,5 +749,545 @@
 		+s(close)
 		&:hover
 			+sp(close-h)
+
+.company
+	margin-bottom: 35px
+	+clr
+	.company__logo
+		float: left
+		margin-right: 30px
+		font-size: 0
+	.company__data
+		display: table
+		p
+			margin-bottom: 3px
+			color: $blg 
+		a
+			display: inline-block
+			border-bottom: 1px solid 
+			line-height: 1 
+			&.pseudo-link
+				border-style: dashed
+
+.map
+	margin-bottom: 35px
+
+.text
+	margin-bottom: 40px
+	font-size: 16px
+	line-height: 1.8
+
+.content
+	margin-bottom: 25px
+	p
+		margin-bottom: 10px
+	blockquote
+		position: relative
+		margin: 25px 0 5px
+		padding-left: 20px
+		+fn
+		font-size: 20px
+		font-weight: 700
+		color: $btn 
+		line-height: 1.5
+		&:before
+			content: "“"
+			position: absolute
+			top: -15px
+			left: -10px
+			font-size: 60px
+		& + p
+			margin: 0 0 25px 20px 
+	ul, ol
+		display: table
+		margin-bottom: 5px
+		li
+			position: relative
+			padding-left: 17px
+			margin-bottom: 10px
+			&:before
+				content: ""
+				position: absolute
+				left: 0
+	ul
+		li
+			&:before
+				top: 5px 
+				width: 5px
+				height: 5px
+				border-radius: 50% 
+				background: $blg 
+	ol
+		counter-reset: list
+		li
+			&:before
+				counter-increment: list
+				content: counter(list)
+				top: 0
+				left: 0
+				font-weight: 700
+				color: $blg
+	.content__block
+		float: left
+		width: 230px
+		margin: 0 20px 20px 0
+		img
+			display: block
+			margin-bottom: 35px 
+		p
+			padding: 15px
+			background: $bg 
+
+
+.slider
+	margin-bottom: 50px
+	.slider__head
+		margin-bottom: 20px
+		font-size: 0
+		text-align: center
+	.slider__prev, .slider__next, .slider__caption
+		display: inline-block
+		vertical-align: middle
+	.slider__prev
+		+s(sl-prev)
+		&:hover
+			+sp(sl-prev-h)
+	.slider__next
+		+s(sl-next)
+		&:hover
+			+sp(sl-next-h)
+	.slider__caption
+		padding: 0 40px
+		font-size: 14px
+		color: $bld 
+		font-weight: 700 
+
+.video
+	margin-bottom: 40px
+
+.why-we
+	.why-we__title
+		margin-bottom: 10px
+		+title
+	.text
+		padding-left: 30px
+		margin-bottom: 20px
+
+.review
+	margin-bottom: 40px
+	+clr
+	.review__ava
+		float: left
+		margin-right: 80px 
+		font-size: 0
+	.review__data
+		display: table
+	.review__text
+		position: relative
+		margin-bottom: 10px
+		+fn
+		font-size: 20px
+		font-weight: 700
+		color: $btn 
+		line-height: 1.5
+		&:before
+			content: "“"
+			position: absolute
+			top: -15px
+			left: -28px
+			font-size: 60px
+
+.posts
+	.posts__main, .posts__full
+		+clr
+		.posts__pic
+			float: left
+		.posts__text
+			font-size: 16px
+			color: $btn
+			line-height: 1.3 
+	.posts__main
+		display: block
+		margin-bottom: 50px
+		.posts__pic
+			margin: 0 25px 0 0
+	.posts__full
+		.posts__pic
+			margin: 0 25px 20px 0
+		.posts__text
+			margin-bottom: 10px 
+	.posts__list
+		overflow: hidden
+	.posts__list
+		margin-right: -50px
+		font-size: 0
+	.posts__item
+		display: inline-block
+		width: 230px
+		margin: 0 20px 30px 0
+		vertical-align: top
+		font-size: 13px
+	.posts__pic
+		position: relative
+		margin-bottom: 15px
+		span
+			position: absolute
+			top: 0
+			left: 0
+			padding: 10px
+			background: $blg
+			color: #fff  
+		img
+			display: block
+	.posts__title
+		margin-bottom: 15px
+		+title
+	.posts__text
+		color: #000
+		line-height: 1.5 
+	.posts__back
+		margin-bottom: 30px
+		a
+			display: inline-block
+			border-bottom: 1px solid 
+			line-height: 1
+	.posts__meta	
+		margin-bottom: 30px
+		color: $blg 
+		p
+			margin-bottom: 3px
+
+.likes
+	margin-bottom: 25px
+	
+.comm
+	margin-bottom: 40px
+	.comm__list
+		margin-bottom: 30px
+		padding-left: 20px
+	.comm__item
+		margin-bottom: 25px
+		+clr
+		&:hover
+			.comm__bad, .comm__good
+				&:hover
+					span
+						font-weight: bold 
+				i
+					opacity: 1
+			.comm__good
+				span
+					color: #00b01e
+			.comm__bad
+				span
+					color: #e01815 
+	.comm__ava
+		float: left
+		width: 44px
+		height: 44px
+		margin-right: 20px
+		border: 3px solid #8dc2d1
+		font-size: 0 
+	.comm__in
+		overflow: hidden
+	.comm__user
+		margin-bottom: 5px
+		font-weight: bold 
+	.comm__meta
+		padding-bottom: 3px
+		margin-bottom: 5px
+		border-bottom: 1px solid
+		color: $blg 
+		+clr
+	.comm__date
+		float: left
+	.comm__rating
+		float: right
+	.comm__bad, .comm__good
+		margin-left: 15px
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			margin-right: 5px
+			opacity: 0 
+		span
+			color: $blg 
+	.comm__bad
+		i
+			+s(comm-minus)
+	.comm__good
+		i
+			+s(comm-plus)
+	.comm__text
+		margin-bottom: 3px
+	.comm__reply-link
+		a
+			display: inline-block
+			border-bottom: 1px solid 
+			line-height: 1
+	.comm__reply
+		padding-left: 80px 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
