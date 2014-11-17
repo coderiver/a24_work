@@ -91,6 +91,9 @@ a
 		border-bottom: 1px dashed 
 		line-height: 1
 
+.placeholder
+	color: #aaa
+
 // common blocks  
 .wrapper
 	position: relative
@@ -120,13 +123,14 @@ a
 			width: 480px 
 	
 .up
-	position: absolute
+	position: fixed
 	right: 0
 	bottom: 0
 	height: 40px
 	padding: 0 25px
 	background: $bl 
 	font-size: 0
+	z-index: 99 
 	&:hover
 		background: $btnh
 	i, span
@@ -446,14 +450,13 @@ a
 				margin-top: -2px
 				font-size: 30px
 				color: #FFF 
+				+font-smoothing
 			.search__counter
 				margin-top: 11px
 				color: #FFF 
 			.search__btn
 				margin-top: 5px
 				background: #fff
-				&:hover
-					background: none 
 	.search__title, .search__counter, .search__btn
 		float: left
 	.search__title

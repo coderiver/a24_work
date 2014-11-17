@@ -11,7 +11,13 @@ head.ready(function() {
 			sv_toggle = $('.js-el-toggle'),
 			share = $('.js-share'),
 			share_close = $('.js-share-close'),
-			slider = $('.js-slider');
+			slider = $('.js-slider'),
+			fields = $('input, textarea');
+
+	// ie9 placeholder
+	if (fields.length) {
+		fields.placeholder();
+	};
 
 	// search
 	search_title.on('click', function () {
