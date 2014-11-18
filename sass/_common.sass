@@ -519,10 +519,35 @@ a
 		background: #fff
 		color: $btn  
 
+.form
+	margin-bottom: 35px
+	.form__title
+		margin-bottom: 15px
+		+fn
+		font-size: 25px
+		color: #000
+		font-weight: 700 
+		line-height: 1.1 
+	.form__title_small	
+		font-size: 20px
+		color: $btn 
+	.form__footer
+		margin-top: 30px
+		.btn
+			margin-right: 20px
+		a
+			text-decoration: underline
+	.field__label
+		color: $btn 
+
 .field
 	margin-bottom: 25px
 	.field__label
 		margin-bottom: 10px
+	.field__in
+		.input
+			& + .pseudo-link
+				margin-left: 17px
 
 .input, .textarea
 	width: 100%
@@ -534,6 +559,8 @@ a
 .input
 	height: 40px
 	padding: 0 12px
+	&.input_w150	
+		width: 150px
 .textarea
 	display: block
 	height: 150px
@@ -654,6 +681,7 @@ a
 .radio
 	position: relative
 	display: block
+	margin-bottom: 20px
 	cursor: pointer
 	&:hover
 		.radio__in
@@ -686,6 +714,39 @@ a
 			height: 21px
 			border: 2px solid #8dc2d1
 			border-radius: 50% 
+
+.checkbox
+	position: relative
+	display: block
+	margin-bottom: 20px
+	cursor: pointer
+	&:hover
+		.checkbox__in
+			&:before
+				border-color: $bl
+	input
+		position: absolute
+		top: 0
+		left: 0
+		opacity: 0 
+		&:checked + .checkbox__in
+			&:after
+				content: ""
+				position: absolute
+				top: 6px
+				left: 4px
+				+s(checkbox) 
+	.checkbox__in
+		display: block
+		padding: 5px 0 3px 33px
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			width: 24px
+			height: 24px
+			border: 1px solid #8dc2d1
 
 
 

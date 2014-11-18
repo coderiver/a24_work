@@ -82,6 +82,7 @@
 		margin-bottom: 55px
 
 .hotwork
+	margin-bottom: 15px
 	font-size: 0
 	.hotwork__item
 		display: inline-block
@@ -243,8 +244,6 @@
 		background: $bl  
 	.vote__result
 		display: none
-	.radio
-		margin-bottom: 20px
 		
 .news
 	margin-top: -7px
@@ -826,7 +825,7 @@
 				
 .add
 	float: right
-	margin: -2px 0 0 20px
+	margin: -1px 0 -1px 20px
 	color: $blg 
 	&:hover
 		color: $btn 
@@ -1379,9 +1378,27 @@
 		padding: 15px 0 5px
 		color: $blg 
 
-
-
-
+.prof
+	.prof__nik
+		margin-bottom: 10px
+		color: $btn 
+	.prof__title
+		margin-bottom: 20px
+		+fn
+		font-size: 20px
+		line-height: 1.1
+		color: $blg
+		font-weight: 700  
+	.prof__list
+		margin-bottom: 30px
+		li
+			margin-top: 7px
+			+clr
+			&:first-child
+				margin: 0
+			&.is-active
+				>a
+					font-weight: 700 
 
 
 
