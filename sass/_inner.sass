@@ -322,10 +322,12 @@
 				margin-left: 10px
 		.el__row-left
 			width: 150px
-		.el__footer
+		.el__action
 			margin: 30px 0 0
 	&.el_similar
 		margin: -20px 0 40px
+	.el__layout
+		+clr
 	.el__item
 		position: relative
 		padding: 15px 20px
@@ -555,17 +557,41 @@
 		display: table
 		.el__row-title
 			color: $btn 
-	.el__footer
+	.el__action
 		position: relative
 		margin: 10px -20px -15px
 		padding: 15px 20px
 		background: $bll 
-	.el__footer-link
+		&.el__action_invert
+			margin: 0 0 20px
+			background: $bg
+			.el__action-link
+				color: $btn
+				&:hover
+					color: $btnh 
+					span
+						border-color: $btnh
+					.el__ico-save
+						+sp(save-bl-h)
+			.el__ico-save
+				+s(save-bl)
+			.el__ico-print
+				+s(print-bl)
+			.el__ico-edit
+				+s(edit)
+			.el__ico-reload
+				+s(reload)
+			.el__ico-hide
+				+s(hide)
+			.el__ico-remove
+				+s(remove-bigger)
+	.el__action-link
 		display: inline-block
 		margin-left: 35px
 		color: #FFF 
 		font-size: 0
 		line-height: 1
+		vertical-align: middle
 		&:first-child
 			margin: 0
 		&:hover
@@ -580,10 +606,9 @@
 			display: inline-block
 			vertical-align: middle
 		i
-			position: relative
-			top: -1px
 			margin-right: 7px
 		span
+			padding-top: 3px
 			border-bottom: 1px solid transparent 
 			font-size: 13px
 		.el__ico-fav
@@ -617,6 +642,50 @@
 		.el__logo
 			float: none
 			margin: 0 0 10px
+	.el__section
+		display: table
+		.el__date
+			float: none
+			width: auto
+			margin: 0 0 20px
+		.el__info
+			padding-bottom: 10px
+			border: none 
+	.el__details
+		position: relative
+		float: right
+		width: 230px
+		margin-left: 20px
+		padding: 20px
+		background: $ava 
+		color: #fff 
+		&:before
+			content: ""
+			position: absolute
+			top: 20px
+			left: -20px
+			+arr(20,40,$ava,l)
+		.ava
+			float: none
+			margin: 0 0 10px
+			border-color: $bg
+		.h
+			color: #fff 
+	.el__details-about
+		margin-bottom: 15px
+		padding-bottom: 15px
+		border-bottom: 1px solid #a4ceda  
+	.el__details-contacts
+		li
+			margin-top: 5px
+			&:first-child
+				margin: 0
+		a
+			text-decoration: underline
+		.social
+			display: inline-block
+			margin-left: 3px
+			vertical-align: middle
 		
 .pager
 	padding-top: 30px
@@ -750,6 +819,7 @@
 	left: 0
 	right: 0
 	bottom: 0
+	background: rgba($btn,.1) 
 	+vertical
 	overflow: auto
 	z-index: 999 
@@ -770,6 +840,9 @@
 		color: #000
 		line-height: 1.1
 		font-weight: 700  
+	.popup__text
+		margin-bottom: 20px
+		color: $btn 
 	.popup__close
 		position: absolute
 		top: 20px
@@ -777,6 +850,23 @@
 		+s(close)
 		&:hover
 			+sp(close-h)
+	.popup__footer-link
+		padding: 20px
+		text-align: center
+		a
+			text-decoration: underline
+	.popup__code
+		padding: 20px 0 10px
+		text-align: center
+		li
+			display: inline-block
+			margin: 0 10px 20px
+			span
+				display: inline-block
+				padding-left: 7px
+				font-size: 25px
+				font-weight: 700  
+				vertical-align: middle
 
 .company
 	margin-bottom: 35px
@@ -1250,27 +1340,27 @@
 			float: left
 			width: 33%
 			border-right: 1px solid $bg
-		input
-			position: absolute
-			top: 0
-			left: 0
-			visibility: hidden
-			&:checked + span
-				background: $btn
-				color: #fff  
-		span
-			display: block
-			line-height: 40px
-			background: #FFF
-			text-align: center
-			color: $blg
-			font-weight: 700   
-			cursor: pointer
+			>input
+				position: absolute
+				top: 0
+				left: 0
+				visibility: hidden
+				&:checked + span
+					background: $btn
+					color: #fff  
+			>span
+				display: block
+				line-height: 40px
+				background: #FFF
+				text-align: center
+				color: $blg
+				font-weight: 700   
+				cursor: pointer
 
 .cart
-	margin-bottom: 30px
-	padding: 15px 20px 30px 
-	background: $btn 
+	.cart__in
+		padding: 15px 20px 30px 
+		background: $btn 
 	.cart__item
 		position: relative
 		margin: 0 20px 15px 0 
@@ -1319,18 +1409,15 @@
 		margin: 30px 0 20px
 		padding-top: 10px
 		border-top: 1px solid #fff
+		+fn
+		font-size: 20px
+		line-height: 1.1
+		font-weight: 700
+		color: #fff 
 		+clr
-		span
-			display: block
-			+fn
-			font-size: 20px
-			line-height: 1.1
-			font-weight: 700
-			color: #fff 
-			overflow: hidden
-			&:first-child
-				float: right
-				margin-left: 10px
+	.cart__total-value
+		float: right
+		margin-left: 10px
 
 .servmore
 	.servmore__title
@@ -1400,20 +1487,191 @@
 				>a
 					font-weight: 700 
 
+.subvac
+	.subvac__head
+		padding: 12px 20px
+		background: $bg
+		+clr
+		.action-wrap
+			float: right
+	.subvac__links
+		overflow: hidden
+		li
+			float: left
+			margin-left: 25px
+			&:first-child
+				margin: 0
+	.subvac__info
+		padding: 12px 20px 22px
+		+clr
+	.subvac__salary
+		float: right
+		width: 130px
+		margin-left: 20px
+		font-size: 15px
+		font-weight: 700
+		color: $bll  
+	.subvac__details
+		display: table
+		p
+			margin-bottom: 3px
+		span
+			color: $blg 
 
+.promosv
+	margin-bottom: 35px
+	.promosv__text
+		margin-bottom: 20px
+		font-size: 16px
+		color: $btn 
+	.promosv__go
+		margin-bottom: 10px
+		.btn
+			margin-right: 25px
+		span
+			display: inline-block
+			+fn
+			font-size: 20px
+			font-weight: 700 
+			color: $btn 
+	.promosv__info
+		margin-bottom: 30px
+		font-size: 11px
+		color: $ava
+	.promosv__how
+		+clr
+	.promosv__before
+		float: left
+	.promosv__after
+		float: right
 
+.rev
+	margin-bottom: 35px
+	.rev__item
+		padding-top: 25px
+		margin-top: 25px
+		border-top: 1px solid #CCEBF4 
+		+clr
+		&:first-child
+			padding: 0
+			margin: 0
+			border: none
+	.rev__info
+		display: table
+	.rev__user
+		margin-bottom: 10px
+		a
+			font-weight: 700
+			text-decoration: underline 
 
+.mysv
+	.mysv__head
+		margin-bottom: 15px
+		+clr
+		.checkbox
+			float: right
+			margin: 0 0 0 20px
+	.mysv__types
+		display: table
+		padding: 4px 0
+		li
+			display: inline-block
+			margin-left: 20px
+			&:first-child
+				margin: 0
+			&.is-active
+				a
+					font-weight: 700
+					color: $btn  
+		a
+			color: $blg 
+	.mysv__stats
+		margin-bottom: 20px
+		padding: 12px 20px
+		background: $bg 
+		+clr
+		.action-wrap
+			float: right
+	.mysv__stats-list
+		display: table
+		li
+			display: inline-block
+			margin-left: 30px
+			&:first-child
+				margin: 0 
+	.mysv__el
+		margin-bottom: 40px
+		+clr
+	.mysv__el-right
+		float: right
+		width: 100px
+		padding-right: 20px
+	.mysv__el-salary
+		margin-bottom: 5px
+		color: $bll
+		font-size: 15px 
+		font-weight: 700 
+	.mysv__el-status, .mysv__el-upd
+		color: $blg
+	.mysv__el-details
+		display: table
 
+.tabs
+	.tabs__head
+		border-bottom: 10px solid $bll 
+		+clr
+	.tabs__list
+		float: left
+		li
+			float: left
+			&.is-active
+				a
+					background: $bll
+					color: #fff
+					font-weight: 700   
+		a
+			display: block
+			padding: 12px 20px
+			color: $bll 
+			&:hover
+				background: $bg
 
-
-
-
-
-
-
-
-
-
+.responce
+	margin-bottom: 30px
+	&.responce_mt30
+		margin-top: 30px
+	&.responce_history
+		.responce__company
+			float: right
+			max-width: 400px
+			margin-left: 20px
+		.responce__date
+			display: block
+			margin-bottom: 3px
+	.responce__item
+		padding-top: 20px
+		margin-top: 20px
+		border-top: 1px solid #ccebf4
+		&:first-child
+			margin: 0
+			padding: 0
+			border: none
+	.responce__head
+		margin: 0 20px 20px 0
+		+clr
+		.action
+			float: right
+			margin-left: 15px
+	.responce__salary
+		float: right
+		width: 100px
+		font-weight: 700
+		color: $bll  
+	.responce__date, .responce__company, .responce__status
+		display: inline-block
+		color: $blg
+	.responce__date
+		padding-right: 20px
 
 
 

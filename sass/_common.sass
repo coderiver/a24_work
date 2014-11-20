@@ -56,8 +56,8 @@ $btnh: #005973
 $bg: #e5f9ff
 $ava: #8dc2d1
 
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic)
-@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic)
+//@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic)
+//@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic)
 =f
 	font-family: "PT Sans", Arial, sans-serif 
 =fn
@@ -91,6 +91,21 @@ a
 		border-bottom: 1px dashed 
 		line-height: 1
 
+.h
+	margin-bottom: 25px
+	+title
+	&.h_big	
+		font-size: 25px
+		color: #000 
+	&.h_light
+		color: $bll 
+	&.h_mb5
+		margin-bottom: 5px
+	&.h_mb10
+		margin-bottom: 10px
+	&.h_mb20
+		margin-bottom: 20px
+
 .placeholder
 	color: #aaa
 
@@ -121,6 +136,17 @@ a
 			width: 730px 
 		&.l-column_two
 			width: 480px 
+
+.rub
+	position: relative
+	display: inline-block
+	&:after
+		content: ""
+		top: 70%
+		left: 0
+		right: 0
+		height: 1px
+		background: #000 
 	
 .up
 	position: fixed
@@ -360,6 +386,19 @@ a
 
 .social
 	font-size: 0
+	&.social_small
+		.social__list
+			a
+				width: 20px
+				height: 20px
+				border: 1px solid #fff
+				&:hover
+					background: transparent
+					border-color: #fff
+		.social__vk
+			+s(vk-small)
+		.social__fb
+			+s(fb-small)
 	.social__title, .social__list
 		display: inline-block
 		vertical-align: top
@@ -498,7 +537,12 @@ a
 			font-weight: 700 
 
 .btn-center
-	text-align: center					
+	text-align: center		
+.btn-wrap
+	.btn
+		margin-left: 25px 	
+		&:first-child
+			margin: 0		
 .btn
 	height: 40px
 	padding: 0 20px
@@ -518,6 +562,32 @@ a
 	&.btn_white
 		background: #fff
 		color: $btn  
+	.btn__plus
+		position: relative
+		top: 1px
+		display: inline-block
+		margin-right: 6px
+		+s(btn-plus)
+
+.action-wrap
+	font-size: 0
+.action
+	margin-left: 20px
+	vertical-align: middle
+	&:first-child
+		margin: 0
+	&.action_remove
+		+s(remove-bigger)
+	&.action_reload
+		+s(reload)
+	&.action_hide
+		+s(hide)
+	&.action_check
+		+s(check)
+	&.action_edit
+		+s(edit)
+		&:hover
+			+s(edit-h)
 
 .form
 	margin-bottom: 35px
@@ -720,6 +790,10 @@ a
 	display: block
 	margin-bottom: 20px
 	cursor: pointer
+	&.checkbox_big
+		.checkbox__in
+			padding: 2px 0 0 33px
+			+title
 	&:hover
 		.checkbox__in
 			&:before

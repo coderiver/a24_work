@@ -169,7 +169,7 @@
 						<!-- serv -->
 						<div class="serv">
 							<!-- item -->
-							<div class="serv__item">
+							<div class="serv__item js-serv">
 								<div class="serv__title"><a href="#"><span>XS — пакет услуг «Минимальный»</span></a></div>
 								<div class="serv__in">
 									<div class="serv__content">
@@ -179,13 +179,13 @@
 										<p>Данный пакет предоставляет удобный и эффективный поиск сотрудников без лишних затрат времени и денег.</p>
 									</div>
 									<div class="serv__footer">
-										<button class="btn">Купить</button>
-										<div class="serv__price">Бесплатно</div>
+										<button class="btn" data-title="Пакет XS">Купить</button>
+										<div class="serv__price"><span>Бесплатно</span></div>
 									</div>
 								</div>
 							</div>
 							<!-- item -->
-							<div class="serv__item">
+							<div class="serv__item js-serv">
 								<div class="serv__title"><a href="#"><span>S — пакет услуг «Начальный»</span></a></div>
 								<div class="serv__in">
 									<div class="serv__content">
@@ -196,40 +196,34 @@
 										<p>Данный пакет предоставляет удобный и эффективный поиск сотрудников без лишних затрат времени и денег.</p>
 									</div>
 									<div class="serv__footer">
-										<button class="btn">Купить</button>
-										<div class="serv__price">1 500 руб.</div>
+										<button class="btn" data-title="Пакет S">Купить</button>
+										<div class="serv__price"><span>1500</span> руб.</div>
 										<div class="serv__months">
-											<label><input type="radio" name="r1" checked=""><span>1 мес.</span></label>
-											<label><input type="radio" name="r1"><span>3 мес.</span></label>
-											<label><input type="radio" name="r1"><span>4 мес.</span></label>
+											<label><input data-price="1500" type="radio" name="r1" checked=""><span><span class="serv__month">1</span> мес.</span></label>
+											<label><input data-price="2500" type="radio" name="r1"><span><span class="serv__month">3</span> мес.</span></label>
+											<label><input data-price="4000" type="radio" name="r1"><span><span class="serv__month">6</span> мес.</span></label>
 										</div>
 									</div>
 								</div>
 							</div>
 							<!-- item -->
-							<div class="serv__item">
-								<div class="serv__title"><a href="#"><span>S — пакет услуг «Начальный»</span></a></div>
+							<div class="serv__item js-serv">
+								<div class="serv__title"><a href="#"><span>XL — пакет услуг «Начальный»</span></a></div>
 								<div class="serv__in">
 									<div class="serv__content">
 										<ul>
-											<li>5 стандартных вакансий</li>
-											<li>Портфолио компании</li>
-											<li>5 стандартных вакансий</li>
-											<li>Портфолио компании</li>
-											<li>5 стандартных вакансий</li>
-											<li>Портфолио компании</li>
 											<li>5 стандартных вакансий</li>
 											<li>Портфолио компании</li>
 										</ul>
 										<p>Данный пакет предоставляет удобный и эффективный поиск сотрудников без лишних затрат времени и денег.</p>
 									</div>
 									<div class="serv__footer">
-										<button class="btn">Купить</button>
-										<div class="serv__price">1 500 руб.</div>
+										<button class="btn" data-title="Пакет XL">Купить</button>
+										<div class="serv__price"><span>1500</span> руб.</div>
 										<div class="serv__months">
-											<label><input type="radio" name="r2" checked=""><span>1 мес.</span></label>
-											<label><input type="radio" name="r2"><span>3 мес.</span></label>
-											<label><input type="radio" name="r2"><span>4 мес.</span></label>
+											<label><input data-price="1500" type="radio" name="r2" checked=""><span><span class="serv__month">1</span> мес.</span></label>
+											<label><input data-price="2500" type="radio" name="r2"><span><span class="serv__month">3</span> мес.</span></label>
+											<label><input data-price="4000" type="radio" name="r2"><span><span class="serv__month">6</span> мес.</span></label>
 										</div>
 									</div>
 								</div>
@@ -238,44 +232,14 @@
 					</div>
 					<div class="l-column">
 						<!-- cart -->
-						<div class="cart">
-							<div class="cart__item">
-								<div class="cart__row">
-									<div class="cart__sum">13 500<button class="cart__del"></button></div>
-									<div class="cart__title">Пакет L × 3 месяца</div>
+						<div class="cart js-cart">
+							<div class="cart__in">
+								<div class="cart__list"></div>
+								<div class="cart__total">
+									<div class="cart__total-value"><span></span> руб.</div>Итого</div>
+								<div class="btn-center">
+									<button class="btn btn_white">Оплатить заказ</button>
 								</div>
-							</div>
-							<div class="cart__item">
-								<div class="cart__row">
-									<div class="cart__price">13 500</div>
-									<div class="cart__title">Анонимная вакансия </div>
-								</div>
-								<div class="cart__row">
-									<div class="cart__sum">13 500<button class="cart__del"></button></div>
-									<div class="cart__value">
-										<button class="cart__minus"></button>
-										<div class="cart__value-in"><span>2</span> шт.</div>
-										<button class="cart__plus"></button>
-									</div>
-								</div>
-							</div>
-							<div class="cart__item">
-								<div class="cart__row">
-									<div class="cart__price">13 500</div>
-									<div class="cart__title">Анонимная вакансия </div>
-								</div>
-								<div class="cart__row">
-									<div class="cart__sum">13 500<button class="cart__del"></button></div>
-									<div class="cart__value">
-										<button class="cart__minus"></button>
-										<div class="cart__value-in"><span>2</span> шт.</div>
-										<button class="cart__plus"></button>
-									</div>
-								</div>
-							</div>
-							<div class="cart__total"><span>19 500 руб.</span><span>Итого</span></div>
-							<div class="btn-center">
-								<button class="btn btn_white">Оплатить заказ</button>
 							</div>
 						</div>
 					</div>
@@ -295,9 +259,9 @@
 					<div class="l-column l-column_two">
 						<!-- servmore -->
 						<div class="servmore">
-							<div class="servmore__item">
+							<div class="servmore__item js-servmore">
 								<button class="btn">Купить</button>
-								<div class="servmore__price">1 000 руб.</div>
+								<div class="servmore__price"><span>1000</span> руб.</div>
 								<div class="servmore__type">Работодатель на главной</div>
 							</div>
 							<div class="servmore__info">
@@ -319,9 +283,9 @@
 					<div class="l-column l-column_two">
 						<!-- servmore -->
 						<div class="servmore">
-							<div class="servmore__item">
+							<div class="servmore__item js-servmore">
 								<button class="btn">Купить</button>
-								<div class="servmore__price">1 000 руб.</div>
+								<div class="servmore__price"><span>2000</span> руб.</div>
 								<div class="servmore__type">Работодатель на главной</div>
 							</div>
 							<div class="servmore__info">
@@ -343,9 +307,9 @@
 					<div class="l-column l-column_two">
 						<!-- servmore -->
 						<div class="servmore">
-							<div class="servmore__item">
+							<div class="servmore__item js-servmore">
 								<button class="btn">Купить</button>
-								<div class="servmore__price">1 000 руб.</div>
+								<div class="servmore__price"><span>3000</span> руб.</div>
 								<div class="servmore__type">Работодатель на главной</div>
 							</div>
 							<div class="servmore__info">
