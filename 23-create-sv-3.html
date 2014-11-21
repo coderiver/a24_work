@@ -111,7 +111,7 @@
 					<div class="prof__title">Аделаида Станиславовна Константинопольская</div>
 					<ul class="prof__list">
 						<li><a href="#">Редактирование профиля</a></li>
-						<li><a href="#">Мои подписки</a></li>
+						<li class="is-active"><a href="#">Мои подписки</a></li>
 						<li><a href="#">Комментарии</a></li>
 					</ul>
 					<div class="prof__title">Ищу работу</div>
@@ -128,60 +128,143 @@
 					</ul>
 				</div>
 			</div>
-			<div class="l-column l-column_two">
+			<div class="l-column l-column_three">
+				<!-- h -->
+				<div class="h h_big">Создать резюме</div>
+				<!-- steps -->
+				<ul class="steps">
+					<li><span>1</span><span>Личные данные</span></li>
+					<li class="is-active"><span>2</span><span>Пожелания к&nbsp;работе</span></li>
+					<li><span>3</span><span>Опыт работы</span></li>
+					<li><span>4</span><span>Образование</span></li>
+					<li><span>5</span><span>Навыки и&nbsp;интересы</span></li>
+					<li><span>6</span><span>Предпросмотр и&nbsp;настройки</span></li>
+				</ul>
 				<!-- form -->
 				<div class="form">
-					<!-- h -->
-					<div class="h h_big">Редактирование профиля</div>
-					<div class="h">Личные данные</div>
-					<!-- field -->
-					<div class="field">
-						<div class="field__label">Фамилия</div>
-						<div class="field__in">
-							<input class="input" type="text" value="Моськина">
+					<!-- center -->
+					<div class="l-center">
+						<div class="l-column l-column_two">
+							<!-- h-wrap -->
+							<div class="h-wrap">
+								<!-- h -->
+								<div class="h">Опыт работы</div>
+								<!-- checkbox -->
+								<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Нет опыта работы</span></label>
+							</div>
+							<!-- field -->
+							<div class="field">
+								<div class="field__label">Период работы</div>
+								<div class="field__in">
+									<div class="form__layout">
+										<div class="form__column">
+											<!-- period -->
+											<div class="period">
+												<div class="period__text">с</div>
+												<!-- select -->
+												<div class="select js-select">
+													<div class="select__head">сентября</div>
+													<ul class="select__list">
+														<li>сентября</li>
+														<li>сентября</li>
+														<li>сентября</li>
+													</ul>
+													<input class="select__value" type="hidden">
+												</div>
+												<!-- select -->
+												<div class="select js-select">
+													<div class="select__head">1993</div>
+													<ul class="select__list">
+														<li>1993</li>
+														<li>1993</li>
+														<li>1993</li>
+													</ul>
+													<input class="select__value" type="hidden">
+												</div>
+											</div>
+										</div>
+										<div class="form__column">
+											<!-- period -->
+											<div class="period">
+												<div class="period__text">по</div>
+												<!-- select -->
+												<div class="select js-select">
+													<div class="select__head">сентября</div>
+													<ul class="select__list">
+														<li>сентября</li>
+														<li>сентября</li>
+														<li>сентября</li>
+													</ul>
+													<input class="select__value" type="hidden">
+												</div>
+												<!-- select -->
+												<div class="select js-select">
+													<div class="select__head">1993</div>
+													<ul class="select__list">
+														<li>1993</li>
+														<li>1993</li>
+														<li>1993</li>
+													</ul>
+													<input class="select__value" type="hidden">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- field -->
+							<div class="field">
+								<div class="field__label">Наименование организации</div>
+								<div class="field__in">
+									<input class="input" type="text" value="ГорГазНефтепродукт">
+								</div>
+							</div>
+							<!-- field -->
+							<div class="field">
+								<div class="field__label">Сфера деятельности</div>
+								<div class="field__in">
+									<!-- select -->
+									<div class="select js-select">
+										<div class="select__head">Добыча сырья</div>
+										<ul class="select__list">
+											<li>Шашлычник</li>
+											<li>Наладчик машин и автоматических линий</li>
+											<li>Младший обмотчик</li>
+										</ul>
+										<input class="select__value" type="hidden">
+									</div>
+								</div>
+							</div>
+							<!-- field -->
+							<div class="field">
+								<div class="field__label">Город</div>
+								<div class="field__in">
+									<!-- select -->
+									<div class="select js-select">
+										<div class="select__head">Добыча сырья</div>
+										<ul class="select__list">
+											<li>Шашлычник</li>
+											<li>Наладчик машин и автоматических линий</li>
+											<li>Младший обмотчик</li>
+										</ul>
+										<input class="select__value" type="hidden">
+									</div>
+								</div>
+							</div>
+							<!-- field -->
+							<div class="field">
+								<div class="field__label">Должность</div>
+								<div class="field__in">
+									<input class="input" type="text" value="">
+								</div>
+							</div>
+
+
+							<div class="form__footer">
+								<button class="btn"><i class="btn__arr-left"></i>Назад</button>
+								<button class="btn">Сохранить и перейти к следующему шагу</button>
+							</div>
 						</div>
-					</div>
-					<!-- field -->
-					<div class="field">
-						<div class="field__label">Имя</div>
-						<div class="field__in">
-							<input class="input" type="text" value="Аделаида">
-						</div>
-					</div>
-					<!-- field -->
-					<div class="field">
-						<div class="field__label">Отчество</div>
-						<div class="field__in">
-							<input class="input" type="text" value="">
-						</div>
-					</div>
-					<!-- field -->
-					<div class="field">
-						<div class="field__label">Электронная почта</div>
-						<div class="field__in">
-							<input class="input" type="text" value="">
-						</div>
-					</div>
-					<div class="form__title form__title_small">Изменение пароля</div>
-					<!-- field -->
-					<div class="field">
-						<div class="field__label">Текущий пароль</div>
-						<div class="field__in">
-							<input class="input input_w150" type="password" value="">
-							<a class="pseudo-link" href="#">Не помню пароль</a>
-						</div>
-					</div>
-					<!-- field -->
-					<div class="field">
-						<div class="field__label">Новый пароль</div>
-						<div class="field__in">
-							<input class="input input_w150" type="password" value="">
-						</div>
-					</div>
-					<div class="form__footer">
-						<button class="btn">Сохранить изменения</button>
-						<button class="btn">Отмена</button>
-						<a href="#">Удалить аккаунт</a>
 					</div>
 				</div>
 			</div>

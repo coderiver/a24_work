@@ -91,6 +91,17 @@ a
 		border-bottom: 1px dashed 
 		line-height: 1
 
+.h-wrap
+	margin-bottom: 25px
+	.h, .checkbox
+		display: inline-block
+		vertical-align: middle
+	.h
+		margin: 0
+		padding: 2px 0
+	.checkbox
+		margin: 0 0 0 30px
+
 .h
 	margin-bottom: 25px
 	+title
@@ -103,6 +114,8 @@ a
 		margin-bottom: 5px
 	&.h_mb10
 		margin-bottom: 10px
+	&.h_mb15
+		margin-bottom: 15px
 	&.h_mb20
 		margin-bottom: 20px
 
@@ -178,14 +191,14 @@ a
 	&.bg_direction
 		position: relative
 		padding: 20px 0 10px
-		background: #8DC2D1
+		background: $ava
 		&:before, &:after
 			content: ""
 			position: absolute
 			top: 0
 			bottom: 0
 			width: 2000px
-			background: #8DC2D1
+			background: $ava
 		&:before
 			left: -2000px
 		&:after
@@ -561,67 +574,147 @@ a
 		width: 100%
 	&.btn_white
 		background: #fff
-		color: $btn  
+		color: $btn 
+	&.btn_small
+		height: 30px
+		padding: 0 10px
+		+f
+		font-size: 13px 
+	&.btn_fs16
+		font-size: 16px 
 	.btn__plus
 		position: relative
 		top: 1px
 		display: inline-block
 		margin-right: 6px
 		+s(btn-plus)
-
-.action-wrap
-	font-size: 0
-.action
-	margin-left: 20px
-	vertical-align: middle
-	&:first-child
-		margin: 0
-	&.action_remove
-		+s(remove-bigger)
-	&.action_reload
-		+s(reload)
-	&.action_hide
-		+s(hide)
-	&.action_check
-		+s(check)
-	&.action_edit
-		+s(edit)
-		&:hover
-			+s(edit-h)
+	.btn__arr-left
+		display: inline-block
+		margin: 0 10px 0 -6px
+		+s(btn-arr-left)
 
 .form
 	margin-bottom: 35px
-	.form__title
-		margin-bottom: 15px
-		+fn
-		font-size: 25px
-		color: #000
-		font-weight: 700 
-		line-height: 1.1 
-	.form__title_small	
-		font-size: 20px
-		color: $btn 
+	.form__layout
+		+clr
+	.form__layout_w650
+		width: 650px
+	.form__layout_mb25
+		margin-bottom: 25px
+	.form__layout_border	
+		margin-bottom: 25px
+		padding-bottom: 5px
+		border-bottom: 1px solid $ava 
+	.form__column
+		float: right
+		&:first-child
+			float: left
+	.form__column_w130
+		width: 130px
+	.form__column_w150
+		width: 150px
+	.form__column_w180
+		width: 180px
+	.form__column_w260
+		width: 260px
+	.form__column_w290
+		width: 290px
+	.form__column_w315
+		width: 315px
 	.form__footer
 		margin-top: 30px
 		.btn
 			margin-right: 20px
 		a
 			text-decoration: underline
-	.field__label
-		color: $btn 
+	* + .h
+		margin-top: 35px
+
+.fieldset
+	margin-bottom: 35px
 
 .field
 	margin-bottom: 25px
+	&.is-disable
+		.field__text
+			color: #d4d4d4 
+		.input
+			border-color: #d4d4d4
+			color: #d4d4d4 
+	&.field_social
+		.field__in
+			position: relative
+			display: block
+		.field__network
+			position: absolute
+			top: 6px
+			left: 4px
+			width: 28px
+			height: 28px
+			background: $bg
+			border-radius: 50%
+			+vertical
+			i
+				display: inline-block
+				vertical-align: middle
+		.field__vk
+			+s(vk) 
+		.field__fb
+			+s(fb) 
+		.field__tw
+			+s(tw) 
+		.field__ok
+			+s(ok) 
+		.input
+			padding: 0 12px 0 40px
+	&.field_mb0
+		margin: 0
 	.field__label
 		margin-bottom: 10px
+		color: $btn 
 	.field__in
 		.input
 			& + .pseudo-link
 				margin-left: 17px
+		.radio, .checkbox
+			display: inline-block
+			margin: 0 0 0 40px
+			vertical-align: middle
+			&:first-child
+				margin: 0 
+	.field__text
+		display: inline-block
+		margin-left: 10px
+		vertical-align: middle
+		color: $btn 
 
+.file
+	min-height: 130px
+	padding: 10px
+	background: $ava
+	&.file_w315
+		width: 315px
+	&.file_mod
+		min-height: 0
+		padding: 20px
+		background: #fff
+		border: 1px dashed $ava
+		.btn
+			float: left 
+			margin-right: 10px
+		.file__title
+			display: table
+			padding-top: 7px
+			vertical-align: top
+			color: $btn 
+	.file__title
+		padding-top: 5px
+		font-weight: 700
+		color: #FFF  
+	
 .input, .textarea
 	width: 100%
-	border: 1px solid #8DC2D1
+	border: 1px solid $ava
 	font-size: 16px
 	&:focus
 		border-color: $bll
@@ -629,8 +722,14 @@ a
 .input
 	height: 40px
 	padding: 0 12px
+	&.input_w80	
+		width: 80px
+	&.input_w110	
+		width: 110px
 	&.input_w150	
 		width: 150px
+	&.input_w315	
+		width: 315px
 .textarea
 	display: block
 	height: 150px
@@ -662,7 +761,7 @@ a
 		position: relative
 		height: 40px
 		padding: 0 50px 0 12px
-		border: 1px solid #8DC2D1
+		border: 1px solid $ava
 		line-height: 38px
 		&:after
 			content: ""
@@ -683,8 +782,39 @@ a
 			&:hover
 				background: $bg 
 				color: $btn 
-		
 
+.period
+	.period__text, .select
+		display: inline-block
+		vertical-align: middle
+	.period__text
+		padding-top: 1px
+		color: $btn 
+	.select
+		margin-left: 5px
+	.select__head
+		padding: 0 41px 0 5px
+
+.action-wrap
+	font-size: 0
+.action
+	margin-left: 20px
+	vertical-align: middle
+	&:first-child
+		margin: 0
+	&.action_remove
+		+s(remove-bigger)
+	&.action_reload
+		+s(reload)
+	&.action_hide
+		+s(hide)
+	&.action_check
+		+s(check)
+	&.action_edit
+		+s(edit)
+		&:hover
+			+s(edit-h)
+		
 .title
 	margin-bottom: 25px
 	overflow: hidden
@@ -753,6 +883,22 @@ a
 	display: block
 	margin-bottom: 20px
 	cursor: pointer
+	&.radio_small
+		input
+			&:checked + .radio__in
+				&:after
+					top: 6px
+					left: 6px
+					width: 9px
+					height: 9px
+					background: $bl
+		.radio__in
+			padding: 3px 0 2px 33px 
+			color: #000 
+			&:before
+				width: 21px
+				height: 21px
+				border: 2px solid $ava
 	&:hover
 		.radio__in
 			&:before
@@ -768,22 +914,23 @@ a
 				position: absolute
 				top: 6px
 				left: 6px
-				width: 9px
-				height: 9px
-				background: $bl
+				width: 12px
+				height: 12px
+				background: $btn
 				border-radius: 50%  
 	.radio__in
 		display: block
-		padding: 3px 0 2px 33px 
+		padding: 4px 0 4px 33px
+		color: $btn  
 		&:before
 			content: ""
 			position: absolute
 			top: 0
 			left: 0
-			width: 21px
-			height: 21px
-			border: 2px solid #8dc2d1
-			border-radius: 50% 
+			width: 24px
+			height: 24px
+			border: 1px solid $ava
+			border-radius: 50%
 
 .checkbox
 	position: relative
@@ -813,6 +960,7 @@ a
 	.checkbox__in
 		display: block
 		padding: 5px 0 3px 33px
+		color: $btn 
 		&:before
 			content: ""
 			position: absolute
@@ -820,7 +968,7 @@ a
 			left: 0
 			width: 24px
 			height: 24px
-			border: 1px solid #8dc2d1
+			border: 1px solid $ava
 
 
 
