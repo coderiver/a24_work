@@ -130,86 +130,138 @@
 			</div>
 			<div class="l-column l-column_three">
 				<!-- h -->
-				<div class="h h_big">Мои резюме</div>
-				<!-- my -->
-				<div class="my">
-					<div class="my__head">
-						<!-- checkbox -->
-						<label class="checkbox checkbox_big"><input type="checkbox" checked=""><span class="checkbox__in">Я ищу работу</span></label>
-						<ul class="my__types">
-							<li class="is-active"><a href="#">Все</a></li>
-							<li><a href="#">Опубликованные</a></li>
-							<li><a href="#">Черновики</a></li>
-							<li><a href="#">Скрытые</a></li>
-						</ul>
-					</div>
-					<div class="my__list">
-						<div class="my__item">
-							<div class="my__stats">
-								<!-- action -->
-								<div class="action-wrap">
-									<button class="action action_edit"></button>
-									<button class="action action_reload"></button>
-									<button class="action action_hide"></button>
-									<button class="action action_remove"></button>
-								</div>
-								<ul class="my__stats-list">
-									<li><a href="#">Отклики — 8</a></li>
-									<li><a href="#">Просмотры</a></li>
-									<li><a href="#">История рассылки</a></li>
-									<li><a href="#">Подходящие вакансии — 17</a></li>
-								</ul>
+				<div class="h h_big">Создать резюме</div>
+				<!-- steps -->
+				<ul class="steps">
+					<li><span>1</span><span>Личные данные</span></li>
+					<li><span>2</span><span>Пожелания к&nbsp;работе</span></li>
+					<li><span>3</span><span>Опыт работы</span></li>
+					<li><span>4</span><span>Образование</span></li>
+					<li class="is-active"><span>5</span><span>Навыки и&nbsp;интересы</span></li>
+					<li><span>6</span><span>Предпросмотр и&nbsp;настройки</span></li>
+				</ul>
+				<!-- form -->
+				<div class="form">
+					<!-- center -->
+					<div class="l-center l-center_align-down">
+						<div class="l-column l-column_two">
+							<!-- h-wrap -->
+							<div class="h-wrap">
+								<!-- h -->
+								<div class="h">Навыки и интересы</div>
 							</div>
-							<div class="my__el">
-								<!-- ava -->
-								<div class="ava">
-									<img src="http://placehold.it/38x38" alt="">
+							<!-- fieldset -->
+							<div class="fieldset">
+								<!-- field -->
+								<div class="field field_list">
+									<div class="field__label">Ваши профессиональные знания, навыки и качества</div>
+									<div class="field__in">
+										<!-- list -->
+										<div class="list">
+											<div class="list__types">
+												<button data-type="is-dots"><i class="list__dots"></i></button>
+												<button data-type="is-number"><i class="list__number"></i></button>
+											</div>
+											<div class="list__in">
+
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="my__el-right">
-									<div class="my__el-salary">50 000 р.</div>
-									<div class="my__el-status">Опубликовано</div>
+							</div>
+							<!-- fieldset -->
+							<div class="fieldset">
+								<!-- field -->
+								<div class="field field_mb0">
+									<div class="field__label">Иностранные языки</div>
 								</div>
-								<div class="my__el-details">
-									<!-- h -->
-									<div class="h h_mb5"><a href="#">Оператор на телефон, диспетчер, менеджер</a></div>
-									<div class="my__el-upd">Последнее изменение: 05.06.2014, 08:44</div>
+								<div class="form__layout">
+									<div class="form__column form__column_w180">
+										<!-- field -->
+										<div class="field">
+											<div class="field__in">
+												<!-- select -->
+												<div class="select js-select">
+													<div class="select__head">иностранный язык</div>
+													<ul class="select__list">
+														<li>Шашлычник</li>
+														<li>Наладчик машин и автоматических линий</li>
+														<li>Младший обмотчик</li>
+													</ul>
+													<input class="select__value" type="hidden">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form__column form__column_w260">
+										<!-- field -->
+										<div class="field">
+											<div class="field__in">
+												<!-- select -->
+												<div class="select js-select">
+													<div class="select__head">уровень</div>
+													<ul class="select__list">
+														<li>Шашлычник</li>
+														<li>Наладчик машин и автоматических линий</li>
+														<li>Младший обмотчик</li>
+													</ul>
+													<input class="select__value" type="hidden">
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
+								<!-- field -->
+								<div class="field">
+									<!-- add -->
+									<button class="add add_dashed"><i></i><span>Добавить</span></button>
+								</div>
+							</div>
+							<!-- fieldset -->
+							<div class="fieldset">
+								<!-- field -->
+								<div class="field">
+									<div class="field__label">Водительские права (категория)</div>
+									<div class="field__in">
+										<!-- checkbox -->
+										<label class="checkbox"><input type="checkbox"><span class="checkbox__in">A</span></label>
+										<!-- checkbox -->
+										<label class="checkbox"><input type="checkbox" checked=""><span class="checkbox__in">B</span></label>
+										<!-- checkbox -->
+										<label class="checkbox"><input type="checkbox"><span class="checkbox__in">C</span></label>
+										<!-- checkbox -->
+										<label class="checkbox"><input type="checkbox"><span class="checkbox__in">D</span></label>
+										<!-- checkbox -->
+										<label class="checkbox"><input type="checkbox"><span class="checkbox__in">E</span></label>
+									</div>
+								</div>
+							</div>
+							<!-- field -->
+							<div class="field field_list">
+								<div class="field__label">Ваши личные качества, интересы и увлечения</div>
+								<div class="field__in">
+									<!-- list -->
+									<div class="list">
+										<div class="list__types">
+											<button data-type="is-dots"><i class="list__dots"></i></button>
+											<button data-type="is-number"><i class="list__number"></i></button>
+										</div>
+										<div class="list__in">
+
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							
+						
+
+							<div class="form__footer">
+								<button class="btn"><i class="btn__arr-left"></i>Назад</button>
+								<button class="btn">Сохранить и перейти к следующему шагу</button>
 							</div>
 						</div>
-						<div class="my__item">
-							<div class="my__stats">
-								<!-- action -->
-								<div class="action-wrap">
-									<button class="action action_edit"></button>
-									<button class="action action_reload"></button>
-									<button class="action action_hide"></button>
-									<button class="action action_remove"></button>
-								</div>
-								<ul class="my__stats-list">
-									<li><a href="#">Отклики — 8</a></li>
-									<li><a href="#">Просмотры</a></li>
-									<li><a href="#">История рассылки</a></li>
-									<li><a href="#">Подходящие вакансии — 17</a></li>
-								</ul>
-							</div>
-							<div class="my__el">
-								<!-- ava -->
-								<div class="ava">
-									<img src="http://placehold.it/38x38" alt="">
-								</div>
-								<div class="my__el-right">
-									<div class="my__el-salary">50 000 р.</div>
-									<div class="my__el-status">Опубликовано</div>
-								</div>
-								<div class="my__el-details">
-									<!-- h -->
-									<div class="h h_mb5"><a href="#">Оператор на телефон, диспетчер, менеджер</a></div>
-									<div class="my__el-upd">Последнее изменение: 05.06.2014, 08:44</div>
-								</div>
-							</div>
-						</div>
 					</div>
-					<button class="btn"><i class="btn__plus"></i>Добавить резюме</button>
 				</div>
 			</div>
 		</div>

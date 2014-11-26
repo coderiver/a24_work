@@ -101,58 +101,160 @@
 		<!-- center -->
 		<div class="l-center">
 			<div class="l-column">
-				<!-- prof -->
-				<div class="prof">
-					<!-- ava -->
-					<div class="ava ava_big">
-						<img src="http://placehold.it/124x124" alt="">
+				<!-- manager -->
+				<div class="manager">
+					<div class="manager__title">Ваш менеджер</div>
+					<div class="manager__data">
+						<div class="ava">
+							<img src="http://placehold.it/38x38" alt="">
+						</div>
+						<div class="manager__name">Герасимов Константин Семёнович</div>
 					</div>
-					<div class="prof__nik">pafnutij_ko4etkoff</div>
-					<div class="prof__title">Аделаида Станиславовна Константинопольская</div>
-					<ul class="prof__list">
-						<li><a href="#">Редактирование профиля</a></li>
-						<li><a href="#">Мои подписки</a></li>
-						<li><a href="#">Комментарии</a></li>
+					<ul class="manager__contacts">
+						<li><a href="mailto:gerasimov@a42.ru">gerasimov@a42.ru</a></li>
+						<li>+7 923 123-45-78</li>
+						<li>+7 (383) 304-00-00</li>
+						<li><a class="link-skype" href="#"><i></i><span>gerasimov</span></a></li>
+						<li><a class="link-icq" href="#"><i></i><span>123-456-789</span></a></li>
 					</ul>
-					<div class="prof__title">Ищу работу</div>
-					<ul class="prof__list">
-						<li>
-							<!-- add -->
-							<button class="add"><span>добавить</span><i></i></button>
-							<a href="#">Мои резюме</a>
-						</li>
-						<li><a href="#">Избранные вакансии</a></li>
-						<li><a href="#">Предложенные мне вакансии</a></li>
-						<li><a href="#">Мои отклики на вакансии</a></li>
-						<li><a href="#">Продвижение резюме</a></li>
-					</ul>
+					<div class="manager__number">Ваш персональный номер: <strong>12829</strong></div>
+				</div>
+				<!-- company -->
+				<div class="company">
+					<div class="company__logo company__logo_border">
+						<img src="http://placehold.it/100x60" alt="">
+					</div>
+					<div class="company__info">
+						<div class="company__info-item">
+							<div class="company__info-title">ООО «Кузбассэлектромотор»</div>
+							<ul class="company__info-list">
+								<li><a href="#">Редактирование профиля</a></li>
+								<li><a href="#">Мои подписки</a></li>
+								<li><a href="#">Комментарии</a></li>
+							</ul>
+						</div>
+						<div class="company__info-item">
+							<div class="company__info-title">Ищу персонал</div>
+							<ul class="company__info-list">
+								<li>
+									<!-- add -->
+									<button class="add"><span>добавить</span><i></i></button>
+									<a href="#">Мои вакансии</a>
+								</li>
+								<li><a href="#">Избранные резюме</a></li>
+								<li><a href="#">Моя компания</a></li>
+							</ul>
+						</div>
+						<div class="company__info-item">
+							<div class="company__info-title">Услуги и цены</div>
+							<ul class="company__info-list">
+								<li><a href="#">Действующие услуги</a></li>
+								<li class="is-active"><a href="#">Заказ услуг</a></li>
+								<li><a href="#">Мои заказы</a></li>
+								<li><a href="#">Выставленные счета</a></li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="l-column l-column_two">
 				<!-- form -->
 				<div class="form">
 					<!-- h -->
-					<div class="h h_big">Редактирование профиля</div>
-					<div class="h">Личные данные</div>
+					<div class="h h_big h_mb5">Моя компания</div>
+					<div class="form__text">Заполните описание вашей компании, чтобы улучшить её привлекательность и количество отликов</div>
+					<!-- h -->
+					<div class="h">Информация о компании</div>
 					<!-- field -->
 					<div class="field">
-						<div class="field__label">Фамилия</div>
-						<div class="field__in">
-							<input class="input" type="text" value="Моськина">
-						</div>
-					</div>
-					<!-- field -->
-					<div class="field">
-						<div class="field__label">Имя</div>
-						<div class="field__in">
-							<input class="input" type="text" value="Аделаида">
-						</div>
-					</div>
-					<!-- field -->
-					<div class="field">
-						<div class="field__label">Отчество</div>
+						<div class="field__label">Название (бренд)</div>
 						<div class="field__in">
 							<input class="input" type="text" value="">
+						</div>
+					</div>
+					<!-- field -->
+					<div class="field">
+						<div class="field__label">Тип работодателя</div>
+						<div class="field__in">
+							<!-- radio -->
+							<label class="radio"><input type="radio" name="type" checked=""><span class="radio__in">Прямой работодатель</span></label>
+							<!-- radio -->
+							<label class="radio"><input type="radio" name="type"><span class="radio__in">Кадровое агентство</span></label>
+						</div>
+					</div>
+					<!-- field -->
+					<div class="field">
+						<div class="field__label">Город</div>
+						<div class="field__in">
+							<!-- select -->
+							<div class="select js-select is-chousen">
+								<div class="select__head">Київ</div>
+								<ul class="select__list">
+									<li>Шашлычник</li>
+									<li>Наладчик машин и автоматических линий</li>
+									<li>Младший обмотчик</li>
+								</ul>
+								<input class="select__value" type="hidden">
+							</div>
+						</div>
+					</div>
+					<!-- field -->
+					<div class="field">
+						<div class="field__label">Сфера деятельности</div>
+						<div class="field__in">
+							<!-- select -->
+							<div class="select js-select">
+								<div class="select__head">не выбрана</div>
+								<ul class="select__list">
+									<li>Шашлычник</li>
+									<li>Наладчик машин и автоматических линий</li>
+									<li>Младший обмотчик</li>
+								</ul>
+								<input class="select__value" type="hidden">
+							</div>
+						</div>
+					</div>
+					<!-- field -->
+					<div class="field field_list">
+						<div class="field__label">Краткое описание</div>
+						<div class="field__in">
+							<!-- list -->
+							<div class="list">
+								<div class="list__types">
+									<button data-type="is-dots"><i class="list__dots"></i></button>
+									<button data-type="is-number"><i class="list__number"></i></button>
+								</div>
+								<div class="list__in">
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- field -->
+					<div class="field field_clr field_m0">
+						<div class="field__label">Логотип</div>
+						<div class="field__in">
+							<!-- ava -->
+							<div class="ava ava_auto">
+								<img src="http://placehold.it/100x60" alt="">
+							</div>
+							<button class="btn btn_small">Загрузить новый</button>
+						</div>
+					</div>
+					<!-- h -->
+					<div class="h">Контактная информация</div>
+					<!-- field -->
+					<div class="field">
+						<div class="field__label">Телефон</div>
+						<div class="field__in">
+							<input class="input input_w150" type="text" value="">
+						</div>
+					</div>
+					<!-- field -->
+					<div class="field">
+						<div class="field__label">Адрес</div>
+						<div class="field__in">
+							<textarea class="textarea textarea_h100"></textarea>
 						</div>
 					</div>
 					<!-- field -->
@@ -162,27 +264,13 @@
 							<input class="input" type="text" value="">
 						</div>
 					</div>
-					<!-- h -->
-					<div class="h">Изменение пароля</div>
 					<!-- field -->
 					<div class="field">
-						<div class="field__label">Текущий пароль</div>
-						<div class="field__in">
-							<input class="input input_w150" type="password" value="">
-							<a class="pseudo-link" href="#">Не помню пароль</a>
-						</div>
-					</div>
-					<!-- field -->
-					<div class="field">
-						<div class="field__label">Новый пароль</div>
-						<div class="field__in">
-							<input class="input input_w150" type="password" value="">
-						</div>
+						<!-- add -->
+						<button class="add add_dashed"><i></i><span>Добавить еще один контакт</span></button>
 					</div>
 					<div class="form__footer">
 						<button class="btn">Сохранить изменения</button>
-						<button class="btn">Отмена</button>
-						<a href="#">Удалить аккаунт</a>
 					</div>
 				</div>
 			</div>

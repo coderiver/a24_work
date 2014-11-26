@@ -326,6 +326,20 @@
 			margin: 30px 0 0
 	&.el_similar
 		margin: -20px 0 40px
+	&.el_edit
+		.el__section
+			.el__info
+				margin: 0
+				padding: 0
+		.el__row
+			margin-bottom: 20px
+		.el__row_mb10
+			margin: 10px
+		.el__row-left
+			width: 155px
+		.el__row-title
+			margin: 0
+			padding-top: 4px
 	.el__layout
 		+clr
 	.el__item
@@ -337,7 +351,7 @@
 			border: none
 		&.is-open
 			background: $bg 
-			>.ava, .el__man
+			>.ava, .el__some, .el__status
 				display: none
 			& + .el__item
 				&:before
@@ -360,7 +374,7 @@
 					display: none
 			& + .el__item
 				border: none
-			.el__title, .el__man, .el__salary
+			.el__title, .el__some, .el__salary
 				color: #FFF
 				a
 					color: #FFF 
@@ -436,10 +450,16 @@
 	.el__title
 		margin-bottom: 3px
 		+title
-	.el__man
+	.el__some
 		color: $blg 
 		a
 			color: $blg 
+			text-decoration: underline
+		span
+			padding-right: 30px
+	.el__status
+		padding-top: 10px
+		color: $btn 
 	.el__data
 		display: table
 	.el__in
@@ -447,7 +467,8 @@
 		padding-top: 20px
 		clear: both
 		+clr
-	.el__in_vacancy
+	.el__in_vacancy,
+	.el__in_vacancy-no-border
 		padding: 0
 		.el__salary
 			margin-bottom: 15px
@@ -457,6 +478,10 @@
 			float: none
 			width: auto
 			margin: 0
+	.el__in_vacancy-no-border
+		.el__info
+			padding-bottom: 10px
+			border: none
 	.el__head
 		margin-bottom: 25px
 		overflow: hidden
@@ -665,6 +690,10 @@
 			top: 20px
 			left: -20px
 			+arr(20,40,$ava,l)
+		.edit
+			position: absolute
+			top: 20px
+			right: 20px
 		.ava
 			float: none
 			margin: 0 0 10px
@@ -823,7 +852,10 @@
 	+vertical
 	overflow: auto
 	z-index: 999 
-	.popup__in	
+	&.popup_remove
+		.popup__in
+			width: 300px
+	.popup__in
 		position: relative
 		display: inline-block
 		width: 520px 
@@ -840,8 +872,9 @@
 		color: #000
 		line-height: 1.1
 		font-weight: 700  
-	.popup__text
+	.popup__text, .popup__content
 		margin-bottom: 20px
+	.popup__text
 		color: $btn 
 	.popup__close
 		position: absolute
@@ -912,38 +945,8 @@
 				font-weight: 700 
 			a
 				display: table
-				
-.add
-	float: right
-	margin: -1px 0 -1px 20px
-	color: $blg 
-	&.add_dashed
-		float: none
-		margin: 0
-		&:hover
-			span
-				border-color: $btn
-		i
-			margin: 0 9px 0 0
-		span
-			border-bottom: 1px dashed $ava 
-	&:hover
-		color: $btn 
-		i
-			+sp(add-h)
-		span
-			border-color: #b0c1c9
-	i, span
-		display: inline-block
-		vertical-align: top
-	i
-		margin-left: 5px
-		+s(add)
-	span
-		padding-top: 2px
-		border-bottom: 1px solid transparent
-		line-height: 1 
-
+			.add
+				float: right
 
 .map
 	margin-bottom: 35px
@@ -1150,11 +1153,19 @@
 	margin-right: 20px
 	border: 3px solid $ava
 	font-size: 0 	
+	text-align: center
+	img
+		max-width: 100%
+		max-height: 100%
 	&.ava_big
 		float: none
 		width: 130px
 		height: 130px
 		margin: 0 0 20px
+	&.ava_auto
+		width: auto
+		max-width: 300px
+		height: auto
 
 .comm
 	margin-bottom: 40px
@@ -1369,6 +1380,7 @@
 				cursor: pointer
 
 .cart
+	display: none
 	.cart__in
 		padding: 15px 20px 30px 
 		background: $btn 
@@ -1575,14 +1587,14 @@
 			font-weight: 700
 			text-decoration: underline 
 
-.mysv
-	.mysv__head
+.my
+	.my__head
 		margin-bottom: 15px
 		+clr
 		.checkbox
 			float: right
 			margin: 0 0 0 20px
-	.mysv__types
+	.my__types
 		display: table
 		padding: 4px 0
 		li
@@ -1596,36 +1608,39 @@
 					color: $btn  
 		a
 			color: $blg 
-	.mysv__stats
+	.my__stats
 		margin-bottom: 20px
 		padding: 12px 20px
 		background: $bg 
 		+clr
 		.action-wrap
 			float: right
-	.mysv__stats-list
+	.my__stats-list
 		display: table
 		li
 			display: inline-block
 			margin-left: 30px
 			&:first-child
 				margin: 0 
-	.mysv__el
+	.my__el
 		margin-bottom: 40px
+		padding-left: 20px
 		+clr
-	.mysv__el-right
+	.my__el-right
 		float: right
 		width: 100px
 		padding-right: 20px
-	.mysv__el-salary
+	.my__el-salary
 		margin-bottom: 5px
 		color: $bll
 		font-size: 15px 
 		font-weight: 700 
-	.mysv__el-status, .mysv__el-upd
+	.my__el-status, .my__el-upd
 		color: $blg
-	.mysv__el-details
+	.my__el-details
 		display: table
+	.ava
+		margin-left: -20px
 
 .tabs
 	.tabs__head
@@ -1656,9 +1671,6 @@
 			float: right
 			max-width: 400px
 			margin-left: 20px
-		.responce__date
-			display: block
-			margin-bottom: 3px
 	.responce__item
 		padding-top: 20px
 		margin-top: 20px
@@ -1678,11 +1690,78 @@
 		width: 100px
 		font-weight: 700
 		color: $bll  
-	.responce__date, .responce__company, .responce__status
+	.responce__date, .responce__company
 		display: inline-block
+	.responce__date, .responce__company, .responce__status
 		color: $blg
+		a
+			color: $blg
+			text-decoration: underline 
+	.responce__status
+		margin-top: 3px
 	.responce__date
 		padding-right: 20px
+		
+.respond
+	margin-bottom: 30px
+	&.respond_mt30
+		margin-top: 30px
+	.respond__item
+		margin-bottom: 40px
+	.respond__head
+		margin-bottom: 20px
+		+clr
+		.action-wrap
+			float: right
+			padding: 5px 20px 0 20px
+	.respond__price
+		float: right
+		width: 180px
+		margin-left: 20px 
+		+fn
+		font-size: 20px
+		color: $bll
+		font-weight: 700  
+	.respond__data
+		display: table
+	.respond__name
+		margin-bottom: 5px
+	.respond__info	
+		color: $blg 
+	.respond__content
+		margin-bottom: 20px
+	.respond__action
+		padding: 15px 20px
+		background: $bg
+		font-size: 0
+		a
+			display: inline-block
+			margin-left: 35px
+			font-size: 0
+			line-height: 1
+			vertical-align: middle
+			&:first-child
+				margin: 0
+			&:hover
+				span
+					border-color: $btn
+			&.is-active
+				
+			i, span
+				display: inline-block
+				vertical-align: middle
+			i
+				margin-right: 7px
+			span
+				padding-top: 3px
+				border-bottom: 1px solid transparent 
+				font-size: 13px
+	.respond__download
+		+s(download)
+	.respond__comm
+		+s(comm) 
+	.respond__remove
+		+s(remove-bigger)
 
 .steps
 	margin-bottom: 20px
@@ -1729,17 +1808,226 @@
 				line-height: 24px   
 				vertical-align: top
 		
+.mylists
+	position: relative
+	padding: 20px
+	margin-bottom: 30px
+	background: $blg
+	&:before
+		content: ""
+		position: absolute
+		top: 8px
+		left: -20px
+		+arr(20,40,$blg,l)
+	.mylists__add, .mylists__item
+		overflow: hidden
+		button
+			float: right
+		span
+			display: table
+			color: #fff 
+	.mylists__add
+		margin-bottom: 15px
+		button
+			+s(plus-border)
+	.mylists__item
+		margin-top: 15px
+		button
+			+s(minus-border)
+	.mylists__title
+		padding: 15px 0
+		border: 1px solid #a4ceda
+		border-width: 1px 0
+		color: $btnh
+		font-weight: 700 
 
+.favsv
+	margin-bottom: 30px
+	.favsv__item
+		margin-bottom: 15px
+	.favsv__in
+		padding: 15px 20px 10px
+		background: $bg 
+	.favsv__date
+		margin-bottom: 20px 
+		color: $blg 
+	.favsv__info
+		+clr
+	.favsv__salary
+		float: right
+		width: 90px
+		margin-left: 15px
+		font-size: 15px
+		font-weight: 700
+		color: $bll  
+	.favsv__fav
+		float: right
+		margin: 1px 0 0 15px
+		+s(fav)
+	.favsv__new-window
+		float: right
+		margin: 1px 0 0 15px
+		+s(new-window)
+	.favsv__user
+		display: table
+		padding-top: 2px
+		color: $blg 
+	.favsv__foot
+		padding: 5px 10px
+		background: $blg 
+		+clr
+	.btn
+		float: right
+		width: 125px
+	.select
+		float: left
+		width: 325px 
+		background: #FFF 
+	.ava
+		margin-right: 15px
 
+.mycomp
+	.mycomp__item
+		margin-bottom: 20px
+		border: 1px dashed $ava
+	.mycomp__item_main
+		padding: 20px 
+		+clr
+	.mycomp__head
+		padding: 10px 10px 10px 20px
+		+clr
+	.mycomp__toggle
+		float: right
+		margin-left: 20px
+		width: 27px 
+		height: 27px
+		background: $bg
+		font-size: 0
+		i
+			display: inline-block
+			+s(minus)
+	.mycomp__in
+		padding: 0 40px 30px 20px 
+	.mycomp__layout
+		+clr
+	.mycomp__column
+		float: right
+		width: 480px
+		&:first-child
+			float: left
+			width: 170px
+		.file
+			min-height: 191px
+	.mycomp__photos
+		margin: 0 -30px -20px 0
+		font-size: 0
+		li
+			display: inline-block
+			width: 210px
+			margin: 0 20px 20px 0
+			vertical-align: top
+	.edit
+		float: right
+		margin-left: 20px
+	.company
+		display: table
+		margin-bottom: 20px
+	.h
+		display: table
+		padding: 3px 0 2px
+	.file
+		padding: 20px
+		min-height: 120px
+		font-size: 13px
 
-
-
-
-
-
-
-
-
+.actserv
+	.actserv__head
+		padding: 0 0 20px 20px
+		font-size: 0
+		color: $blg 
+	.actserv__title,
+	.actserv__date
+		display: inline-block
+	.actserv__title,
+	.actserv__date
+		font-size: 13px
+	.actserv__title
+		width: 400px
+		margin: 0 20px 0 0 
+		span
+			margin-right: 10px
+	.actserv__date
+		width: 120px
+		margin-right: 20px
+	.actserv__item 
+		margin-bottom: 20px
+		&.is-active
+			.actserv__head
+				background: $btn
+				color: #FFF  
+				span
+					color: #FFF 
+		.actserv__head
+			padding: 15px 0 15px 20px
+			background: $bg 
+	.actserv__in
+		padding: 10px 20px
+		background: $bg 
+		color: $btn 
+		span, ul
+			display: table-cell
+			padding-right: 20px
+			vertical-align: top 
+	
+.account
+	.account__status
+		margin-bottom: 25px
+		font-weight: 700
+		color: $blg
+		span
+			&.is-red
+				color: #d51051 
+	.account__table
+		margin-bottom: 30px
+	.account__row
+		margin-bottom: 20px
+		padding: 15px 0
+		background: $bg 
+		color: $btn 
+		+clr
+	.account__row_head
+		padding: 0 
+		background: none
+		color: $blg 
+		.account__title, .account__price
+			font-weight: 400 
+			color: $blg 
+			font-size: 13px
+	.account__row_total
+		padding: 0
+		background: none 
+	.account__number,
+	.account__title,
+	.account__price,
+	.account__price_title
+		float: left
+	.account__number
+		width: 70px
+		padding: 0 20px
+	.account__title
+		width: 550px
+		padding-right: 20px
+		font-weight: 700
+	.account__price
+		width: 90px
+		font-size: 15px
+		font-weight: 700
+		color: $bll  
+	.account__price_title
+		width: 620px
+		padding-right: 10px
+		text-align: right
+		color: $blg 
 
 
 

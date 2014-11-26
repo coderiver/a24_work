@@ -81,14 +81,15 @@ head.ready(function() {
 				$(this).parent().addClass('is-open');
 				$(this).next().show();
 			}
-		})
+		});
 		el.find('.select__list li').bind('click', function(){
 			var val = $(this).text();
 			$(this).parent().prev().html(val);
 			$(this).parent().next().val(val);
 			$(this).parent().hide();
 			$(this).parent().parent().removeClass('is-open');
-		})
+			$(this).parent().parent().addClass('is-chousen');
+		});
 		el.click(function(event){
 			event.stopPropagation();
 		});
@@ -139,6 +140,7 @@ head.ready(function() {
 					serv_price.html(price);
 				});
 				serv_buy.on('click', function () {
+					services_cart_show();
 					var title = $(this).data('title'),
 							price = serv_price.html();
 					if (serv_months.length) {
@@ -174,6 +176,7 @@ head.ready(function() {
 						servmore_type = servmore_this.find('.servmore__type').html(),
 						servmore_buy = servmore_this.find('.btn');
 				servmore_buy.on('click', function () {
+					services_cart_show();
 					cart_list.append('<div class="cart__item cart__item_more">'+
 						'<div class="cart__row">'+
 							'<div class="cart__price">' + servmore_price + '</div>'+
@@ -236,6 +239,13 @@ head.ready(function() {
 					return total;
 				});
 				cart_total.html(total);
+			}
+			// cart show
+			function services_cart_show () {
+				if (!cart.hasClass('is-visible')) {
+					cart.addClass('is-visible');
+					cart.slideDown();
+				};
 			}
 			// remove
 			body.on('click', '.cart__del', function () {

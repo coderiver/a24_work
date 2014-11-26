@@ -130,86 +130,110 @@
 			</div>
 			<div class="l-column l-column_three">
 				<!-- h -->
-				<div class="h h_big">Мои резюме</div>
-				<!-- my -->
-				<div class="my">
-					<div class="my__head">
-						<!-- checkbox -->
-						<label class="checkbox checkbox_big"><input type="checkbox" checked=""><span class="checkbox__in">Я ищу работу</span></label>
-						<ul class="my__types">
-							<li class="is-active"><a href="#">Все</a></li>
-							<li><a href="#">Опубликованные</a></li>
-							<li><a href="#">Черновики</a></li>
-							<li><a href="#">Скрытые</a></li>
-						</ul>
-					</div>
-					<div class="my__list">
-						<div class="my__item">
-							<div class="my__stats">
-								<!-- action -->
-								<div class="action-wrap">
-									<button class="action action_edit"></button>
-									<button class="action action_reload"></button>
-									<button class="action action_hide"></button>
-									<button class="action action_remove"></button>
+				<div class="h h_big">Создать резюме</div>
+				<!-- steps -->
+				<ul class="steps">
+					<li><span>1</span><span>Личные данные</span></li>
+					<li class="is-active"><span>2</span><span>Пожелания к&nbsp;работе</span></li>
+					<li><span>3</span><span>Опыт работы</span></li>
+					<li><span>4</span><span>Образование</span></li>
+					<li><span>5</span><span>Навыки и&nbsp;интересы</span></li>
+					<li><span>6</span><span>Предпросмотр и&nbsp;настройки</span></li>
+				</ul>
+				<!-- form -->
+				<div class="form">
+					<!-- center -->
+					<div class="l-center">
+						<div class="l-column l-column_two">
+							<!-- h -->
+							<div class="h">Пожелания к будущей работе</div>
+							<!-- field -->
+							<div class="field">
+								<div class="field__label">Желаемая должность</div>
+								<div class="field__in">
+									<input class="input" type="text" value="Моськина">
 								</div>
-								<ul class="my__stats-list">
-									<li><a href="#">Отклики — 8</a></li>
-									<li><a href="#">Просмотры</a></li>
-									<li><a href="#">История рассылки</a></li>
-									<li><a href="#">Подходящие вакансии — 17</a></li>
-								</ul>
 							</div>
-							<div class="my__el">
-								<!-- ava -->
-								<div class="ava">
-									<img src="http://placehold.it/38x38" alt="">
+							<!-- h -->
+							<div class="h h_mb15">Профессиональная область</div>
+							<!-- field -->
+							<div class="field">
+								<!-- select -->
+								<div class="select js-select">
+									<div class="select__head">Добыча сырья</div>
+									<ul class="select__list">
+										<li>Шашлычник</li>
+										<li>Наладчик машин и автоматических линий</li>
+										<li>Младший обмотчик</li>
+									</ul>
+									<input class="select__value" type="hidden">
 								</div>
-								<div class="my__el-right">
-									<div class="my__el-salary">50 000 р.</div>
-									<div class="my__el-status">Опубликовано</div>
+							</div>
+							<!-- h -->
+							<div class="h">Подходящий для вас график работы</div>
+							<div class="form__layout">
+								<div class="form__column form__column_w260">
+									<!-- field -->
+									<div class="field">
+										<!-- checkbox -->
+										<label class="checkbox"><input type="checkbox" checked=""><span class="checkbox__in">Полный рабочий день</span></label>
+									</div>
+									<!-- field -->
+									<div class="field">
+										<!-- checkbox -->
+										<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Сменный график</span></label>
+									</div>
+									<!-- field -->
+									<div class="field">
+										<!-- checkbox -->
+										<label class="checkbox"><input type="checkbox" checked=""><span class="checkbox__in">Свободный график</span></label>
+									</div>
 								</div>
-								<div class="my__el-details">
-									<!-- h -->
-									<div class="h h_mb5"><a href="#">Оператор на телефон, диспетчер, менеджер</a></div>
-									<div class="my__el-upd">Последнее изменение: 05.06.2014, 08:44</div>
+								<div class="form__column form__column_w180">
+									<!-- field -->
+									<div class="field">
+										<!-- checkbox -->
+										<label class="checkbox"><input type="checkbox" checked=""><span class="checkbox__in">Удалённо (фриланс)</span></label>
+									</div>
+									<!-- field -->
+									<div class="field">
+										<!-- checkbox -->
+										<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Частичная занятость</span></label>
+									</div>
+									<!-- field -->
+									<div class="field">
+										<!-- checkbox -->
+										<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Вахтовый метод</span></label>
+									</div>
 								</div>
+							</div>
+							<!-- h -->
+							<div class="h">Зарплата</div>
+							<!-- field -->
+							<div class="field is-disable">
+								<div class="field__in">
+									<input class="input input_w80 is-disabled" disabled="" type="text" value="10 000">
+									<div class="field__text">руб./месяц</div>
+									<!-- checkbox -->
+									<label class="checkbox"><input type="checkbox" checked=""><span class="checkbox__in">по договоренности</span></label>
+								</div>
+							</div>
+							<!-- field -->
+							<div class="field">
+								<!-- checkbox -->
+								<label class="checkbox"><input type="checkbox" checked=""><span class="checkbox__in">Готов к командировкам</span></label>
+							</div>
+							<!-- field -->
+							<div class="field">
+								<!-- checkbox -->
+								<label class="checkbox"><input type="checkbox" checked=""><span class="checkbox__in">Готов к переезду в другой город</span></label>
+							</div>
+							<div class="form__footer">
+								<button class="btn"><i class="btn__arr-left"></i>Назад</button>
+								<button class="btn">Сохранить и перейти к следующему шагу</button>
 							</div>
 						</div>
-						<div class="my__item">
-							<div class="my__stats">
-								<!-- action -->
-								<div class="action-wrap">
-									<button class="action action_edit"></button>
-									<button class="action action_reload"></button>
-									<button class="action action_hide"></button>
-									<button class="action action_remove"></button>
-								</div>
-								<ul class="my__stats-list">
-									<li><a href="#">Отклики — 8</a></li>
-									<li><a href="#">Просмотры</a></li>
-									<li><a href="#">История рассылки</a></li>
-									<li><a href="#">Подходящие вакансии — 17</a></li>
-								</ul>
-							</div>
-							<div class="my__el">
-								<!-- ava -->
-								<div class="ava">
-									<img src="http://placehold.it/38x38" alt="">
-								</div>
-								<div class="my__el-right">
-									<div class="my__el-salary">50 000 р.</div>
-									<div class="my__el-status">Опубликовано</div>
-								</div>
-								<div class="my__el-details">
-									<!-- h -->
-									<div class="h h_mb5"><a href="#">Оператор на телефон, диспетчер, менеджер</a></div>
-									<div class="my__el-upd">Последнее изменение: 05.06.2014, 08:44</div>
-								</div>
-							</div>
-						</div>
 					</div>
-					<button class="btn"><i class="btn__plus"></i>Добавить резюме</button>
 				</div>
 			</div>
 		</div>

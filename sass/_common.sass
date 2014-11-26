@@ -108,8 +108,21 @@ a
 	&.h_big	
 		font-size: 25px
 		color: #000 
+	&.h_border
+		margin: 0
+		padding-bottom: 10px
+		border-bottom: 10px solid $bll 
+	&.h_border-think
+		padding-bottom: 25px
+		border-bottom: 1px solid $ava  
 	&.h_light
 		color: $bll 
+	&.h_gray
+		color: $blg
+	&.h_white
+		color: #fff 
+	&.h_mb0
+		margin-bottom: 0
 	&.h_mb5
 		margin-bottom: 5px
 	&.h_mb10
@@ -550,12 +563,25 @@ a
 			font-weight: 700 
 
 .btn-center
-	text-align: center		
+	text-align: center	
+	font-size: 0	
+	a
+		font-style: 13px
 .btn-wrap
+	font-size: 0
 	.btn
 		margin-left: 25px 	
 		&:first-child
 			margin: 0		
+	a
+		font-style: 13px
+.btn-justify
+	+clr
+	.btn
+		float: right
+		&:first-child
+			float: left
+		
 .btn
 	height: 40px
 	padding: 0 20px
@@ -594,6 +620,7 @@ a
 		+s(btn-arr-left)
 
 .form
+	position: relative
 	margin-bottom: 35px
 	.form__layout
 		+clr
@@ -627,11 +654,48 @@ a
 			margin-right: 20px
 		a
 			text-decoration: underline
+	.form__footer_mt10
+		margin-top: 10px
+	.form__experiance
+		position: absolute
+		top: 77px
+		right: 0
+		bottom: 118px
+		width: 230px
+		border-left: 2px solid $ava 
+		&:before
+			content: ""
+			display: inline-block
+			height: 100%
+			vertical-align: bottom
+	.form__experiance-in
+		position: relative
+		top: 7px
+		display: inline-block
+		padding-left: 20px
+		vertical-align: bottom
+		color: $btn
+		span
+			display: block
+			color: $bll
+			font-size: 20px
+			font-weight: 700  
+	.form__text
+		color: $btn 
 	* + .h
 		margin-top: 35px
+	.h_big + .h
+		margin-top: 0
 
 .fieldset
 	margin-bottom: 35px
+	&.fieldset_border, &.fieldset_border-mod
+		padding-bottom: 20px
+		margin-bottom: 20px
+		border-bottom: 1px solid $ava 
+	&.fieldset_border-mod
+		padding-bottom: 0
+		margin-bottom: 35px
 
 .field
 	margin-bottom: 25px
@@ -667,24 +731,52 @@ a
 			+s(ok) 
 		.input
 			padding: 0 12px 0 40px
+	&.field_list
+		padding-top: 13px
+		.field__label
+			padding-right: 100px
+	&.field_add-del
+		+clr
+		.add
+			float: left
+		.del
+			float: right
+	&.field_range
+		.field__text
+			margin: 0 5px
+			&:first-child
+				margin: 0 7px 0 0
 	&.field_mb0
 		margin: 0
+	&.field_radio-ml25
+		.field__in
+			.radio, .checkbox
+				margin: 0 0 0 25px
+	&.field_clr
+		.field__in
+			+clr
 	.field__label
 		margin-bottom: 10px
 		color: $btn 
+		>.checkbox
+			display: inline-block
+			margin: 0 0 0 40px
 	.field__in
 		.input
 			& + .pseudo-link
 				margin-left: 17px
 		.radio, .checkbox
 			display: inline-block
-			margin: 0 0 0 40px
+			margin: 0 0 0 35px
 			vertical-align: middle
 			&:first-child
 				margin: 0 
+		.checkbox
+			&.checkbox_mt8
+				margin-top: 8px
 	.field__text
 		display: inline-block
-		margin-left: 10px
+		margin-left: 7px
 		vertical-align: middle
 		color: $btn 
 
@@ -722,6 +814,7 @@ a
 .input
 	height: 40px
 	padding: 0 12px
+	vertical-align: middle
 	&.input_w80	
 		width: 80px
 	&.input_w110	
@@ -735,6 +828,10 @@ a
 	height: 150px
 	padding: 8px 12px
 	resize: vertical
+	&.textarea_h100
+		height: 100px
+	&.textarea_h60
+		height: 60px
 	
 .select
 	position: relative
@@ -757,12 +854,21 @@ a
 			&:after
 				top: 14px
 				+s(select-arr-a)
+	&.is-chousen
+		.select__head
+			font-size: 16px
+			color: #000 
 	.select__head
 		position: relative
 		height: 40px
 		padding: 0 50px 0 12px
 		border: 1px solid $ava
+		white-space: nowrap
+		text-overflow: ellipsis
 		line-height: 38px
+		font-size: 13px
+		color: $ava 
+		overflow: hidden
 		&:after
 			content: ""
 			position: absolute
@@ -808,12 +914,112 @@ a
 		+s(reload)
 	&.action_hide
 		+s(hide)
+	&.action_comm
+		+s(comm)
+	&.action_download
+		+s(download)
 	&.action_check
 		+s(check)
 	&.action_edit
 		+s(edit)
 		&:hover
 			+s(edit-h)
+
+.add, .del
+	margin: -1px 0 -1px 20px
+	color: $blg 
+	vertical-align: top
+	&.add_dashed, &.del_dashed
+		float: none
+		margin: 0
+		&:hover
+			span
+				border-color: $btn
+		i
+			margin: 0 9px 0 0
+		span
+			border-bottom: 1px dashed $ava 
+		&:hover
+			color: $btn 
+			span
+				border-color: #b0c1c9
+	i, span
+		display: inline-block
+		vertical-align: top
+	i
+		margin-left: 5px
+	span
+		padding-top: 2px
+		border-bottom: 1px solid transparent
+		line-height: 1 
+.add
+	i
+		+s(add)
+	&:hover
+		i
+			+sp(add-h)
+.del
+	i
+		+s(del)
+		
+.edit
+	height: 30px
+	padding: 0 10px
+	background: $bg
+	border-radius: 4px 
+	font-size: 0
+	color: $btn 
+	vertical-align: top
+	i, span
+		display: inline-block
+		vertical-align: top
+	i
+		margin-right: 10px
+		+s(edit)
+	span
+		font-size: 13px 
+
+.list
+	position: relative
+	.list__types
+		position: absolute
+		top: -39px
+		right: 0
+		font-size: 0
+		button
+			width: 40px
+			height: 40px
+			margin-left: -1px
+			border: 1px solid $ava
+			background: #d0ebf4
+			font-size: 0
+			vertical-align: top
+			i
+				display: inline-block
+	.list__dots
+		+s(list-dots)
+	.list__number
+		+s(list-number)
+	.list__in
+		min-height: 94px
+		padding: 10px
+		border: 1px solid $ava
+		ul
+			font-size: 16px
+			&.is-dots
+				li
+					position: relative
+					margin-bottom: 5px
+					padding-left: 17px
+					&:before
+						content: ""
+						position: absolute
+						top: 7px
+						left: 0
+						width: 5px
+						height: 5px
+						background: $ava
+						border-radius: 50% 
 		
 .title
 	margin-bottom: 25px
@@ -846,19 +1052,22 @@ a
 		line-height: 1.1
 		letter-spacing: -.5px
 		+smooth
-	.title__ico-star
+	.title__ico-star,
+	.title__ico-letter,
+	.title__ico-top,
+	.title__ico-target,
+	.title__ico-hand,
+	.title__ico-serv
 		top: -1px
+	.title__ico-star
 		+s(title-star)
 	.title__ico-letter
-		top: -1px
 		+s(title-letter)
 	.title__ico-rhomb
 		+s(title-rhomb)
 	.title__ico-top
-		top: -1px
 		+s(title-top)
 	.title__ico-target
-		top: -1px
 		+s(title-target)
 	.title__ico-list
 		+s(title-list)
@@ -873,10 +1082,11 @@ a
 	.title__ico-portfolio	
 		+s(title-portfolio)
 	.title__ico-hand
-		top: -1px
 		+s(title-hand)
 	.title__ico-world
 		+s(title-world)
+	.title__ico-serv
+		+s(title-serv)
 
 .radio
 	position: relative
@@ -941,6 +1151,8 @@ a
 		.checkbox__in
 			padding: 2px 0 0 33px
 			+title
+	&.checkbox_mt8
+		margin-top: 8px
 	&:hover
 		.checkbox__in
 			&:before
