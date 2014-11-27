@@ -13,7 +13,8 @@ head.ready(function() {
 			share = $('.js-share'),
 			share_close = $('.js-share-close'),
 			slider = $('.js-slider'),
-			fields = $('input, textarea');
+			fields = $('input, textarea'),
+			el_item = $('.el__item');
 
 	// ie9 placeholder
 	if (fields.length) {
