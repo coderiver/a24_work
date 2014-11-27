@@ -14,7 +14,7 @@ head.ready(function() {
 			share_close = $('.js-share-close'),
 			slider = $('.js-slider'),
 			fields = $('input, textarea'),
-			el_item = $('.el__item');
+			remove_disable = $('.js-remove-disable');
 
 	// ie9 placeholder
 	if (fields.length) {
@@ -44,7 +44,9 @@ head.ready(function() {
 	sv_toggle.on('click', function () {
 		var item = $(this).parents('.el__item'),
 				text_show = 'развернуть',
-				text_hide = 'свернуть';
+				text_hide = 'свернуть',
+				el_open = $('.el__item.is-open'),
+				el_hot_open = $('.el__item_hot.is-open');
 		if (item.hasClass('el__item_hot')) {
 			item.toggleClass('is-hot');
 		}
@@ -52,11 +54,16 @@ head.ready(function() {
 			$(this).find('span').text(text_show);
 		}
 		else {
+			$(this).addClass('is-active');
+			item.addClass('is-open');
+			item.find('.el__in').show();
 			$(this).find('span').text(text_hide);
 		}
-		$(this).toggleClass('is-active');
-		item.toggleClass('is-open');
-		item.find('.el__in').toggle();
+		el_open.removeClass('is-open');
+		el_open.find('.el__in').hide();
+		el_open.find('.el__toggle button').removeClass('is-active');
+		el_open.find('.el__toggle button span').text(text_show);
+		el_hot_open.addClass('is-hot');
 	});
 
 	// share
@@ -257,5 +264,20 @@ head.ready(function() {
 		};
 	}
 	services();
+
+	// remove disable state on button
+	remove_disable.keyup(function () {
+		var val = $(this).val(),
+				btn = $(this).data('disable'),
+				btn_el = $('.' + btn);
+		if (val.length > 0) {
+			btn_el.removeClass('is-disable');
+			btn_el.removeAttr('disabled');
+		}
+		else {
+			btn_el.addClass('is-disable');
+			btn_el.attr('disabled', 'disabled');
+		}
+	});
 	
 });
