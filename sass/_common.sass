@@ -34,11 +34,11 @@
 //     @each $s in a,b,c
 // 	    	#{$s}
 //				display: none
-// ## fonts 
+// ## fonts
 // Save fonts to /css/fonts, after that write (eot, woff, ttf):
-// +font(book, cytiapro-black-webfont)  
+// +font(book, cytiapro-black-webfont)
 // =book
-// 	font-family: "book", Arial, sans-serif 
+// 	font-family: "book", Arial, sans-serif
 // insert pics into css
 // div
 // 	+pic("blabla.png")
@@ -59,38 +59,38 @@ $ava: #8dc2d1
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic)
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic)
 =f
-	font-family: "PT Sans", Arial, sans-serif 
+	font-family: "PT Sans", Arial, sans-serif
 =fn
-	font-family: "PT Sans Narrow", Arial, sans-serif 
+	font-family: "PT Sans Narrow", Arial, sans-serif
 =smooth
 	-webkit-font-smoothing: antialiased
 =title
 	+fn
-	font-size: 20px 
-	font-weight: 700 
-	color: $bld 
+	font-size: 20px
+	font-weight: 700
+	color: $bld
 	line-height: 1.1
 	a
-		color: $bld 
+		color: $bld
 
 body
 	min-width: 1020px
 	+f
-	font-size: 13px 
+	font-size: 13px
 	line-height: 1.3
 	&.no-scroll
 		overflow: hidden
 button, input, textarea
 	+f
-	font-size: 13px 
+	font-size: 13px
 button
-	background: none 
+	background: none
 a
 	text-decoration: none
 	color: $bld
 	&.pseudo-link
 		display: inline-block
-		border-bottom: 1px dashed 
+		border-bottom: 1px dashed
 		line-height: 1
 
 .h-wrap
@@ -107,22 +107,22 @@ a
 .h
 	margin-bottom: 25px
 	+title
-	&.h_big	
+	&.h_big
 		font-size: 25px
-		color: #000 
+		color: #000
 	&.h_border
 		margin: 0
 		padding-bottom: 10px
-		border-bottom: 10px solid $bll 
+		border-bottom: 10px solid $bll
 	&.h_border-think
 		padding-bottom: 25px
-		border-bottom: 1px solid $ava  
+		border-bottom: 1px solid $ava
 	&.h_light
-		color: $bll 
+		color: $bll
 	&.h_gray
 		color: $blg
 	&.h_white
-		color: #fff 
+		color: #fff
 	&.h_mb0
 		margin-bottom: 0
 	&.h_mb5
@@ -137,12 +137,12 @@ a
 .placeholder
 	color: #aaa
 
-// common blocks  
+// common blocks
 .wrapper
 	position: relative
 	padding-bottom: 50px
 	overflow: hidden
-    
+
 .l-center
 	position: relative
 	width: 1020px
@@ -161,9 +161,9 @@ a
 		&:first-child
 			margin: 0
 		&.l-column_three
-			width: 730px 
+			width: 730px
 		&.l-column_two
-			width: 480px 
+			width: 480px
 
 .rub
 	position: relative
@@ -174,17 +174,17 @@ a
 		left: 0
 		right: 0
 		height: 1px
-		background: #000 
-	
+		background: #000
+
 .up
 	position: fixed
 	right: 0
 	bottom: 0
 	height: 40px
 	padding: 0 25px
-	background: $bl 
+	background: $bl
 	font-size: 0
-	z-index: 99 
+	z-index: 99
 	&:hover
 		background: $btnh
 	i, span
@@ -195,14 +195,14 @@ a
 	span
 		+fn
 		font-size: 20px
-		font-weight: 700 
-		color: #fff 
+		font-weight: 700
+		color: #fff
 
 .bg
 	&.bg_main
 		margin: -65px 0 25px
 		padding-top: 65px
-		background: $bg 
+		background: $bg
 	&.bg_direction
 		position: relative
 		padding: 20px 0 10px
@@ -220,16 +220,16 @@ a
 			right: -2000px
 		.l-column
 			position: relative
-			z-index: 2 
+			z-index: 2
 	&.bg_footer
 		padding: 30px 0
-		background: $bg 
+		background: $bg
 	&.bg_el
 		margin-top: -70px
-		border-top: 70px solid $bg 
+		border-top: 70px solid $bg
 		.l-column
 			position: relative
-			z-index: 2 
+			z-index: 2
 		.el_single
 			position: relative
 			background: $bg
@@ -243,12 +243,12 @@ a
 			&:before
 				left: -2000px
 			&:after
-				right: -2000px 
+				right: -2000px
 	&.bg_section
 		position: relative
 		margin-bottom: 40px
-		padding: 30px 0 10px 
-		background: $bg 
+		padding: 30px 0 10px
+		background: $bg
 		&:before, &:after
 			content: ""
 			position: absolute
@@ -259,8 +259,8 @@ a
 		&:before
 			left: -2000px
 		&:after
-			right: -2000px 
-			
+			right: -2000px
+
 .header
 	margin-bottom: 30px
 	.header__middle
@@ -271,7 +271,7 @@ a
 		padding: 20px 0
 		+fn
 		font-size: 40px
-		font-weight: 700 
+		font-weight: 700
 		line-height: 1
 	.header__banners
 		font-size: 0
@@ -291,7 +291,7 @@ a
 			+fn
 			font-size: 16px
 			font-weight: 700
-			color: #FFF  
+			color: #FFF
 			text-transform: uppercase
 			line-height: 50px
 			&:first-child
@@ -309,7 +309,7 @@ a
 			&:first-child
 				margin: 0
 			&.is-active
-				color: #00c7ff 
+				color: #00c7ff
 	.topper__logo
 		float: right
 		margin-top: 4px
@@ -324,7 +324,7 @@ a
 		line-height: 30px
 		+fn
 		font-size: 20px
-		font-weight: 700 
+		font-weight: 700
 	.top__nav
 		float: left
 		margin-right: 25px
@@ -335,7 +335,7 @@ a
 			+fn
 			font-size: 12px
 			text-transform: uppercase
-			color: #000 
+			color: #000
 			line-height: 30px
 			&:before
 				content: ""
@@ -345,7 +345,7 @@ a
 				width: 4px
 				height: 4px
 				background: #00c7ff
-				border-radius: 50%  
+				border-radius: 50%
 			&:first-child
 				margin: 0
 				&:before
@@ -354,14 +354,14 @@ a
 		float: left
 		margin: 6px 20px 0 0
 		padding: 0 7px
-		border-radius: 3px 
-		background: #00c7ff 
+		border-radius: 3px
+		background: #00c7ff
 		text-transform: uppercase
 		+fn
-		font-weight: 700 
-		color: #000 
+		font-weight: 700
+		color: #000
 		line-height: 18px
-	.top__news 
+	.top__news
 		float: left
 	.top__news-pic
 		float: left
@@ -375,7 +375,7 @@ a
 		float: left
 		line-height: 30px
 		font-size: 11px
-		color: #000 
+		color: #000
 	.top__login
 		float: right
 		a
@@ -384,11 +384,11 @@ a
 			+fn
 			text-transform: uppercase
 			line-height: 30px
-			color: #000 
+			color: #000
 			&:hover
 				background: #00c6ff
-				text-decoration: underline 
-				color: #fff 
+				text-decoration: underline
+				color: #fff
 	.top__profile
 		float: right
 		line-height: 30px
@@ -401,10 +401,10 @@ a
 			padding: 2px 4px 0
 			margin: 5px 0 0 7px
 			background:	#00c7ff
-			border-radius: 2px 
+			border-radius: 2px
 			line-height: 1
 			color: #000
-			font-weight: 700 
+			font-weight: 700
 			&:before
 				content: ""
 				position: absolute
@@ -451,7 +451,7 @@ a
 				margin: 0
 			&:hover
 				background: $bg
-				border-color: $bll 
+				border-color: $bll
 		i
 			display: inline-block
 			vertical-align: middle
@@ -463,16 +463,19 @@ a
 		+s(tw)
 	.social__ok
 		+s(ok)
+	.el__row-right &
+		position: relative
+		top: -7px
 
 .search
 	margin-bottom: 30px
 	.search__form
 		padding: 20px
-		background: $bll 
+		background: $bll
 		+clr
 		.input
 			float: left
-			width: 710px 
+			width: 710px
 			border: none
 		.btn
 			float: right
@@ -486,9 +489,9 @@ a
 		width: 53%
 		margin-top: 10px
 		padding: 7px 20px 9px
-		border: 2px solid $bll 
+		border: 2px solid $bll
 		border-width: 2px 2px 0
-		z-index: 2 
+		z-index: 2
 		&:first-child
 			float: left
 			width: 47%
@@ -505,22 +508,22 @@ a
 		&.is-active
 			margin: 0
 			padding: 12px 18px 9px
-			background: $bll 
+			background: $bll
 			z-index: 4
 			&:before
 				content: ""
 				position: absolute
 				top: -2px
 				left: -42px
-				+arr(40,55,$bll,br) 
+				+arr(40,55,$bll,br)
 			.search__title
 				margin-top: -2px
 				font-size: 30px
-				color: #FFF 
+				color: #FFF
 				+font-smoothing
 			.search__counter
 				margin-top: 11px
-				color: #FFF 
+				color: #FFF
 			.search__btn
 				margin-top: 5px
 				background: #fff
@@ -530,8 +533,8 @@ a
 		margin: 2px 30px 0 0
 		+fn
 		font-size: 20px
-		font-weight: 700 
-		color: #000 
+		font-weight: 700
+		color: #000
 		cursor: pointer
 		line-height: 1
 		+nosel
@@ -539,15 +542,15 @@ a
 		margin: 6px 30px 0 0
 		border-bottom: 1px solid
 		font-size: 13px
-		color: #000 
+		color: #000
 		&:hover
 			border-width: 2px
 	.search__btn
 		height: 27px
 		padding: 0 8px
-		border-radius: 4px 
+		border-radius: 4px
 		border: 2px solid $bll
-		color: $bll 
+		color: $bll
 		&:hover
 			background: #fff
 			border-color: $btn
@@ -562,19 +565,19 @@ a
 			+s(plus)
 		span
 			font-size: 13px
-			font-weight: 700 
+			font-weight: 700
 
 .btn-center
-	text-align: center	
-	font-size: 0	
+	text-align: center
+	font-size: 0
 	a
 		font-style: 13px
 .btn-wrap
 	font-size: 0
 	.btn
-		margin-left: 25px 	
+		margin-left: 25px
 		&:first-child
-			margin: 0		
+			margin: 0
 	a
 		font-style: 13px
 .btn-justify
@@ -583,20 +586,20 @@ a
 		float: right
 		&:first-child
 			float: left
-		
+
 .btn
 	height: 40px
 	padding: 0 20px
 	background: $btn
 	border-radius: 4px
 	+fn
-	font-size: 20px 
-	color: #FFF 
+	font-size: 20px
+	color: #FFF
 	&:hover
-		background: $btnh 
+		background: $btnh
 	&.is-disable
 		background: $btn
-		opacity: .3 
+		opacity: .3
 		cursor: default
 	&.btn_wide
 		width: 100%
@@ -604,14 +607,14 @@ a
 		padding: 0 30px
 	&.btn_white
 		background: #fff
-		color: $btn 
+		color: $btn
 	&.btn_small
 		height: 30px
 		padding: 0 10px
 		+f
-		font-size: 13px 
+		font-size: 13px
 	&.btn_fs16
-		font-size: 16px 
+		font-size: 16px
 	.btn__plus
 		position: relative
 		top: 1px
@@ -632,10 +635,10 @@ a
 		width: 650px
 	.form__layout_mb25
 		margin-bottom: 25px
-	.form__layout_border	
+	.form__layout_border
 		margin-bottom: 25px
 		padding-bottom: 5px
-		border-bottom: 1px solid $ava 
+		border-bottom: 1px solid $ava
 	.form__column
 		float: right
 		&:first-child
@@ -666,7 +669,7 @@ a
 		right: 0
 		bottom: 118px
 		width: 230px
-		border-left: 2px solid $ava 
+		border-left: 2px solid $ava
 		&:before
 			content: ""
 			display: inline-block
@@ -683,9 +686,9 @@ a
 			display: block
 			color: $bll
 			font-size: 20px
-			font-weight: 700  
+			font-weight: 700
 	.form__text
-		color: $btn 
+		color: $btn
 	* + .h
 		margin-top: 35px
 	.h_big + .h
@@ -696,7 +699,7 @@ a
 	&.fieldset_border, &.fieldset_border-mod
 		padding-bottom: 20px
 		margin-bottom: 20px
-		border-bottom: 1px solid $ava 
+		border-bottom: 1px solid $ava
 	&.fieldset_border-mod
 		padding-bottom: 0
 		margin-bottom: 35px
@@ -705,10 +708,10 @@ a
 	margin-bottom: 25px
 	&.is-disable
 		.field__text
-			color: #d4d4d4 
+			color: #d4d4d4
 		.input
 			border-color: #d4d4d4
-			color: #d4d4d4 
+			color: #d4d4d4
 	&.field_social
 		.field__in
 			position: relative
@@ -726,13 +729,13 @@ a
 				display: inline-block
 				vertical-align: middle
 		.field__vk
-			+s(vk) 
+			+s(vk)
 		.field__fb
-			+s(fb) 
+			+s(fb)
 		.field__tw
-			+s(tw) 
+			+s(tw)
 		.field__ok
-			+s(ok) 
+			+s(ok)
 		.input
 			padding: 0 12px 0 40px
 	&.field_list
@@ -763,7 +766,7 @@ a
 			+clr
 	.field__label
 		margin-bottom: 10px
-		color: $btn 
+		color: $btn
 		>.checkbox
 			display: inline-block
 			margin: 0 0 0 40px
@@ -776,7 +779,7 @@ a
 			margin: 0 0 0 35px
 			vertical-align: middle
 			&:first-child
-				margin: 0 
+				margin: 0
 		.checkbox
 			&.checkbox_mt8
 				margin-top: 8px
@@ -784,7 +787,7 @@ a
 		display: inline-block
 		margin-left: 7px
 		vertical-align: middle
-		color: $btn 
+		color: $btn
 
 .file
 	min-height: 130px
@@ -798,18 +801,18 @@ a
 		background: #fff
 		border: 1px dashed $ava
 		.btn
-			float: left 
+			float: left
 			margin-right: 10px
 		.file__title
 			display: table
 			padding-top: 7px
 			vertical-align: top
-			color: $btn 
+			color: $btn
 	.file__title
 		padding-top: 5px
 		font-weight: 700
-		color: #FFF  
-	
+		color: #FFF
+
 .input, .textarea
 	width: 100%
 	border: 1px solid $ava
@@ -821,13 +824,13 @@ a
 	height: 40px
 	padding: 0 12px
 	vertical-align: middle
-	&.input_w80	
+	&.input_w80
 		width: 80px
-	&.input_w110	
+	&.input_w110
 		width: 110px
-	&.input_w150	
+	&.input_w150
 		width: 150px
-	&.input_w315	
+	&.input_w315
 		width: 315px
 .textarea
 	display: block
@@ -838,14 +841,14 @@ a
 		height: 100px
 	&.textarea_h60
 		height: 60px
-	
+
 .select
 	position: relative
 	cursor: pointer
 	font-size: 16px
 	+nosel
 	&.is-open
-		z-index: 998 
+		z-index: 998
 		.select__head
 			border-color: $bll
 			box-shadow: 0 0 0 1px $bll inset
@@ -863,7 +866,7 @@ a
 	&.is-chousen
 		.select__head
 			font-size: 16px
-			color: #000 
+			color: #000
 	.select__head
 		position: relative
 		height: 40px
@@ -873,7 +876,7 @@ a
 		text-overflow: ellipsis
 		line-height: 38px
 		font-size: 13px
-		color: $ava 
+		color: $ava
 		overflow: hidden
 		&:after
 			content: ""
@@ -888,12 +891,12 @@ a
 		left: 0
 		right: 0
 		border: 2px solid $bll
-		background: #FFF 
+		background: #FFF
 		li
 			padding: 10px
 			&:hover
-				background: $bg 
-				color: $btn 
+				background: $bg
+				color: $btn
 
 .period
 	.period__text, .select
@@ -901,7 +904,7 @@ a
 		vertical-align: middle
 	.period__text
 		padding-top: 1px
-		color: $btn 
+		color: $btn
 	.select
 		margin-left: 5px
 	.select__head
@@ -933,7 +936,7 @@ a
 
 .add, .del
 	margin: -1px 0 -1px 20px
-	color: $blg 
+	color: $blg
 	vertical-align: top
 	&.add_dashed, &.del_dashed
 		float: none
@@ -944,9 +947,9 @@ a
 		i
 			margin: 0 9px 0 0
 		span
-			border-bottom: 1px dashed $ava 
+			border-bottom: 1px dashed $ava
 		&:hover
-			color: $btn 
+			color: $btn
 			span
 				border-color: #b0c1c9
 	i, span
@@ -957,7 +960,7 @@ a
 	span
 		padding-top: 2px
 		border-bottom: 1px solid transparent
-		line-height: 1 
+		line-height: 1
 .add
 	i
 		+s(add)
@@ -967,14 +970,14 @@ a
 .del
 	i
 		+s(del)
-		
+
 .edit
 	height: 30px
 	padding: 0 10px
 	background: $bg
-	border-radius: 4px 
+	border-radius: 4px
 	font-size: 0
-	color: $btn 
+	color: $btn
 	vertical-align: top
 	i, span
 		display: inline-block
@@ -983,7 +986,7 @@ a
 		margin-right: 10px
 		+s(edit)
 	span
-		font-size: 13px 
+		font-size: 13px
 
 .list
 	position: relative
@@ -1000,6 +1003,12 @@ a
 			background: #d0ebf4
 			font-size: 0
 			vertical-align: top
+			&:hover
+				background: #8FC2D0
+				.list__dots
+					+s(list-dots-h)
+				.list__number
+					+s(list-number-h)
 			i
 				display: inline-block
 	.list__dots
@@ -1008,8 +1017,12 @@ a
 		+s(list-number)
 	.list__in
 		min-height: 94px
-		padding: 10px
-		border: 1px solid $ava
+		// padding: 10px
+		// border: 1px solid $ava
+		textarea
+			padding: 10px
+			height: 100%
+			min-height: 94px
 		ul
 			font-size: 16px
 			&.is-dots
@@ -1025,8 +1038,8 @@ a
 						width: 5px
 						height: 5px
 						background: $ava
-						border-radius: 50% 
-		
+						border-radius: 50%
+
 .title
 	margin-bottom: 25px
 	overflow: hidden
@@ -1038,13 +1051,13 @@ a
 		top: 12px
 		display: block
 		height: 2px
-		background: $bl 
+		background: $bl
 		overflow: hidden
-	.title__ico	
+	.title__ico
 		float: right
 		width: 26px
 		height: 26px
-		border-radius: 50% 
+		border-radius: 50%
 		border: 2px solid $bl
 		+vertical
 		i
@@ -1056,7 +1069,7 @@ a
 		margin-right: 8px
 		+fn
 		font-size: 25px
-		font-weight: 700 
+		font-weight: 700
 		line-height: 1.1
 		letter-spacing: -.5px
 		+smooth
@@ -1087,7 +1100,7 @@ a
 		+s(title-plus)
 	.title__ico-res
 		+s(title-res)
-	.title__ico-portfolio	
+	.title__ico-portfolio
 		+s(title-portfolio)
 	.title__ico-hand
 		+s(title-hand)
@@ -1113,8 +1126,8 @@ a
 					height: 9px
 					background: $bl
 		.radio__in
-			padding: 3px 0 2px 33px 
-			color: #000 
+			padding: 3px 0 2px 33px
+			color: #000
 			&:before
 				width: 21px
 				height: 21px
@@ -1127,7 +1140,7 @@ a
 		position: absolute
 		top: 0
 		left: 0
-		opacity: 0 
+		opacity: 0
 		&:checked + .radio__in
 			&:after
 				content: ""
@@ -1137,11 +1150,11 @@ a
 				width: 12px
 				height: 12px
 				background: $btn
-				border-radius: 50%  
+				border-radius: 50%
 	.radio__in
 		display: block
 		padding: 4px 0 4px 33px
-		color: $btn  
+		color: $btn
 		&:before
 			content: ""
 			position: absolute
@@ -1171,18 +1184,18 @@ a
 		position: absolute
 		top: 0
 		left: 0
-		opacity: 0 
+		opacity: 0
 		&:checked + .checkbox__in
 			&:after
 				content: ""
 				position: absolute
 				top: 6px
 				left: 4px
-				+s(checkbox) 
+				+s(checkbox)
 	.checkbox__in
 		display: block
 		padding: 5px 0 3px 33px
-		color: $btn 
+		color: $btn
 		&:before
 			content: ""
 			position: absolute
