@@ -201,6 +201,7 @@ a.pseudo-link { display: inline-block; border-bottom: 1px dashed; line-height: 1
 .btn.btn_white { background: #fff; color: #17748F; }
 .btn.btn_small { height: 30px; padding: 0 10px; font-family: "PT Sans", Arial, sans-serif; font-size: 13px; }
 .btn.btn_fs16 { font-size: 16px; }
+.btn.btn_send { display: block; margin-top: 30px; }
 .btn .btn__plus { position: relative; top: 1px; display: inline-block; margin-right: 6px; background: url('../img/icons-s916fc8ea40.png') 0 -222px no-repeat; width: 15px; height: 15px; }
 .btn .btn__arr-left { display: inline-block; margin: 0 10px 0 -6px; background: url('../img/icons-s916fc8ea40.png') 0 -199px no-repeat; width: 9px; height: 13px; }
 
