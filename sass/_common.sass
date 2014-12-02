@@ -481,6 +481,9 @@ a
 	.el__row-right &
 		position: relative
 		top: -7px
+	.el_single .el__row-right &
+		position: relative
+		top: -2px
 
 .search
 	margin-bottom: 30px
@@ -658,6 +661,9 @@ a
 		float: right
 		&:first-child
 			float: left
+		.period + .checkbox
+			float: left
+			margin: 20px 0 -11px 23px
 	.form__column_w130
 		width: 130px
 	.form__column_w150
@@ -708,6 +714,29 @@ a
 		margin-top: 35px
 	.h_big + .h
 		margin-top: 0
+	.form__summary
+		position: absolute
+		top: 82px
+		right: 0
+		bottom: 108px
+		width: 230px
+		border-left: 2px solid #8FC2D0
+		padding-left: 20px
+		.form__summary-in
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			height: auto
+			padding-left: 20px
+		.form__summary-label
+			display: block
+			margin-bottom: 10px
+			color: $btn
+		.form__summary-text
+			color: #3aaaca
+			font-size: 20px
+			line-height: 1
 
 .fieldset
 	margin-bottom: 35px
@@ -718,6 +747,11 @@ a
 	&.fieldset_border-mod
 		padding-bottom: 0
 		margin-bottom: 35px
+	&.fieldset_border-top
+		border-top: 1px solid $ava
+		padding-top: 20px
+		.fieldset + &
+			margin-top: 50px
 
 .field
 	margin-bottom: 25px
@@ -798,6 +832,8 @@ a
 		.checkbox
 			&.checkbox_mt8
 				margin-top: 8px
+		.form__layout
+			margin-top: 15px
 	.field__text
 		display: inline-block
 		margin-left: 7px
@@ -934,6 +970,8 @@ a
 		margin: 0
 	&.action_remove
 		+s(remove-bigger)
+		&:hover
+			+s(remove-bigger-h)
 	&.action_reload
 		+s(reload)
 	&.action_hide

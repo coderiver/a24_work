@@ -136,8 +136,8 @@
 					<li><span>1</span><span>Личные данные</span></li>
 					<li><span>2</span><span>Пожелания к&nbsp;работе</span></li>
 					<li><span>3</span><span>Опыт работы</span></li>
-					<li><span>4</span><span>Образование</span></li>
-					<li class="is-active"><span>5</span><span>Навыки и&nbsp;интересы</span></li>
+					<li class="is-active"><span>4</span><span>Образование</span></li>
+					<li><span>5</span><span>Навыки и&nbsp;интересы</span></li>
 					<li><span>6</span><span>Предпросмотр и&nbsp;настройки</span></li>
 				</ul>
 				<!-- form -->
@@ -148,64 +148,95 @@
 							<!-- h-wrap -->
 							<div class="h-wrap">
 								<!-- h -->
-								<div class="h">Навыки и интересы</div>
+								<div class="h">Основное образование</div>
 							</div>
 							<!-- fieldset -->
 							<div class="fieldset">
 								<!-- field -->
-								<div class="field field_list">
-									<div class="field__label">Ваши профессиональные знания, навыки и качества</div>
+								<div class="field">
+									<div class="field__label">Образование</div>
 									<div class="field__in">
-										<!-- list -->
-										<div class="list">
-											<div class="list__types">
-												<button data-type="is-dots"><i class="list__dots"></i></button>
-												<button data-type="is-number"><i class="list__number"></i></button>
-											</div>
-											<div class="list__in">
-												<textarea class="textarea"></textarea>
-											</div>
+										<!-- select -->
+										<div class="select js-select">
+											<div class="select__head">не выбрано</div>
+											<ul class="select__list">
+												<li>Шашлычник</li>
+												<li>Наладчик машин и автоматических линий</li>
+												<li>Младший обмотчик</li>
+											</ul>
+											<input class="select__value" type="hidden">
 										</div>
 									</div>
 								</div>
-							</div>
-							<!-- fieldset -->
-							<div class="fieldset">
 								<!-- field -->
-								<div class="field field_mb0">
-									<div class="field__label">Иностранные языки</div>
+								<div class="field">
+									<div class="field__label">Учебное заведение</div>
+									<div class="field__in">
+										<input class="input" type="text" value="">
+									</div>
 								</div>
-								<div class="form__layout">
-									<div class="form__column form__column_w180">
-										<!-- field -->
-										<div class="field">
-											<div class="field__in">
-												<!-- select -->
-												<div class="select js-select">
-													<div class="select__head">иностранный язык</div>
-													<ul class="select__list">
-														<li>Шашлычник</li>
-														<li>Наладчик машин и автоматических линий</li>
-														<li>Младший обмотчик</li>
-													</ul>
-													<input class="select__value" type="hidden">
+								<!-- field -->
+								<div class="field">
+									<div class="field__label">Специальность</div>
+									<div class="field__in">
+										<input class="input" type="text" value="">
+									</div>
+								</div>
+								<!-- field -->
+								<div class="field">
+									<div class="field__label">Период обучения</div>
+									<div class="field__in">
+										<div class="form__layout">
+											<div class="form__column">
+												<!-- period -->
+												<div class="period">
+													<div class="period__text">с</div>
+													<!-- select -->
+													<div class="select js-select">
+														<div class="select__head">сентября</div>
+														<ul class="select__list">
+															<li>сентября</li>
+															<li>сентября</li>
+															<li>сентября</li>
+														</ul>
+														<input class="select__value" type="hidden">
+													</div>
+													<!-- select -->
+													<div class="select js-select">
+														<div class="select__head">1993</div>
+														<ul class="select__list">
+															<li>1993</li>
+															<li>1993</li>
+															<li>1993</li>
+														</ul>
+														<input class="select__value" type="hidden">
+													</div>
 												</div>
 											</div>
-										</div>
-									</div>
-									<div class="form__column form__column_w260">
-										<!-- field -->
-										<div class="field">
-											<div class="field__in">
-												<!-- select -->
-												<div class="select js-select">
-													<div class="select__head">уровень</div>
-													<ul class="select__list">
-														<li>Шашлычник</li>
-														<li>Наладчик машин и автоматических линий</li>
-														<li>Младший обмотчик</li>
-													</ul>
-													<input class="select__value" type="hidden">
+											<div class="form__column">
+												<!-- period -->
+												<div class="period">
+													<div class="period__text">по</div>
+													<!-- select -->
+													<div class="select js-select">
+														<div class="select__head">сентября</div>
+														<ul class="select__list">
+															<li>сентября</li>
+															<li>сентября</li>
+															<li>сентября</li>
+														</ul>
+														<input class="select__value" type="hidden">
+													</div>
+													<!-- select -->
+													<div class="select js-select">
+														<div class="select__head">1993</div>
+														<ul class="select__list">
+															<li>1993</li>
+															<li>1993</li>
+															<li>1993</li>
+														</ul>
+														<input class="select__value" type="hidden">
+													</div>
 												</div>
 											</div>
 										</div>
@@ -214,48 +245,98 @@
 								<!-- field -->
 								<div class="field">
 									<!-- add -->
-									<button class="add add_dashed"><i></i><span>Добавить</span></button>
+									<button class="add add_dashed"><i></i><span>Добавить учебное заведение</span></button>
 								</div>
 							</div>
 							<!-- fieldset -->
 							<div class="fieldset">
 								<!-- field -->
 								<div class="field">
-									<div class="field__label">Водительские права (категория)</div>
+									<div class="field__label">Название</div>
 									<div class="field__in">
-										<!-- checkbox -->
-										<label class="checkbox"><input type="checkbox"><span class="checkbox__in">A</span></label>
-										<!-- checkbox -->
-										<label class="checkbox"><input type="checkbox" checked=""><span class="checkbox__in">B</span></label>
-										<!-- checkbox -->
-										<label class="checkbox"><input type="checkbox"><span class="checkbox__in">C</span></label>
-										<!-- checkbox -->
-										<label class="checkbox"><input type="checkbox"><span class="checkbox__in">D</span></label>
-										<!-- checkbox -->
-										<label class="checkbox"><input type="checkbox"><span class="checkbox__in">E</span></label>
+										<input class="input" type="text" value="">
 									</div>
 								</div>
-							</div>
-							<!-- field -->
-							<div class="field field_list">
-								<div class="field__label">Ваши личные качества, интересы и увлечения</div>
-								<div class="field__in">
-									<!-- list -->
-									<div class="list">
-										<div class="list__types">
-											<button data-type="is-dots"><i class="list__dots"></i></button>
-											<button data-type="is-number"><i class="list__number"></i></button>
-										</div>
-										<div class="list__in">
-											<textarea class="textarea"></textarea>
+								<!-- field -->
+								<div class="field">
+									<div class="field__label">Проводившая организация</div>
+									<div class="field__in">
+										<input class="input" type="text" value="">
+									</div>
+								</div>
+								<!-- field -->
+								<div class="field">
+									<div class="field__label">Специальность / специализация</div>
+									<div class="field__in">
+										<input class="input" type="text" value="">
+									</div>
+								</div>
+								<!-- field -->
+								<div class="field">
+									<div class="field__label">Период обучения</div>
+									<div class="field__in">
+										<div class="form__layout">
+											<div class="form__column">
+												<!-- period -->
+												<div class="period">
+													<div class="period__text">с</div>
+													<!-- select -->
+													<div class="select js-select">
+														<div class="select__head">сентября</div>
+														<ul class="select__list">
+															<li>сентября</li>
+															<li>сентября</li>
+															<li>сентября</li>
+														</ul>
+														<input class="select__value" type="hidden">
+													</div>
+													<!-- select -->
+													<div class="select js-select">
+														<div class="select__head">1993</div>
+														<ul class="select__list">
+															<li>1993</li>
+															<li>1993</li>
+															<li>1993</li>
+														</ul>
+														<input class="select__value" type="hidden">
+													</div>
+												</div>
+											</div>
+											<div class="form__column">
+												<!-- period -->
+												<div class="period">
+													<div class="period__text">по</div>
+													<!-- select -->
+													<div class="select js-select">
+														<div class="select__head">сентября</div>
+														<ul class="select__list">
+															<li>сентября</li>
+															<li>сентября</li>
+															<li>сентября</li>
+														</ul>
+														<input class="select__value" type="hidden">
+													</div>
+													<!-- select -->
+													<div class="select js-select">
+														<div class="select__head">1993</div>
+														<ul class="select__list">
+															<li>1993</li>
+															<li>1993</li>
+															<li>1993</li>
+														</ul>
+														<input class="select__value" type="hidden">
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
+								<!-- field -->
+								<div class="field">
+									<!-- add -->
+									<button class="add add_dashed"><i></i><span>Добавить учебное заведение</span></button>
+								</div>
 							</div>
-
-
-
-
 							<div class="form__footer">
 								<button class="btn"><i class="btn__arr-left"></i>Назад</button>
 								<button class="btn">Сохранить и перейти к следующему шагу</button>
