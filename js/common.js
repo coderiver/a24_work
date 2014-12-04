@@ -1,20 +1,24 @@
 head.ready(function() {
 
     var body = $('body'),
-            search = $('.js-search'),
-            search_type = search.find('.search__type'),
-            search_title = search.find('.search__title'),
-            up = $('.js-up'),
-            vote = $('.js-vote'),
-            vote_in = vote.find('.vote__in'),
-            vote_result = vote.find('.vote__result'),
-            vote_btn = vote_in.find('.btn'),
-            sv_toggle = $('.js-el-toggle'),
-            share = $('.js-share'),
-            share_close = $('.js-share-close'),
-            slider = $('.js-slider'),
-            fields = $('input, textarea'),
-            remove_disable = $('.js-remove-disable');
+        search = $('.js-search'),
+        search_type = search.find('.search__type'),
+        search_title = search.find('.search__title'),
+        up = $('.js-up'),
+        vote = $('.js-vote'),
+        vote_in = vote.find('.vote__in'),
+        vote_result = vote.find('.vote__result'),
+        vote_btn = vote_in.find('.btn'),
+        sv_toggle = $('.js-el-toggle'),
+        sv_title = $('.el__title a'),
+        share = $('.js-share'),
+        share_close = $('.js-share-close'),
+        slider = $('.js-slider'),
+        fields = $('input, textarea'),
+        remove_disable = $('.js-remove-disable'),
+        disable_input = $('.js-disable-input'),
+        popup_close = $('.js-popup-close'),
+        popup = $('.popup');
 
     // ie9 placeholder
     if (fields.length) {
@@ -64,6 +68,10 @@ head.ready(function() {
         el_open.find('.el__toggle button').removeClass('is-active');
         el_open.find('.el__toggle button span').text(text_show);
         el_hot_open.addClass('is-hot');
+    });
+    sv_title.on('click', function () {
+        $(this).parents('.el__item').find('.js-el-toggle').trigger('click');
+        return false;
     });
 
     // share
@@ -303,6 +311,25 @@ head.ready(function() {
             btn_el.addClass('is-disable');
             btn_el.attr('disabled', 'disabled');
         }
+    });
+
+    // disable input
+    disable_input.change(function () {
+        var input = $(this).data('input'),
+            el = $('.' + input);
+        el.parents('.field').toggleClass('is-disable');
+        if (el.attr('disabled')) {
+            el.removeAttr('disabled');
+        }
+        else {
+            el.attr('disabled', 'disabled');
+        }
+    });
+
+    // popup
+    popup_close.on('click', function () {
+        popup.fadeOut();
+        body.removeClass('no-scroll');
     });
 
 });

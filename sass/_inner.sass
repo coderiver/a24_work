@@ -401,7 +401,7 @@
 	.el__right
 		float: right
 		width: 130px
-		margin-left: 15px
+		margin: 2px 0 0 15px
 	.el__salary
 		font-weight: 700
 		font-size: 15px
@@ -432,7 +432,7 @@
 				+s(arr-toggle-down)
 	.el__fav
 		float: right
-		margin-left: 15px
+		margin: 2px 0 0 15px
 		button
 			+s(fav)
 			&:hover
@@ -441,7 +441,7 @@
 				+s(fav-a)
 	.el__new-window
 		float: right
-		margin-left: 15px
+		margin: 2px 0 0 15px
 		a
 			display: block
 			+s(new-window)
@@ -881,11 +881,12 @@
 		font-weight: 700
 	.popup__text, .popup__content
 		margin-bottom: 20px
+		line-height: 1.5
 	.popup__text
 		color: $btn
 	.popup__close
 		position: absolute
-		top: 20px
+		top: 24px
 		right: 20px
 		+s(close)
 		&:hover
@@ -896,11 +897,11 @@
 		a
 			text-decoration: underline
 	.popup__code
-		padding: 20px 0 10px
+		padding: 27px 10px 10px 0
 		text-align: center
 		li
 			display: inline-block
-			margin: 0 10px 20px
+			margin: 0 5px 17px
 			span
 				display: inline-block
 				padding-left: 7px
@@ -1735,7 +1736,7 @@
 		+clr
 		.action-wrap
 			float: right
-			padding: 5px 20px 0 20px
+			padding: 6px 20px 0 20px
 	.respond__price
 		float: right
 		width: 180px
@@ -1746,6 +1747,7 @@
 		font-weight: 700
 	.respond__data
 		display: table
+		padding-top: 5px
 	.respond__name
 		margin-bottom: 5px
 	.respond__info
@@ -1970,6 +1972,7 @@
 	.actserv__title,
 	.actserv__date
 		display: inline-block
+		vertical-align: middle
 	.actserv__title,
 	.actserv__date
 		font-size: 13px
@@ -1977,7 +1980,9 @@
 		width: 400px
 		margin: 0 20px 0 0
 		span
-			margin-right: 10px
+			display: inline-block
+			margin: 0 10px 0 0
+			vertical-align: middle
 	.actserv__date
 		width: 120px
 		margin-right: 20px
