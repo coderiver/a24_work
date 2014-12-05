@@ -18,7 +18,12 @@ head.ready(function() {
         remove_disable = $('.js-remove-disable'),
         disable_input = $('.js-disable-input'),
         popup_close = $('.js-popup-close'),
-        popup = $('.popup');
+        popup = $('.popup'),
+        input_decimal = $('.js-input-decimal'),
+        rating = $('.js-rating'),
+        comm_reply = $('.js-comm-reply'),
+        tempalte_socials = $('.js-template-socials'),
+        add_socials = $('.js-add-socials');
 
     // ie9 placeholder
     if (fields.length) {
@@ -330,6 +335,69 @@ head.ready(function() {
     popup_close.on('click', function () {
         popup.fadeOut();
         body.removeClass('no-scroll');
+        return false;
     });
+
+    // input decimal
+    input_decimal.keyup(function () {
+        var value = $(this).val(),
+            value = value.replace(/\s+/g, ''),
+            value = value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        $(this).val(value);
+    });
+
+    // rating
+    if (rating.length) {
+        rating.each(function () {
+            var good = $(this).find('.js-rating-good'),
+                bad = $(this).find('.js-rating-bad');
+            good.on('click', function () {
+                if (!$(this).parent().hasClass('is-done')) {
+                    $(this).parent().addClass('is-done');
+                    var el = $(this).find('span'),
+                        counter = el.html(),
+                        counter = parseInt(counter);
+                    el.html(++counter);
+                };
+            });
+            bad.on('click', function () {
+                if (!$(this).parent().hasClass('is-done')) {
+                    $(this).parent().addClass('is-done');
+                    var el = $(this).find('span'),
+                        counter = el.html(),
+                        counter = parseInt(counter);
+                    el.html(++counter);
+                };
+            });
+        });
+    };
+
+    // comm
+    comm_reply.on('click', function () {
+        $(this).parent().next().slideToggle();
+        return false;
+    });
+
+    // add social links
+    add_socials.on('click', function () {
+        var template = tempalte_socials.html();
+        tempalte_socials.before(template);
+    });
+
+    // validate
+    function validate () {
+        var form = $('.js-validate');
+        form.each(function () {
+            var select = form.find('.js-validate-select'),
+                textarea = form.find('.js-validate-textarea'),
+                btn = form.find('.js-validate-btn');
+            if (select.hasClass('is-chousen') && textarea.val() === 0) {
+                btn.removeClass('is-disable');
+                btn.removeAttr('disabled');
+            };
+        });
+            
+    }
+    
 
 });

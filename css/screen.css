@@ -810,6 +810,7 @@ a.pseudo-link { display: inline-block; border-bottom: 1px dashed; line-height: 1
 .comm .comm__item:hover .comm__good span { color: #00b01e; }
 .comm .comm__item:hover .comm__bad span { color: #e01815; }
 .comm .comm__in { overflow: hidden; }
+.comm .comm__in .comm__form { display: none; padding-top: 10px; }
 .comm .comm__user { margin-bottom: 5px; font-weight: bold; }
 .comm .comm__meta { padding-bottom: 3px; margin-bottom: 5px; border-bottom: 1px solid; color: #70a8b8; *zoom: 1; }
 .comm .comm__meta:after { content: " "; display: table; clear: both; }

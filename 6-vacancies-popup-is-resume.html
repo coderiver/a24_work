@@ -452,7 +452,7 @@
 </div>
 <!-- popup -->
 <div class="popup popup_is-resume" style="display: block;">
-	<div class="popup__in">
+	<form class="popup__in js-validate">
 		<button class="popup__close js-popup-close"></button>
 		<div class="popup__title">Откликнуться на вакансию</div>
 		<!-- field -->
@@ -460,7 +460,7 @@
 			<div class="field__label">Ваше резюме</div>
 			<div class="field__in">
 				<!-- select -->
-				<div class="select js-select">
+				<div class="select js-select js-validate-select">
 					<div class="select__head">Продавец-консультант</div>
 					<ul class="select__list">
 						<li>Шашлычник</li>
@@ -475,13 +475,13 @@
 		<div class="field">
 			<div class="field__label">Сопроводительное письмо</div>
 			<div class="field__in">
-				<textarea class="textarea js-remove-disable" data-disable="js-btn-1"></textarea>
+				<textarea class="textarea js-validate-textarea"></textarea>
 			</div>
 		</div>
 		<div class="btn-center">
-			<button class="btn js-btn-1 is-disable" disabled="">Отправить резюме</button>
+			<button class="btn js-validate-btn is-disable" disabled="">Отправить резюме</button>
 		</div>
-	</div>
+	</form>
 </div>
 <!-- popup -->
 <div class="popup popup_no-resume">
