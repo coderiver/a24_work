@@ -844,9 +844,14 @@ a
 		color: $btn
 
 .file
+	position: relative
 	min-height: 130px
 	padding: 10px
 	background: $ava
+	overflow: hidden
+	&:hover
+		.btn
+			background: $btnh 
 	&.file_w315
 		width: 315px
 	&.file_mod
@@ -866,7 +871,14 @@ a
 		padding-top: 5px
 		font-weight: 700
 		color: #FFF
-
+	>input
+		position: absolute
+		top: 0
+		right: 0
+		font-size: 150px
+		opacity: 0
+		cursor: pointer 
+		
 .input, .textarea
 	width: 100%
 	border: 1px solid $ava

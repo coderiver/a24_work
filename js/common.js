@@ -20,6 +20,7 @@ head.ready(function() {
         popup_close = $('.js-popup-close'),
         popup = $('.popup'),
         input_decimal = $('.js-input-decimal'),
+        input_file = $('.js-input-file'),
         rating = $('.js-rating'),
         comm_reply = $('.js-comm-reply'),
         tempalte_socials = $('.js-template-socials'),
@@ -110,6 +111,8 @@ head.ready(function() {
             $(this).parent().hide();
             $(this).parent().parent().removeClass('is-open');
             $(this).parent().parent().addClass('is-chousen');
+            // validate
+            validate_select(el);
         });
         el.click(function(event){
             event.stopPropagation();
@@ -385,19 +388,49 @@ head.ready(function() {
     });
 
     // validate
-    function validate () {
-        var form = $('.js-validate');
-        form.each(function () {
-            var select = form.find('.js-validate-select'),
-                textarea = form.find('.js-validate-textarea'),
-                btn = form.find('.js-validate-btn');
-            if (select.hasClass('is-chousen') && textarea.val() === 0) {
-                btn.removeClass('is-disable');
-                btn.removeAttr('disabled');
+    function validate_select (el_select) {
+        var el_parent = el_select.parents('.js-validate'),
+            el_textarea = el_parent.find('.js-validate-textarea'),
+            el_btn = el_parent.find('.js-validate-btn');
+        if (el_textarea.length) {
+            var el_textarea_val = el_textarea.val();
+            if (el_textarea_val.length !== 0) {
+                el_btn.removeClass('is-disable');
+                el_btn.removeAttr('disabled');
+            }
+        }
+        else {
+            el_btn.removeClass('is-disable');
+            el_btn.removeAttr('disabled');
+        }
+        
+    }
+    function validate_textarea () {
+        var el_textarea = $('.js-validate-textarea'),
+            el_parent = el_textarea.parents('.js-validate'),
+            el_select = el_parent.find('.js-validate-select'),
+            el_btn = el_parent.find('.js-validate-btn');
+        el_textarea.keyup(function () {
+            var el_textarea_val = $(this).val();
+            if (el_select.hasClass('is-chousen')) {
+                if (el_textarea_val.length !== 0) {
+                    el_btn.removeClass('is-disable');
+                    el_btn.removeAttr('disabled');
+                }
+                else {
+                    el_btn.addClass('is-disable');
+                    el_btn.attr('disabled', 'disabled');
+                }
             };
         });
-            
     }
+    validate_textarea();
+
+    // file
+    input_file.change(function () {
+        var value = $(this).val().replace(/\\/g, '/').replace(/.*\//, '');
+        $(this).parent().find('.js-input-file-val').html(value);
+    });
     
 
 });

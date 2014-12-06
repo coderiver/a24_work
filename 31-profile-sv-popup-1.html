@@ -256,7 +256,7 @@
 </div>
 <!-- popup -->
 <div class="popup popup_promosv" style="display: block;">
-	<div class="popup__in">
+	<form class="popup__in js-validate">
 		<button class="popup__close js-popup-close"></button>
 		<div class="popup__title">Выделить моё резюме</div>
 		<div class="popup__text">В течение двух недель ваше резюме будет выделено для работодателей ярким цветом. Это увеличит ваши шансы найти работу.</div>
@@ -265,7 +265,7 @@
 			<div class="field__label">Ваше резюме</div>
 			<div class="field__in">
 				<!-- select -->
-				<div class="select js-select">
+				<div class="select js-select js-validate-select">
 					<div class="select__head">Продавец-консультант</div>
 					<ul class="select__list">
 						<li>Шашлычник</li>
@@ -277,12 +277,12 @@
 			</div>
 		</div>
 		<div class="btn-center">
-			<button class="btn">Получить sms-код</button>
+			<button class="btn js-validate-btn is-disable" disabled="">Получить sms-код</button>
 		</div>
 		<div class="popup__footer-link">
 			<a href="#">Соглашение об оказании услуг</a>
 		</div>
-	</div>
+	</form>
 </div>
 <!-- load scripts -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>

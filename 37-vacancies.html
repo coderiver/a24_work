@@ -242,7 +242,7 @@
 </div>
 <!-- popup -->
 <div class="popup popup_respond" style="display: block;">
-	<div class="popup__in">
+	<form class="popup__in js-validate">
 		<button class="popup__close js-popup-close"></button>
 		<div class="popup__title">Ответить соискателю</div>
 		<!-- field -->
@@ -250,7 +250,7 @@
 			<div class="field__label">Здесь вы можете выбрать шаблоны текстов для ответов соискателям</div>
 			<div class="field__in">
 				<!-- select -->
-				<div class="select js-select">
+				<div class="select js-select js-validate-select">
 					<div class="select__head">Отказ откликнувшемуся на вакансию соискателю</div>
 					<ul class="select__list">
 						<li>Шашлычник</li>
@@ -265,13 +265,13 @@
 		<div class="field">
 			<div class="field__label">Сопроводительное письмо</div>
 			<div class="field__in">
-				<textarea class="textarea js-remove-disable" data-disable="js-btn-3"></textarea>
+				<textarea class="textarea js-validate-textarea"></textarea>
 			</div>
 		</div>
 		<div class="btn-center">
-			<button class="btn js-btn-3 is-disable" disabled="">Ответить</button>
+			<button class="btn js-validate-btn is-disable" disabled="">Ответить</button>
 		</div>
-	</div>
+	</form>
 </div>
 <!-- load scripts -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
