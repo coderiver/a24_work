@@ -88,10 +88,8 @@ button
 a
 	text-decoration: none
 	color: $bld
-	&.pseudo-link
-		display: inline-block
-		border-bottom: 1px dashed
-		line-height: 1
+	&:hover
+		text-decoration: underline
 
 .h-wrap
 	margin-bottom: 25px
@@ -107,6 +105,9 @@ a
 .h
 	margin-bottom: 25px
 	+title
+	a
+		&:hover
+			color: $bll 
 	&.h_big
 		font-size: 25px
 		color: #000
@@ -119,8 +120,14 @@ a
 		border-bottom: 1px solid $ava
 	&.h_light
 		color: $bll
+		a
+			&:hover
+				color: $btn 
 	&.h_gray
 		color: $blg
+		a
+			&:hover
+				color: $btn 
 	&.h_white
 		color: #fff
 	&.h_mb0
@@ -325,6 +332,8 @@ a
 				margin: 0
 			&.is-active
 				color: #00c7ff
+				text-decoration: none
+				cursor: default
 	.topper__logo
 		float: right
 		margin-top: 4px
@@ -376,6 +385,10 @@ a
 		font-weight: 700
 		color: #000
 		line-height: 18px
+		text-decoration: none
+		&:hover
+			background: $btn
+			color: #FFF 
 	.top__news
 		float: left
 	.top__news-pic
@@ -561,6 +574,7 @@ a
 		border-bottom: 1px solid
 		font-size: 13px
 		color: #000
+		text-decoration: none
 		&:hover
 			border-width: 2px
 	.search__btn
@@ -685,6 +699,8 @@ a
 			margin-right: 20px
 		a
 			text-decoration: underline
+			&:hover
+				color: $bll 
 	.form__footer_mt10
 		margin-top: 10px
 	.form__experiance
@@ -842,6 +858,11 @@ a
 		margin-left: 7px
 		vertical-align: middle
 		color: $btn
+	.field__link
+		margin-left: 7px
+		text-decoration: underline
+		&:hover
+			color: $bll 
 
 .file
 	position: relative
@@ -989,12 +1010,20 @@ a
 			+s(remove-bigger-h)
 	&.action_reload
 		+s(reload)
+		&:hover
+			+s(reload-h)
 	&.action_hide
 		+s(hide)
+		&:hover
+			+s(hide-h)
 	&.action_comm
 		+s(comm)
+		&:hover
+			+s(comm-h)
 	&.action_download
 		+s(download)
+		&:hover
+			+s(download-h)
 	&.action_check
 		+s(check)
 	&.action_edit
@@ -1003,32 +1032,26 @@ a
 			+s(edit-h)
 
 .add, .del
-	margin: -1px 0 -1px 20px
 	color: $blg
 	vertical-align: top
-	&.add_dashed, &.del_dashed
-		float: none
-		margin: 0
-		&:hover
-			span
-				border-color: $btn
-		i
-			margin: 0 9px 0 0
+	font-size: 0
+	&:hover
+		color: $btn
 		span
-			border-bottom: 1px dashed $ava
-		&:hover
-			color: $btn
-			span
-				border-color: #b0c1c9
+			border-color: #b0c1c9
 	i, span
 		display: inline-block
 		vertical-align: top
-	i
-		margin-left: 5px
 	span
+		margin-right: 7px
 		padding-top: 2px
-		border-bottom: 1px solid transparent
+		border-bottom: 1px dashed $ava
 		line-height: 1
+		font-size: 13px
+	i
+		& + span
+			margin: 0 0 0 7px 
+		
 .add
 	i
 		+s(add)
@@ -1038,6 +1061,9 @@ a
 .del
 	i
 		+s(del)
+	&:hover
+		i
+			+s(del-h)
 
 .edit
 	height: 30px
@@ -1055,6 +1081,12 @@ a
 		+s(edit)
 	span
 		font-size: 13px
+	&:hover
+		color: $btn
+		span
+			text-decoration: underline
+		i
+			+s(edit-h)
 
 .list
 	position: relative
