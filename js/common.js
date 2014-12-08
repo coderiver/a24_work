@@ -24,7 +24,10 @@ head.ready(function() {
         rating = $('.js-rating'),
         comm_reply = $('.js-comm-reply'),
         tempalte_socials = $('.js-template-socials'),
-        add_socials = $('.js-add-socials');
+        add_socials = $('.js-add-socials'),
+        actserv = $('.js-actserv'),
+        actserv_item = actserv.find('.actserv__item');
+        actserv_head = actserv.find('.actserv__head');
 
     // ie9 placeholder
     if (fields.length) {
@@ -432,5 +435,18 @@ head.ready(function() {
         $(this).parent().find('.js-input-file-val').html(value);
     });
     
+    // actserv
+    actserv_head.on('click', function () {
+        if ($(this).hasClass('is-active')) {
+            actserv_head.removeClass('is-active');
+            actserv_head.next().hide();
+        }
+        else {
+            actserv_head.removeClass('is-active');
+            actserv_head.next().hide();
+            $(this).addClass('is-active');
+            $(this).next().show();
+        }
+    });
 
 });

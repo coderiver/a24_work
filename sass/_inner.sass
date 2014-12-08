@@ -418,7 +418,7 @@
 	.el__right
 		float: right
 		width: 130px
-		margin: 2px 0 0 15px
+		margin: 3px 0 0 15px
 	.el__salary
 		font-weight: 700
 		font-size: 15px
@@ -448,16 +448,17 @@
 				+s(arr-toggle-down)
 	.el__fav
 		float: right
-		margin: 2px 0 0 15px
+		margin: 3px 0 0 15px
 		button
 			+s(fav)
+			vertical-align: top
 			&:hover
 				+s(fav-h)
 			&.is-active
 				+s(fav-a)
 	.el__new-window
 		float: right
-		margin: 2px 0 0 15px
+		margin: 3px 0 0 15px
 		a
 			display: block
 			+s(new-window)
@@ -604,6 +605,8 @@
 		float: right
 		width: 225px
 		margin-left: 40px
+		.btn
+			width: 100%
 	.el__a42
 		padding: 10px 20px 0 0
 	.el__contacts-left
@@ -2070,6 +2073,8 @@
 		padding: 0 0 20px 20px
 		font-size: 0
 		color: $blg
+		cursor: pointer
+		+nosel
 	.actserv__title,
 	.actserv__date
 		display: inline-block
@@ -2089,16 +2094,16 @@
 		margin-right: 20px
 	.actserv__item
 		margin-bottom: 20px
-		&.is-active
-			.actserv__head
+		.actserv__head
+			padding: 15px 0 15px 20px
+			background: $bg
+			&.is-active
 				background: $btn
 				color: #FFF
 				span
 					color: #FFF
-		.actserv__head
-			padding: 15px 0 15px 20px
-			background: $bg
 	.actserv__in
+		display: none
 		padding: 10px 20px
 		background: $bg
 		color: $btn
