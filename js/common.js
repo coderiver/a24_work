@@ -21,12 +21,13 @@ head.ready(function() {
         popup = $('.popup'),
         input_decimal = $('.js-input-decimal'),
         input_file = $('.js-input-file'),
+        input_date = $('.js-input-date'),
         rating = $('.js-rating'),
         comm_reply = $('.js-comm-reply'),
         tempalte_socials = $('.js-template-socials'),
         add_socials = $('.js-add-socials'),
         actserv = $('.js-actserv'),
-        actserv_item = actserv.find('.actserv__item');
+        actserv_item = actserv.find('.actserv__item'),
         actserv_head = actserv.find('.actserv__head');
 
     // ie9 placeholder
@@ -448,5 +449,10 @@ head.ready(function() {
             $(this).next().show();
         }
     });
+
+    // date
+    if (input_date.length) {
+        input_date.mask('00.00.00');
+    };
 
 });
