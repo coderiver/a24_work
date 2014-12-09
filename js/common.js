@@ -151,69 +151,59 @@ head.ready(function() {
     };
 
     function services () {
-        var serv       = $('.js-serv'),
-            servmore   = $('.js-servmore'),
-            cart       = $('.js-cart'),
-            cart_list  = cart.find('.cart__list'),
-            cart_total = cart.find('.cart__total-value span');
+        var serv = $('.js-serv'),
+            servmore = $('.js-servmore'),
+            cart = $('.js-cart'),
+            cart_list = cart.find('.js-cart-list'),
+            cart_total = cart.find('.js-cart-total');
 
         if (serv.length) {
             // serv
             serv.each(function () {
-                var serv_this   = $(this),
-                    serv_months = serv_this.find('.serv__months input'),
-                    serv_price  = serv_this.find('.serv__price span'),
-                    serv_buy    = serv_this.find('.serv__footer .btn');
-
+                var serv_this = $(this),
+                    serv_months = serv_this.find('.js-serv-months'),
+                    serv_price = serv_this.find('.js-serv-price'),
+                    serv_buy = serv_this.find('.js-serv-buy');
+                // serv months
                 serv_months.on('change', function () {
-                    var price = $(this).data('price'),
-                        month = $(this).parent().find('.serv__month').html();
-
+                    var price = $(this).data('price');
+                        $(this).parent().find('.js-serv-months-value').html();
                     serv_price.html(price);
                 });
-
+                // serv buy
                 serv_buy.on('click', function () {
+                    // cart whow
                     services_cart_show();
-
                     var title = $(this).data('title'),
                         price = serv_price.html();
-
                     if (serv_months.length) {
                         var month = 0;
-
                         serv_months.each(function () {
                             if ($(this).is(':checked')) {
-                                month = $(this).next().find('.serv__month').html();
+                                month = $(this).next().find('.js-serv-months-value').html();
                             };
                         });
-
-                        var cart_item = '<div class="cart__item">' +
+                        var cart_item = '<div class="cart__item js-cart-item">' +
                                             '<div class="cart__row">'+
-                                                '<div class="cart__sum"><span class="js-cart-money">' + price + '</span><button class="cart__del"></button></div>'+
+                                                '<div class="cart__sum"><span class="js-cart-money">' + price + '</span><button class="cart__del js-cart-del"></button></div>'+
                                                 '<div class="cart__title">' + title + ' × ' + month + ' мес.</div>'+
                                             '</div>'+
                                         '</div>';
-
-                        if (cart_list.find('.cart__item').length) {
-                            // cart_list.html('');
-                            cart_list.find('.cart__item').remove();
+                        if (!cart_list.is(':empty')) {
+                            cart_list.empty();
                             cart_list.append(cart_item);
                         } else {
                             cart_list.append(cart_item);
                         }
-
                     } else {
-
-                        var cart_item = '<div class="cart__item">' +
+                        var cart_item = '<div class="cart__item js-cart-item">' +
                                             '<div class="cart__row">'+
-                                                '<div class="cart__sum">' + price + '<button class="cart__del"></button></div>'+
+                                                '<div class="cart__sum">' + price + '<button class="cart__del js-cart-del"></button></div>'+
                                                 '<div class="cart__title">' + title + '</div>'+
                                             '</div>'+
                                         '</div>';
-
-                        if (cart_list.find('.cart__item').length) {
-                            // cart_list.html('');
-                            cart_list.find('.cart__item').remove();
+                        if (!cart_list.is(':empty')) {
+                            cart_list.empty();
                             cart_list.append(cart_item);
                         } else {
                             cart_list.append(cart_item);
@@ -224,74 +214,98 @@ head.ready(function() {
                 });
             });
             // servmore
-            servmore.each(function () {
+            $('.js-servmore-buy').on('click', function () {
+                // cart show
+                services_cart_show();
                 var servmore_this = $(this),
-                        servmore_price = servmore_this.find('.servmore__price span').html(),
-                        servmore_type = servmore_this.find('.servmore__type').html(),
-                        servmore_buy = servmore_this.find('.btn');
-                servmore_buy.on('click', function () {
-                    services_cart_show();
-                    cart_list.append('<div class="cart__item cart__item_more">'+
+                    servmore_price = servmore_this.parent().find('.js-servmore-price').html(),
+                    servmore_type = servmore_this.parent().find('.js-servmore-title').html(),
+                    servmore_data_item = servmore_this.data('item');
+                if (!servmore_this.hasClass('is-added')) {
+                    servmore_this.addClass('is-added');
+                    // add servmore
+                    servmore_add(servmore_data_item);
+                }
+                else {
+                    $('.' + servmore_data_item).find('.js-cart-plus').trigger('click');
+                }
+
+                // add servmore
+                function servmore_add (el) {
+                    cart_list.append('<div class="cart__item cart__item_more js-cart-item ' + el + ' js-cart-item-more">'+
                         '<div class="cart__row">'+
-                            '<div class="cart__price">' + servmore_price + '</div>'+
-                            '<div class="cart__title">' + servmore_type + '</div>'+
+                            '<div class="cart__price js-cart-price">' + servmore_price + '</div>'+
+                            '<div class="cart__title js-cart-title">' + servmore_type + '</div>'+
                         '</div>'+
                         '<div class="cart__row">'+
-                            '<div class="cart__sum"><span class="js-cart-money">' + servmore_price + '</span><button class="cart__del"></button></div>'+
+                            '<div class="cart__sum"><span class="js-cart-money">' + servmore_price + '</span><button class="cart__del js-cart-del"></button></div>'+
                             '<div class="cart__value">'+
-                                '<button class="cart__minus"></button>'+
-                                '<div class="cart__value-in"><span>1</span> шт.</div>'+
-                                '<button class="cart__plus"></button>'+
+                                '<button class="cart__minus js-cart-minus"></button>'+
+                                '<div class="cart__value-in"><span class="js-cart-value">1</span> шт.</div>'+
+                                '<button class="cart__plus js-cart-plus"></button>'+
                             '</div>'+
                         '</div>'+
                     '</div>');
-                    // total
-                    services_total();
-                })
-            });
-            // value
-            body.on('click', '.cart__plus', function () {
-                var item = $(this).parents('.cart__item'),
-                        price = item.find('.cart__price').html(),
-                        price = parseInt(price),
-                        value = item.find('.cart__value-in span'),
-                        current = value.html(),
-                        current = parseInt(current),
-                        sum = item.find('.js-cart-money'),
-                        sum_value = sum.html(),
-                        sum_value = parseInt(sum_value);
-                value.html(++current);
-                sum.html(current*price);
+                }
                 // total
                 services_total();
             });
-            body.on('click', '.cart__minus', function () {
-                var item = $(this).parents('.cart__item'),
-                        price = item.find('.cart__price').html(),
-                        price = parseInt(price),
-                        value = item.find('.cart__value-in span'),
-                        current = value.html(),
-                        current = parseInt(current),
-                        sum = item.find('.js-cart-money'),
-                        sum_value = sum.html(),
-                        sum_value = parseInt(sum_value);
+            // value
+            body.on('click', '.js-cart-plus', function () {
+                var item = $(this).parents('.js-cart-item'),
+                    price = item.find('.js-cart-price').html(),
+                    price = price.replace(/\s+/g, ''),
+                    price = parseInt(price),
+                    value = item.find('.js-cart-value'),
+                    current = value.html(),
+                    current = parseInt(current),
+                    sum = item.find('.js-cart-money'),
+                    sum_value = sum.html(),
+                    sum_value = parseInt(sum_value);
+                value.html(++current);
+                var sum_finish = current*price,
+                    sum_finish = '' + sum_finish + '';
+                    sum_finish = sum_finish.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+                sum.html(sum_finish);
+                // total
+                services_total();
+                return false;
+            });
+            body.on('click', '.js-cart-minus', function () {
+                var item = $(this).parents('.js-cart-item'),
+                    price = item.find('.js-cart-price').html(),
+                    price = price.replace(/\s+/g, ''),
+                    price = parseInt(price),
+                    value = item.find('.js-cart-value'),
+                    current = value.html(),
+                    current = parseInt(current),
+                    sum = item.find('.js-cart-money'),
+                    sum_value = sum.html(),
+                    sum_value = parseInt(sum_value);
                 if (current > 1) {
                     value.html(--current);
-                    sum.html(current*price);
+                    var sum_finish = current*price,
+                        sum_finish = '' + sum_finish + '';
+                        sum_finish = sum_finish.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+                    sum.html(sum_finish);
                     // total
                     services_total();
                 };
+                return false;
             });
             // total
             function services_total () {
-                var cart_money = $('.cart .js-cart-money'),
+                var cart_money = $('.js-cart-money'),
                         total = 0;
                 cart_money.each(function () {
                     var money = $(this).html(),
-                            money = parseInt(money);
+                        money = money.replace(/\s+/g, ''),
+                        money = parseInt(money);
                     total += money;
                     return total;
                 });
+                total = '' + total + '';
+                total = total.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
                 cart_total.html(total);
             }
             // cart show
@@ -302,14 +316,14 @@ head.ready(function() {
                 };
             }
             // remove
-            body.on('click', '.cart__del', function () {
-                $(this).parents('.cart__item').remove();
+            body.on('click', '.js-cart-del', function () {
+                $(this).parents('.js-cart-item').remove();
                 // total
                 services_total();
             });
         };
     }
-    // services();
+    services();
 
     // remove disable state on button
     remove_disable.keyup(function () {
