@@ -232,39 +232,92 @@
 							<div class="ava ava_auto">
 								<img src="http://placehold.it/100x60" alt="">
 							</div>
-							<button class="btn btn_small">Загрузить новый</button>
+							<!-- btn-file -->
+							<div class="btn-file">
+								<input type="file">
+								<button class="btn btn_small">Загрузить новый</button>
+							</div>
 						</div>
 					</div>
 					<!-- h -->
 					<div class="h">Контактная информация</div>
-					<!-- field -->
-					<div class="field">
-						<div class="field__label">Телефон</div>
-						<div class="field__in">
-							<input class="input input_w150" type="text" value="">
+					<!-- template for contacts -->
+					<div class="js-template-contacts" style="display: none;">
+						<!-- fieldset -->
+						<div class="fieldset js-contacts-item">
+							<!-- field -->
+							<div class="field">
+								<div class="field__label">Телефон</div>
+								<div class="field__in">
+									<input class="input input_w150" type="text" value="">
+								</div>
+							</div>
+							<!-- field -->
+							<div class="field">
+								<div class="field__label">Адрес</div>
+								<div class="field__in">
+									<textarea class="textarea textarea_h100"></textarea>
+								</div>
+							</div>
+							<!-- field -->
+							<div class="field">
+								<div class="field__label">Электронная почта</div>
+								<div class="field__in">
+									<input class="input" type="text" value="">
+								</div>
+							</div>
+							<div class="form__layout">
+								<div class="form__column">
+									<button class="add js-contacts-add">
+										<i></i>
+										<span>Добавить учебное заведение</span>
+									</button>
+								</div>
+								<div class="form__column">
+									<button class="del js-contacts-del">
+										<i></i>
+										<span>Удалить место работы</span>
+									</button>
+								</div>
+							</div>
 						</div>
 					</div>
-					<!-- field -->
-					<div class="field">
-						<div class="field__label">Адрес</div>
-						<div class="field__in">
-							<textarea class="textarea textarea_h100"></textarea>
+					<div class="js-contacts">
+						<!-- fieldset -->
+						<div class="fieldset">
+							<!-- field -->
+							<div class="field">
+								<div class="field__label">Телефон</div>
+								<div class="field__in">
+									<input class="input input_w150" type="text" value="">
+								</div>
+							</div>
+							<!-- field -->
+							<div class="field">
+								<div class="field__label">Адрес</div>
+								<div class="field__in">
+									<textarea class="textarea textarea_h100"></textarea>
+								</div>
+							</div>
+							<!-- field -->
+							<div class="field">
+								<div class="field__label">Электронная почта</div>
+								<div class="field__in">
+									<input class="input" type="text" value="">
+								</div>
+							</div>
+							<div class="form__layout">
+								<div class="form__column">
+									<button class="add js-contacts-add">
+										<i></i>
+										<span>Добавить учебное заведение</span>
+									</button>
+								</div>
+							</div>
 						</div>
-					</div>
-					<!-- field -->
-					<div class="field">
-						<div class="field__label">Электронная почта</div>
-						<div class="field__in">
-							<input class="input" type="text" value="">
-						</div>
-					</div>
-					<!-- field -->
-					<div class="field">
-						<!-- add -->
-						<button class="add"><i></i><span>Добавить еще один контакт</span></button>
 					</div>
 					<div class="form__footer">
-						<button class="btn">Сохранить изменения</button>
+						<button class="btn js-contacts-add">Сохранить изменения</button>
 					</div>
 				</div>
 			</div>

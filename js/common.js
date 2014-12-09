@@ -31,7 +31,10 @@ head.ready(function() {
         actserv_head = actserv.find('.actserv__head'),
         textarea_editor = $('.js-textarea-editor'),
         template_work_place = $('.js-work-place-template'),
-        work_place_list = $('.js-work-place-list');
+        work_place_list = $('.js-work-place-list'),
+        mycomp_toggle = $('.js-mycomp-toggle'),
+        contacts = $('.js-contacts'),
+        template_contacts = $('.js-template-contacts');
 
     // ie9 placeholder
     if (fields.length) {
@@ -496,6 +499,22 @@ head.ready(function() {
     body.on('click', '.js-work-place-del', function () {
         $(this).parents('.js-work-place-item').remove();
     });
+
+    // mycomp toggle
+    mycomp_toggle.on('click', function () {
+        $(this).parent().next().toggle();
+        $(this).toggleClass('is-active');
+    }); 
+
+    // contacts
+    body.on('click', '.js-contacts-add', function () {
+        var item = template_contacts.html();
+        contacts.append(item);
+    });
+    body.on('click', '.js-contacts-del', function () {
+        $(this).parents('.js-contacts-item').remove();
+    });
+
 
     
 

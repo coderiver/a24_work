@@ -2047,9 +2047,14 @@
 		height: 27px
 		background: $bg
 		font-size: 0
+		&:hover
+			opacity: .8 
+		&.is-active
+			i
+				+s(plus-big)
 		i
 			display: inline-block
-			+s(minus)
+			+s(minus-big)
 	.mycomp__in
 		padding: 0 40px 30px 20px
 	.mycomp__layout
