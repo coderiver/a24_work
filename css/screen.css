@@ -837,7 +837,11 @@ a:hover { text-decoration: underline; }
 .meta { margin-bottom: 30px; color: #70a8b8; }
 .meta p { margin-bottom: 3px; }
 
-.likes { margin-bottom: 25px; }
+.likes { margin-bottom: 25px; font-size: 0; }
+.likes .likes__item { display: inline-block; margin-left: 20px; vertical-align: top; }
+.likes .likes__item:first-child { margin: 0; }
+.likes .likes__item_twitter { margin-right: -20px; }
+.likes .likes__item_twitter iframe { display: block; width: 100px !important; }
 
 .ava { float: left; width: 44px; height: 44px; margin-right: 20px; border: 3px solid #8dc2d1; font-size: 0; text-align: center; }
 .ava img { max-width: 100%; max-height: 100%; }
