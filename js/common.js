@@ -29,7 +29,9 @@ head.ready(function() {
         actserv = $('.js-actserv'),
         actserv_item = actserv.find('.actserv__item'),
         actserv_head = actserv.find('.actserv__head'),
-        textarea_editor = $('.js-textarea-editor');
+        textarea_editor = $('.js-textarea-editor'),
+        template_work_place = $('.js-work-place-template'),
+        work_place_list = $('.js-work-place-list');
 
     // ie9 placeholder
     if (fields.length) {
@@ -479,5 +481,22 @@ head.ready(function() {
             });
         })
     };
+
+    // work place
+    body.on('click', '.js-work-place-add', function () {
+        var item = template_work_place.html();
+        work_place_list.append(item);
+        var item_new = work_place_list.find('.js-work-place-item');
+        item_new.find('.js-textarea-editor-new').htmlarea({
+            toolbar: ["orderedList", "unorderedList"],
+            css: 'css/editor.css'
+        });
+        select();
+    });
+    body.on('click', '.js-work-place-del', function () {
+        $(this).parents('.js-work-place-item').remove();
+    });
+
+    
 
 });
