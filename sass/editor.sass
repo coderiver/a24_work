@@ -1,0 +1,59 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic)
+
+body
+	margin: 0
+	padding: 10px 
+	border: 1px solid #8dc2d1
+	font-family: "PT Sans", Arial, sans-serif 
+	font-size: 16px
+	&:focus
+		border-color: #3aaaca
+		box-shadow: 0 0 0 1px #3aaaca inset
+		&:before, &:after
+			content: ""
+			position: fixed
+			left: 0
+			right: 0
+			height: 2px
+			background: #3aaaca
+		&:before
+			top: 0
+		&:after
+			bottom: 0 
+	ul
+		padding-left: 10px
+		li
+			position: relative
+			margin-bottom: 5px
+			padding-left: 17px
+			list-style-type: none
+			&:before
+				content: ""
+				position: absolute
+				top: 7px
+				left: 0
+				width: 5px
+				height: 5px
+				background: #8dc2d1
+				border-radius: 50%
+	ol
+		padding-left: 10px
+		counter-reset: numbers
+		li
+			position: relative
+			margin-bottom: 5px
+			padding-left: 20px
+			list-style-type: none
+			&:before
+				counter-increment: numbers
+				content: counter(numbers) ". "
+				position: absolute
+				top: 0
+				left: 0
+				color: #8dc2d1 
+				
+			
+
+
+
+

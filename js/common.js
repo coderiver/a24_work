@@ -28,7 +28,8 @@ head.ready(function() {
         add_socials = $('.js-add-socials'),
         actserv = $('.js-actserv'),
         actserv_item = actserv.find('.actserv__item'),
-        actserv_head = actserv.find('.actserv__head');
+        actserv_head = actserv.find('.actserv__head'),
+        textarea_editor = $('.js-textarea-editor');
 
     // ie9 placeholder
     if (fields.length) {
@@ -308,7 +309,7 @@ head.ready(function() {
             });
         };
     }
-    services();
+    // services();
 
     // remove disable state on button
     remove_disable.keyup(function () {
@@ -452,7 +453,17 @@ head.ready(function() {
 
     // date
     if (input_date.length) {
-        input_date.mask('00.00.00');
+        input_date.mask('00. 00. 0000');
+    };
+
+    // editor
+    if (textarea_editor.length) {
+        textarea_editor.each(function () {
+            $(this).htmlarea({
+                toolbar: ["orderedList", "unorderedList"],
+                css: 'css/editor.css'
+            });
+        })
     };
 
 });
