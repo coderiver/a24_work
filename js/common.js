@@ -11,6 +11,7 @@ head.ready(function() {
         vote_btn = vote_in.find('.btn'),
         sv_toggle = $('.js-el-toggle'),
         sv_title = $('.el__title a'),
+        sv_item = $('.el__item'),
         share = $('.js-share'),
         share_close = $('.js-share-close'),
         slider = $('.js-slider'),
@@ -61,7 +62,13 @@ head.ready(function() {
     });
 
     // sv
-    sv_toggle.on('click', function () {
+    sv_item.on('click', function () {
+        if (!$(this).hasClass('is-open')) {
+            $(this).find('.js-el-toggle').trigger('click');
+        }
+    });
+    sv_toggle.on('click', function (event) {
+        event.stopPropagation();
         var item = $(this).parents('.el__item'),
                 text_show = 'развернуть',
                 text_hide = 'свернуть',
@@ -85,7 +92,8 @@ head.ready(function() {
         el_open.find('.el__toggle button span').text(text_show);
         el_hot_open.addClass('is-hot');
     });
-    sv_title.on('click', function () {
+    sv_title.on('click', function (event) {
+        event.stopPropagation();
         $(this).parents('.el__item').find('.js-el-toggle').trigger('click');
         return false;
     });
