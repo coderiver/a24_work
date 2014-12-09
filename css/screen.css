@@ -671,6 +671,7 @@ a:hover { text-decoration: underline; }
 .el .el__action-link .el__ico-print { background: url('../img/icons-s39a11ca579.png') 0 -2184px no-repeat; width: 17px; height: 14px; }
 .el .el__action-link .el__ico-like { background: url('../img/icons-s39a11ca579.png') 0 -1235px no-repeat; width: 14px; height: 13px; }
 .el .el__map a { display: inline-block; }
+.el .el__map a:hover span { color: #3aaaca; text-decoration: underline; }
 .el .el__map span, .el .el__map i { display: inline-block; vertical-align: middle; }
 .el .el__map span { color: #17748f; }
 .el .el__map i { position: relative; top: -1px; margin-right: 5px; background: url('../img/icons-s39a11ca579.png') 0 -889px no-repeat; width: 13px; height: 16px; }
