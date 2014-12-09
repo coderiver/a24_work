@@ -1134,13 +1134,13 @@ a:hover { text-decoration: underline; }
 .mycomp .mycomp__layout:after { content: " "; display: table; clear: both; }
 .mycomp .mycomp__column { float: right; width: 480px; }
 .mycomp .mycomp__column:first-child { float: left; width: 170px; }
-.mycomp .mycomp__column .file { min-height: 191px; }
+.mycomp .mycomp__column .file { height: 191px; }
 .mycomp .mycomp__photos { margin: 0 -30px -20px 0; font-size: 0; }
 .mycomp .mycomp__photos li { display: inline-block; width: 210px; margin: 0 20px 20px 0; vertical-align: top; }
 .mycomp .edit { float: right; margin-left: 20px; }
 .mycomp .company { display: table; margin-bottom: 20px; }
 .mycomp .h { display: table; padding: 3px 0 2px; }
-.mycomp .file { padding: 20px; min-height: 120px; font-size: 13px; }
+.mycomp .file { padding: 20px; height: 120px; font-size: 13px; }
 
 .actserv .actserv__head { padding: 0 0 20px 20px; font-size: 0; color: #70a8b8; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 .actserv .actserv__title, .actserv .actserv__date { display: inline-block; vertical-align: middle; }
