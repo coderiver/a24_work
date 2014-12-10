@@ -1,0 +1,485 @@
+@import lib/base
+@import reset
+
+$bl: #009bc7
+$bld: #007292
+$bll: #3aaaca
+$blg: #70a8b8
+$btn: #17748F
+$btnh: #005973
+$bg: #e5f9ff
+$ava: #8dc2d1
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic)
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic)
+=f
+	font-family: "PT Sans", Arial, sans-serif
+=fn
+	font-family: "PT Sans Narrow", Arial, sans-serif
+=smooth
+	-webkit-font-smoothing: antialiased
+=title
+	+fn
+	font-size: 20px
+	font-weight: 700
+	color: $bld
+	line-height: 1.1
+	a
+		color: $bld
+
+body
+	min-width: 1020px
+	+f
+	font-size: 13px
+	line-height: 1.3
+	&.no-scroll
+		overflow: hidden
+button, input, textarea
+	+f
+	font-size: 13px
+button
+	background: none
+a
+	text-decoration: none
+	color: $bld
+	&:hover
+		text-decoration: underline
+
+.el_single
+	margin-bottom: 25px
+	.el__title
+		font-size: 25px
+		color: #000
+	.el__in
+		display: block
+	.el__head
+		.ava
+			margin-left: 10px
+	.el__row-left
+		width: 150px
+	.el__action
+		margin: 30px 0 0
+.el_similar
+	margin: -20px 0 40px
+.el_edit
+	.el__row
+		margin-bottom: 20px
+	.el__row_mb10
+		margin: 10px
+	.el__row-left
+		width: 155px
+	.el__row-title
+		margin: 0
+		padding-top: 4px
+.el_lists
+	.el__title
+		a
+			color: $bll 
+			&:hover
+				color: $btn 
+.el__layout
+	+clr
+.el__item
+	position: relative
+	+clr
+	&.is-open
+		background: $bg
+		>.ava, .el__some, .el__status
+			display: none
+		& + .el__item
+			&:before
+				display: none
+	&.is-hot
+		padding: 16px 20px 15px
+		background: $blg
+		border: none
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 20px
+			right: 20px
+			height: 1px
+			background: #8DB9C6
+		&:first-child
+			padding: 15px 20px
+			&:before
+				display: none
+		& + .el__item
+			border: none
+		.el__title, .el__some, .el__salary
+			color: #FFF
+			a
+				color: #FFF
+		.el__toggle
+			button
+				&:hover
+					span
+						border-color: #fff
+				&.is-active
+					i
+						+s(arr-toggle-top)
+				span
+					color: #fff
+				i
+					+s(arr-toggle-down-l)
+		.el__fav
+			button
+				&:hover
+					+s(fav-l)
+		.el__new-window
+			a
+				&:hover
+					+s(new-window-l)
+.el__right
+	float: right
+	width: 130px
+	margin: 3px 0 0 15px
+.el__salary
+	font-weight: 700
+	font-size: 15px
+	color: $bll
+.el__toggle
+	button
+		&:hover
+			span
+				color: $bld
+				text-decoration: underline
+			i
+				+s(arr-toggle-down-h)
+		&.is-active
+			&:hover
+				i
+					+s(arr-toggle-top-h)
+			i
+				+s(arr-toggle-top)
+		span, i
+			display: inline-block
+			vertical-align: middle
+		span
+			color: $blg
+			line-height: 1
+		i
+			margin-left: 3px
+			+s(arr-toggle-down)
+.el__fav
+	float: right
+	margin: 3px 0 0 15px
+	button
+		+s(fav)
+		vertical-align: top
+		&:hover
+			+s(fav-h)
+		&.is-active
+			+s(fav-a)
+.el__new-window
+	float: right
+	margin: 3px 0 0 15px
+	a
+		display: block
+		+s(new-window)
+		&:hover
+			+s(new-window-h)
+		&.is-active
+			+s(new-window-a)
+.el__title
+	margin-bottom: 3px
+	+title
+	a
+		&:hover
+			color: $bll 
+.el__some
+	color: $blg
+	a
+		color: $blg
+		&:hover
+			color: $btn 
+	span
+		padding-right: 30px
+.el__status
+	padding-top: 10px
+	color: $btn
+.el__data
+	display: table
+.el__in
+	display: none
+	padding-top: 20px
+	clear: both
+	+clr
+.el__in_vacancy,
+.el__in_vacancy-no-border
+	padding: 0
+	.el__salary
+		margin-bottom: 15px
+		+fn
+		font-size: 25px
+	.el__date
+		float: none
+		width: auto
+		margin: 0
+.el__head
+	margin-bottom: 25px
+	overflow: hidden
+	.ava
+		width: 130px
+		height: 130px
+		margin-right: 30px
+.el__logo
+	float: left
+	margin-right: 30px
+	font-size: 0
+.el__date
+	float: right
+	width: 130px
+	margin-left: 20px
+	color: $blg
+	li
+		margin-bottom: 3px
+.el__about
+	overflow: hidden
+	p
+		margin-bottom: 3px
+		color: $blg
+	a
+		display: inline-block
+		line-height: 1
+		text-decoration: underline
+		&:hover
+			color: $bll 
+.el__row-title
+	margin-bottom: 15px
+	+fn
+	font-size: 20px
+	font-weight: 700
+	color: $blg
+	line-height: 1.1
+.el__row
+	margin-bottom: 10px
+	+clr
+	& + .el__row-title
+		margin-top: 30px
+.el__row-left
+	float: left
+	width: 140px
+	margin-right: 20px
+	text-align: right
+	color: $blg
+.el__row-left_social
+	padding-top: 5px
+.el__row-right
+	display: table
+	max-width: 500px
+	line-height: 1.4
+.el__row-content
+	max-width: 550px
+.el__row-right, .el__row-content
+	ul
+		margin: 15px 0
+		li
+			position: relative
+			margin-top: 15px
+			padding-left: 15px
+			&:before
+				content: ""
+				position: absolute
+				top: 6px
+				left: 0
+				width: 5px
+				height: 5px
+				background: $blg
+				border-radius: 50%
+		& + p
+			margin-top: 10px
+	>a
+		display: inline-block
+		text-decoration: underline
+		line-height: 1
+		&:hover
+			color: $bll 
+	.social
+		a
+			&:hover
+				background: #FFF
+.el__added
+	margin-top: 25px
+	a
+		display: inline-block
+		border-bottom: 1px solid
+		color: $bld
+		line-height: 1
+.el__contacts
+	+clr
+.el__contacts-right
+	float: right
+	width: 225px
+	margin-left: 40px
+	.btn
+		width: 100%
+.el__a42
+	padding: 10px 20px 0 0
+.el__contacts-left
+	display: table
+	.el__row-title
+		color: $btn
+.el__action
+	position: relative
+	margin: 10px -20px -15px
+	padding: 15px 20px
+	background: $bll
+	&.el__action_invert
+		margin: 0 0 20px
+		background: $bg
+		.el__action-link
+			color: $btn
+			&:hover
+				color: $btnh
+				.el__ico-save
+					+sp(save-bl-h)
+				.el__ico-print
+					+s(print-bl-h)
+				.el__ico-edit
+					+s(edit-h)
+				.el__ico-reload
+					+s(reload-h)
+				.el__ico-hide
+					+s(hide-h)
+				.el__ico-remove
+					+s(remove-bigger-h)
+		.el__ico-save
+			+s(save-bl)
+		.el__ico-print
+			+s(print-bl)
+		.el__ico-edit
+			+s(edit)
+		.el__ico-reload
+			+s(reload)
+		.el__ico-hide
+			+s(hide)
+		.el__ico-remove
+			+s(remove-bigger)
+.el__action-link
+	display: inline-block
+	margin-left: 35px
+	color: #FFF
+	font-size: 0
+	line-height: 1
+	vertical-align: middle
+	&:first-child
+		margin: 0
+	&:hover
+		span
+			text-decoration: underline
+	&.is-active
+		.el__ico-fav
+			+s(fav-a)
+		.el__ico-like
+			+s(like-a)
+	i, span
+		display: inline-block
+		vertical-align: middle
+	i
+		margin-right: 7px
+	span
+		padding-top: 3px
+		font-size: 13px
+	.el__ico-fav
+		top: -3px
+		+s(fav-white)
+	.el__ico-new-window
+		+s(new-window-white)
+	.el__ico-save
+		+s(save-white)
+	.el__ico-print
+		+s(print-white)
+	.el__ico-like
+		+s(like-white)
+.el__map
+	a
+		display: inline-block
+		&:hover
+			span
+				color: $bll
+				text-decoration: underline 
+	span, i
+		display: inline-block
+		vertical-align: middle
+	span
+		color: $btn
+	i
+		position: relative
+		top: -1px
+		margin-right: 5px
+		+s(marker)
+.el__company
+	float: right
+	width: 230px
+	margin: 0 0 20px 40px
+	.el__logo
+		float: none
+		margin: 0 0 10px
+.el__section
+	display: table
+	.el__date
+		float: none
+		width: auto
+		margin: 0 0 20px
+.el__details
+	position: relative
+	float: right
+	width: 230px
+	margin-left: 20px
+	padding: 20px
+	background: $ava
+	color: #fff
+	.edit
+		position: absolute
+		top: 20px
+		right: 20px
+	.ava
+		float: none
+		margin: 0 0 10px
+		border-color: $bg
+	.h
+		color: #fff
+.el__details-about
+	margin-bottom: 15px
+	padding-bottom: 15px
+	border-bottom: 1px solid #a4ceda
+.el__details-contacts
+	li
+		margin-top: 5px
+		&:first-child
+			margin: 0
+	a
+		text-decoration: underline
+		&:hover
+			color: $btnh 
+	.social
+		display: inline-block
+		margin-left: 3px
+		vertical-align: middle
+.el__counter
+	font-size: 15px
+	font-weight: 700
+	color: $btn  
+	
+.ava
+	float: left
+	width: 44px
+	height: 44px
+	margin-right: 20px
+	border: 3px solid $ava
+	font-size: 0
+	text-align: center
+	img
+		max-width: 100%
+		max-height: 100%
+	&.ava_big
+		float: none
+		width: 130px
+		height: 130px
+		margin: 0 0 20px
+	&.ava_auto
+		width: auto
+		max-width: 300px
+		height: auto

@@ -35,7 +35,8 @@ head.ready(function() {
         work_place_list = $('.js-work-place-list'),
         mycomp_toggle = $('.js-mycomp-toggle'),
         contacts = $('.js-contacts'),
-        template_contacts = $('.js-template-contacts');
+        template_contacts = $('.js-template-contacts'),
+        print = $('.js-print');
 
     // ie9 placeholder
     if (fields.length) {
@@ -523,7 +524,19 @@ head.ready(function() {
         $(this).parents('.js-contacts-item').remove();
     });
 
-
+    // print
+    print.on('click', function () {
+        var el = $(this).attr('href');
+        $(el).print({
+            globalStyles: false,
+            mediaPrint: false,
+            stylesheet: 'css/print.css',
+            iframe: true,
+            noPrintSelector: '.js-no-print',
+            append : '<div style="margin-top: 20px; padding: 10px; border-top: 2px solid #000; text-align: center;">«Резюме с сайта rabota.a42.ru»<div>'
+        });
+        return false;
+    });
     
 
 });
