@@ -41,6 +41,8 @@ head.ready(function() {
         study_list = $('.js-study-list'),
         template_lang = $('.js-lang-template'),
         lang_list = $('.js-lang-list'),
+        template_thesis = $('.js-thesis-template'),
+        thesis_list = $('.js-thesis-list'),
         popup_trigger = $('.js-popup-trigger');
 
     // ie9 placeholder
@@ -565,6 +567,15 @@ head.ready(function() {
     });
     body.on('click', '.js-lang-del', function () {
         $(this).parents('.js-lang-item').remove();
+    });
+
+    // thesis
+    body.on('click', '.js-thesis-add', function () {
+        var item = template_thesis.html();
+        thesis_list.append(item);
+    });
+    body.on('click', '.js-thesis-del', function () {
+        $(this).parents('.js-thesis-item').remove();
     });
     
 

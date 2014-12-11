@@ -231,22 +231,57 @@
 							<div class="h h_mb0">Тезисы «Почему мы?»</div>
 						</div>
 						<div class="mycomp__in">
-							<!-- field -->
-							<div class="field">
-								<div class="field__label">Заголовок</div>
-								<div class="field__in">
-									<input class="input" type="text" value="Команда молодых профессионалов">
+							<!-- form -->
+							<div class="form form_m0">
+								<!-- template for thesis -->
+								<div class="js-thesis-template" style="display: none;">
+									<div class="js-thesis-item" style="margin-top: 20px;">
+										<!-- field -->
+										<div class="field">
+											<div class="field__label">Заголовок</div>
+											<div class="field__in">
+												<input class="input" type="text" value="">
+											</div>
+										</div>
+										<!-- field -->
+										<div class="field">
+											<div class="field__label">Текст тезиса</div>
+											<div class="field__in">
+												<textarea class="textarea textarea_h60"></textarea>
+											</div>
+										</div>
+										<div class="form__layout">
+											<div class="form__column">
+												<!-- add -->
+												<button class="add js-thesis-add"><i></i><span>Добавить тезис</span></button>
+											</div>
+											<div class="form__column">
+												<!-- del -->
+												<button class="del js-thesis-del"><i></i><span>Удалить тезис</span></button>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-							<!-- field -->
-							<div class="field">
-								<div class="field__label">HTML-код видео с youtube</div>
-								<div class="field__in">
-									<textarea class="textarea textarea_h60">У каждого сотрудника есть возможность учиться, участвовать в разных направлениях работы, получать новые навыки и добиваться профессиональной самореализации.</textarea>
+								<div class="js-thesis-item">
+									<!-- field -->
+									<div class="field">
+										<div class="field__label">Заголовок</div>
+										<div class="field__in">
+											<input class="input" type="text" value="Команда молодых профессионалов">
+										</div>
+									</div>
+									<!-- field -->
+									<div class="field">
+										<div class="field__label">Текст тезиса</div>
+										<div class="field__in">
+											<textarea class="textarea textarea_h60">У каждого сотрудника есть возможность учиться, участвовать в разных направлениях работы, получать новые навыки и добиваться профессиональной самореализации.</textarea>
+										</div>
+									</div>
+									<!-- add -->
+									<button class="add js-thesis-add"><i></i><span>Добавить тезис</span></button>
 								</div>
+								<div class="js-thesis-list"></div>
 							</div>
-							<!-- add -->
-							<button class="add"><i></i><span>Добавить тезис</span></button>
 						</div>
 					</div>
 					<!-- item -->

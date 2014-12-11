@@ -214,6 +214,7 @@ a:hover { text-decoration: underline; }
 .btn .btn__arr-left { display: inline-block; margin: 0 10px 0 -6px; background: url('../img/icons-sbdd3bd2646.png') 0 -1333px no-repeat; width: 9px; height: 13px; }
 
 .form { position: relative; margin-bottom: 35px; }
+.form.form_m0 { margin: 0; }
 .form .form__layout { *zoom: 1; }
 .form .form__layout:after { content: " "; display: table; clear: both; }
 .form .form__layout_w650 { width: 650px; }
