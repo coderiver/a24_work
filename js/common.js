@@ -169,6 +169,7 @@ head.ready(function() {
             servmore = $('.js-servmore'),
             cart = $('.js-cart'),
             cart_list = cart.find('.js-cart-list'),
+            cart_list_more = cart.find('.js-cart-list-more'),
             cart_total = cart.find('.js-cart-total');
 
         if (serv.length) {
@@ -241,18 +242,18 @@ head.ready(function() {
                     servmore_add(servmore_data_item);
                 }
                 else {
-                    $('.' + servmore_data_item).find('.js-cart-plus').trigger('click');
+                    $('.js-cart-item-' + servmore_data_item).find('.js-cart-plus').trigger('click');
                 }
 
                 // add servmore
                 function servmore_add (el) {
-                    cart_list.append('<div class="cart__item cart__item_more js-cart-item ' + el + ' js-cart-item-more">'+
+                    cart_list_more.append('<div class="cart__item cart__item_more js-cart-item js-cart-item-' + el + ' js-cart-item-more">'+
                         '<div class="cart__row">'+
                             '<div class="cart__price js-cart-price">' + servmore_price + '</div>'+
                             '<div class="cart__title js-cart-title">' + servmore_type + '</div>'+
                         '</div>'+
                         '<div class="cart__row">'+
-                            '<div class="cart__sum"><span class="js-cart-money">' + servmore_price + '</span><button class="cart__del js-cart-del"></button></div>'+
+                            '<div class="cart__sum"><span class="js-cart-money">' + servmore_price + '</span><button class="cart__del js-cart-del" data-button="js-servmore-buy-' + el + '"></button></div>'+
                             '<div class="cart__value">'+
                                 '<button class="cart__minus js-cart-minus"></button>'+
                                 '<div class="cart__value-in"><span class="js-cart-value">1</span> шт.</div>'+
@@ -332,6 +333,10 @@ head.ready(function() {
             // remove
             body.on('click', '.js-cart-del', function () {
                 $(this).parents('.js-cart-item').remove();
+                if ($(this).parents('.js-cart-item').hasClass('js-cart-item-more')) {
+                    var servmore_buy = $(this).data('button');
+                    $('.' + servmore_buy).removeClass('is-added');
+                };
                 // total
                 services_total();
             });
