@@ -6,7 +6,7 @@
 	<link rel="stylesheet" media="all" href="css/screen.css" >
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 </head>
-<body class="no-scroll">
+<body>
 <!-- wrapper -->
 <div class="wrapper">
 	<!-- up -->
@@ -268,7 +268,7 @@
 								</div>
 								<div class="el__contacts js-no-print">
 									<div class="el__contacts-right">
-										<button class="btn">Предложить вакансию</button>
+										<button class="btn js-popup-trigger" data-popup="js-popup-vacancy">Откликнуться</button>
 										<div class="el__a42">Пожалуйста, сообщите соискателю, что нашли резюме на a42.ru <a href="#">:)</a></div>
 									</div>
 									<div class="el__contacts-left">
@@ -388,7 +388,7 @@
 								</div>
 								<div class="el__contacts js-no-print">
 									<div class="el__contacts-right">
-										<button class="btn">Предложить вакансию</button>
+									<button class="btn js-popup-trigger" data-popup="js-popup-vacancy">Откликнуться</button>
 										<div class="el__a42">Пожалуйста, сообщите соискателю, что нашли резюме на a42.ru <a href="#">:)</a></div>
 									</div>
 									<div class="el__contacts-left">
@@ -451,7 +451,7 @@
 	</div>
 </div>
 <!-- popup -->
-<div class="popup popup_is-resume" style="display: block;">
+<div class="popup popup_is-resume js-popup-vacancy">
 	<form class="popup__in js-validate">
 		<button class="popup__close js-popup-close"></button>
 		<div class="popup__title">Откликнуться на вакансию</div>
@@ -482,32 +482,6 @@
 			<button class="btn js-validate-btn is-disable" disabled="">Отправить резюме</button>
 		</div>
 	</form>
-</div>
-<!-- popup -->
-<div class="popup popup_no-resume">
-	<div class="popup__in">
-		<button class="popup__close js-popup-close"></button>
-		<div class="popup__title">Откликнуться на вакансию</div>
-		<!-- field -->
-		<div class="field">
-			<div class="field__label">Чтобы откликнуться на вакансию, создайте резюме</div>
-			<div class="field__in">
-				<div class="btn-center">
-					<button class="btn">Создать резюме</button>
-				</div>
-			</div>
-		</div>
-		<!-- field -->
-		<div class="field">
-			<div class="field__label">Сопроводительное письмо</div>
-			<div class="field__in">
-				<textarea class="textarea js-remove-disable" data-disable="js-btn-2"></textarea>
-			</div>
-		</div>
-		<div class="btn-center">
-			<button class="btn js-btn-2 is-disable" disabled="">Отправить резюме</button>
-		</div>
-	</div>
 </div>
 <!-- load scripts -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>

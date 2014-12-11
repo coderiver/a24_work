@@ -150,102 +150,110 @@
 								<!-- h -->
 								<div class="h">Основное образование</div>
 							</div>
-							<!-- fieldset -->
-							<div class="fieldset">
-								<!-- field -->
-								<div class="field">
-									<div class="field__label">Образование</div>
-									<div class="field__in">
-										<!-- select -->
-										<div class="select js-select">
-											<div class="select__head">не выбрано</div>
-											<ul class="select__list">
-												<li>Шашлычник</li>
-												<li>Наладчик машин и автоматических линий</li>
-												<li>Младший обмотчик</li>
-											</ul>
-											<input class="select__value" type="hidden">
-										</div>
-									</div>
-								</div>
-								<!-- field -->
-								<div class="field">
-									<div class="field__label">Учебное заведение</div>
-									<div class="field__in">
-										<input class="input" type="text" value="">
-									</div>
-								</div>
-								<!-- field -->
-								<div class="field">
-									<div class="field__label">Специальность</div>
-									<div class="field__in">
-										<input class="input" type="text" value="">
-									</div>
-								</div>
-								<!-- field -->
-								<div class="field">
-									<div class="field__label">Период обучения</div>
-									<div class="field__in">
-										<div class="form__layout">
-											<div class="form__column">
-												<!-- period -->
-												<div class="period">
-													<div class="period__text">с</div>
-													<!-- select -->
-													<div class="select js-select">
-														<div class="select__head">сентября</div>
-														<ul class="select__list">
-															<li>сентября</li>
-															<li>сентября</li>
-															<li>сентября</li>
-														</ul>
-														<input class="select__value" type="hidden">
-													</div>
-													<!-- select -->
-													<div class="select js-select">
-														<div class="select__head">1993</div>
-														<ul class="select__list">
-															<li>1993</li>
-															<li>1993</li>
-															<li>1993</li>
-														</ul>
-														<input class="select__value" type="hidden">
-													</div>
-												</div>
-											</div>
-											<div class="form__column">
-												<!-- period -->
-												<div class="period">
-													<div class="period__text">по</div>
-													<!-- select -->
-													<div class="select js-select">
-														<div class="select__head">сентября</div>
-														<ul class="select__list">
-															<li>сентября</li>
-															<li>сентября</li>
-															<li>сентября</li>
-														</ul>
-														<input class="select__value" type="hidden">
-													</div>
-													<!-- select -->
-													<div class="select js-select">
-														<div class="select__head">1993</div>
-														<ul class="select__list">
-															<li>1993</li>
-															<li>1993</li>
-															<li>1993</li>
-														</ul>
-														<input class="select__value" type="hidden">
-													</div>
-												</div>
+							<!-- template for study -->
+							<div class="js-study-template" style="display: none;">
+								<!-- fieldset -->
+								<div class="fieldset js-study-item">
+									<!-- field -->
+									<div class="field">
+										<div class="field__label">Образование</div>
+										<div class="field__in">
+											<!-- select -->
+											<div class="select js-select">
+												<div class="select__head">не выбрано</div>
+												<ul class="select__list">
+													<li>Шашлычник</li>
+													<li>Наладчик машин и автоматических линий</li>
+													<li>Младший обмотчик</li>
+												</ul>
+												<input class="select__value" type="hidden">
 											</div>
 										</div>
 									</div>
-								</div>
-								<!-- field -->
-								<div class="field">
-									<!-- add -->
-									<button class="add"><i></i><span>Добавить учебное заведение</span></button>
+									<!-- field -->
+									<div class="field">
+										<div class="field__label">Учебное заведение</div>
+										<div class="field__in">
+											<input class="input" type="text" value="">
+										</div>
+									</div>
+									<!-- field -->
+									<div class="field">
+										<div class="field__label">Специальность</div>
+										<div class="field__in">
+											<input class="input" type="text" value="">
+										</div>
+									</div>
+									<!-- field -->
+									<div class="field">
+										<div class="field__label">Период обучения</div>
+										<div class="field__in">
+											<div class="form__layout">
+												<div class="form__column">
+													<!-- period -->
+													<div class="period">
+														<div class="period__text">с</div>
+														<!-- select -->
+														<div class="select js-select">
+															<div class="select__head">сентября</div>
+															<ul class="select__list">
+																<li>сентября</li>
+																<li>сентября</li>
+																<li>сентября</li>
+															</ul>
+															<input class="select__value" type="hidden">
+														</div>
+														<!-- select -->
+														<div class="select js-select">
+															<div class="select__head">1993</div>
+															<ul class="select__list">
+																<li>1993</li>
+																<li>1993</li>
+																<li>1993</li>
+															</ul>
+															<input class="select__value" type="hidden">
+														</div>
+													</div>
+												</div>
+												<div class="form__column">
+													<!-- period -->
+													<div class="period">
+														<div class="period__text">по</div>
+														<!-- select -->
+														<div class="select js-select">
+															<div class="select__head">сентября</div>
+															<ul class="select__list">
+																<li>сентября</li>
+																<li>сентября</li>
+																<li>сентября</li>
+															</ul>
+															<input class="select__value" type="hidden">
+														</div>
+														<!-- select -->
+														<div class="select js-select">
+															<div class="select__head">1993</div>
+															<ul class="select__list">
+																<li>1993</li>
+																<li>1993</li>
+																<li>1993</li>
+															</ul>
+															<input class="select__value" type="hidden">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form__layout">
+										<div class="form__column">
+											<!-- add -->
+											<button class="add js-study-add"><i></i><span>Добавить учебное заведение</span></button>
+										</div>
+										<div class="form__column">
+											<!-- del -->
+											<button class="del js-study-del"><i></i><span>Удалить учебное заведение</span></button>
+										</div>
+									</div>
 								</div>
 							</div>
 							<!-- fieldset -->
@@ -331,12 +339,14 @@
 										</div>
 									</div>
 								</div>
-								<!-- field -->
-								<div class="field">
-									<!-- add -->
-									<button class="add"><i></i><span>Добавить учебное заведение</span></button>
+								<div class="form__layout">
+									<div class="form__column">
+										<!-- add -->
+										<button class="add js-study-add"><i></i><span>Добавить учебное заведение</span></button>
+									</div>
 								</div>
 							</div>
+							<div class="js-study-list"></div>
 							<div class="form__footer">
 								<button class="btn"><i class="btn__arr-left"></i>Назад</button>
 								<button class="btn">Сохранить и перейти к следующему шагу</button>

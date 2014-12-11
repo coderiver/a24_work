@@ -36,7 +36,12 @@ head.ready(function() {
         mycomp_toggle = $('.js-mycomp-toggle'),
         contacts = $('.js-contacts'),
         template_contacts = $('.js-template-contacts'),
-        print = $('.js-print');
+        print = $('.js-print'),
+        template_study = $('.js-study-template'),
+        study_list = $('.js-study-list'),
+        template_lang = $('.js-lang-template'),
+        lang_list = $('.js-lang-list'),
+        popup_trigger = $('.js-popup-trigger');
 
     // ie9 placeholder
     if (fields.length) {
@@ -109,39 +114,36 @@ head.ready(function() {
     });
 
     //select
-    function select() {
-        var el = $('.js-select');
-        el.find('.select__head').on('click', function(){
-            if ($(this).parent().hasClass('is-open')) {
-                $(this).parent().removeClass('is-open');
-                $(this).next().hide();
-            }
-            else {
-                el.removeClass('is-open');
-                el.find('.select__list').hide();
-                $(this).parent().addClass('is-open');
-                $(this).next().show();
-            }
-        });
-        el.find('.select__list li').bind('click', function(){
-            var val = $(this).text();
-            $(this).parent().prev().html(val);
-            $(this).parent().next().val(val);
-            $(this).parent().hide();
-            $(this).parent().parent().removeClass('is-open');
-            $(this).parent().parent().addClass('is-chousen');
-            // validate
-            validate_select(el);
-        });
-        el.click(function(event){
-            event.stopPropagation();
-        });
-        $(document).click(function() {
-            el.find('.select__list').hide();
-            el.removeClass('is-open');
-        });
-    }
-    select();
+    var el = $('.js-select');
+    body.on('click', '.select__head', function(){
+        if ($(this).parent().hasClass('is-open')) {
+            $(this).parent().removeClass('is-open');
+            $(this).next().hide();
+        }
+        else {
+            $('.js-select').removeClass('is-open');
+            $('.js-select').find('.select__list').hide();
+            $(this).parent().addClass('is-open');
+            $(this).next().show();
+        }
+    });
+    body.on('click', '.select__list li', function(){
+        var val = $(this).text();
+        $(this).parent().prev().html(val);
+        $(this).parent().next().val(val);
+        $(this).parent().hide();
+        $(this).parent().parent().removeClass('is-open');
+        $(this).parent().parent().addClass('is-chousen');
+        // validate
+        validate_select(el);
+    });
+    body.on('click', '.js-select', function(event){
+        event.stopPropagation();
+    });
+    $(document).click(function() {
+        $('.js-select').find('.select__list').hide();
+        $('.js-select').removeClass('is-open');
+    });
 
     // slider
     if (slider.length) {
@@ -373,6 +375,11 @@ head.ready(function() {
     });
 
     // popup
+    popup_trigger.on('click', function () {
+        var popup = $(this).data('popup');
+        $('.' + popup).fadeIn();
+        body.addClass('no-scroll');
+    });
     popup_close.on('click', function () {
         popup.fadeOut();
         body.removeClass('no-scroll');
@@ -508,7 +515,6 @@ head.ready(function() {
             toolbar: ["orderedList", "unorderedList"],
             css: 'css/editor.css'
         });
-        select();
     });
     body.on('click', '.js-work-place-del', function () {
         $(this).parents('.js-work-place-item').remove();
@@ -541,6 +547,24 @@ head.ready(function() {
             append : '<div style="margin-top: 20px; padding: 10px; border-top: 2px solid #000; text-align: center;">«Резюме с сайта rabota.a42.ru»<div>'
         });
         return false;
+    });
+
+    // study
+    body.on('click', '.js-study-add', function () {
+        var item = template_study.html();
+        study_list.append(item);
+    });
+    body.on('click', '.js-study-del', function () {
+        $(this).parents('.js-study-item').remove();
+    });
+
+    // language
+    body.on('click', '.js-lang-add', function () {
+        var item = template_lang.html();
+        lang_list.append(item);
+    });
+    body.on('click', '.js-lang-del', function () {
+        $(this).parents('.js-lang-item').remove();
     });
     
 

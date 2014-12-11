@@ -697,8 +697,6 @@ a:hover { text-decoration: underline; }
 .el .el__details-contacts .social { display: inline-block; margin-left: 3px; vertical-align: middle; }
 .el .el__counter { font-size: 15px; font-weight: 700; color: #17748f; }
 
-.ff .el .el__row-right { width: 100%; }
-
 .pager { padding-top: 30px; border-top: 2px solid #009bc7; text-align: center; font-size: 0; }
 .pager a { display: inline-block; height: 30px; padding: 0 10px; margin: 0 2px; border-radius: 4px; vertical-align: top; font-size: 13px; color: #17748f; line-height: 30px; text-decoration: none; }
 .pager a:hover { background: #e5f9ff; font-weight: 700; }
@@ -754,7 +752,7 @@ a:hover { text-decoration: underline; }
 .company .company__logo { float: left; margin-right: 30px; font-size: 0; }
 .company .company__logo_border { float: none; margin: 0 0 20px; }
 .company .company__logo_border img { border: 3px solid #8dc2d1; }
-.company .company__data { display: table; }
+.company .company__data { float: left; width: 300px; }
 .company .company__data p { margin-bottom: 3px; color: #70a8b8; }
 .company .company__data a { display: inline-block; line-height: 1; text-decoration: underline; }
 .company .company__data a.is-pseudo { border-bottom: 1px dashed; text-decoration: none; }
