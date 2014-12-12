@@ -289,8 +289,8 @@ a:hover { text-decoration: underline; }
 .field .field__link:hover { color: #3aaaca; }
 
 .jHtmlArea { position: relative; }
-.jHtmlArea, .jHtmlArea iframe { width: 480px !important; height: 150px !important; }
-.jHtmlArea iframe { position: relative; z-index: 2; }
+.jHtmlArea, .jHtmlArea iframe { width: 480px !important; }
+.jHtmlArea iframe { display: block; position: relative; z-index: 2; }
 .jHtmlArea .ToolBar { position: absolute; top: -39px; right: 0; width: auto !important; font-size: 0; text-align: center; }
 .jHtmlArea .ToolBar li { display: inline-block; margin-left: -1px; border: 1px solid #8dc2d1; vertical-align: top; }
 .jHtmlArea .ToolBar a { display: block; width: 38px; height: 38px; background: #d0ebf4; font-size: 0; vertical-align: top; }

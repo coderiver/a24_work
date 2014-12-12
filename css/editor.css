@@ -1,5 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic);
-body { margin: 0; padding: 10px; border: 1px solid #8dc2d1; font-family: "PT Sans", Arial, sans-serif; font-size: 16px; }
+html { height: 100%; }
+
+body { min-height: 100%; margin: 0; padding: 10px; border: 1px solid #8dc2d1; font-family: "PT Sans", Arial, sans-serif; font-size: 16px; }
 body:before, body:after { content: ""; position: fixed; left: 0; right: 0; height: 2px; background: #3aaaca; }
 body:before { top: -1px; }
 body:after { bottom: -1px; }
