@@ -1,15 +1,6 @@
 @import lib/base
 @import reset
 
-$bl: #009bc7
-$bld: #007292
-$bll: #3aaaca
-$blg: #70a8b8
-$btn: #17748F
-$btnh: #005973
-$bg: #e5f9ff
-$ava: #8dc2d1
-
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic)
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic)
 =f
@@ -22,10 +13,10 @@ $ava: #8dc2d1
 	+fn
 	font-size: 20px
 	font-weight: 700
-	color: $bld
+	color: #000
 	line-height: 1.1
 	a
-		color: $bld
+		color: #000
 
 body
 	min-width: 1020px
@@ -41,9 +32,9 @@ button
 	background: none
 a
 	text-decoration: none
-	color: $bld
-	&:hover
-		text-decoration: underline
+	color: #000
+ul
+	list-style: disc inside
 
 .el_single
 	margin-bottom: 25px
@@ -74,16 +65,14 @@ a
 .el_lists
 	.el__title
 		a
-			color: $bll 
-			&:hover
-				color: $btn 
+			color: #000 
 .el__layout
 	+clr
 .el__item
 	position: relative
 	+clr
 	&.is-open
-		background: $bg
+		background: #000
 		>.ava, .el__some, .el__status
 			display: none
 		& + .el__item
@@ -91,7 +80,7 @@ a
 				display: none
 	&.is-hot
 		padding: 16px 20px 15px
-		background: $blg
+		background: #000
 		border: none
 		&:before
 			content: ""
@@ -108,19 +97,19 @@ a
 		& + .el__item
 			border: none
 		.el__title, .el__some, .el__salary
-			color: #FFF
+			color: #000
 			a
-				color: #FFF
+				color: #000
 		.el__toggle
 			button
 				&:hover
 					span
-						border-color: #fff
+						border-color: #000
 				&.is-active
 					i
 						+s(arr-toggle-top)
 				span
-					color: #fff
+					color: #000
 				i
 					+s(arr-toggle-down-l)
 		.el__fav
@@ -138,67 +127,19 @@ a
 .el__salary
 	font-weight: 700
 	font-size: 15px
-	color: $bll
-.el__toggle
-	button
-		&:hover
-			span
-				color: $bld
-				text-decoration: underline
-			i
-				+s(arr-toggle-down-h)
-		&.is-active
-			&:hover
-				i
-					+s(arr-toggle-top-h)
-			i
-				+s(arr-toggle-top)
-		span, i
-			display: inline-block
-			vertical-align: middle
-		span
-			color: $blg
-			line-height: 1
-		i
-			margin-left: 3px
-			+s(arr-toggle-down)
-.el__fav
-	float: right
-	margin: 3px 0 0 15px
-	button
-		+s(fav)
-		vertical-align: top
-		&:hover
-			+s(fav-h)
-		&.is-active
-			+s(fav-a)
-.el__new-window
-	float: right
-	margin: 3px 0 0 15px
-	a
-		display: block
-		+s(new-window)
-		&:hover
-			+s(new-window-h)
-		&.is-active
-			+s(new-window-a)
+	color: #000
 .el__title
 	margin-bottom: 3px
 	+title
-	a
-		&:hover
-			color: $bll 
 .el__some
-	color: $blg
+	color: #000
 	a
-		color: $blg
-		&:hover
-			color: $btn 
+		color: #000
 	span
 		padding-right: 30px
 .el__status
 	padding-top: 10px
-	color: $btn
+	color: #000
 .el__data
 	display: table
 .el__in
@@ -232,26 +173,24 @@ a
 	float: right
 	width: 130px
 	margin-left: 20px
-	color: $blg
+	color: #000
+	list-style: none
 	li
 		margin-bottom: 3px
 .el__about
 	overflow: hidden
 	p
 		margin-bottom: 3px
-		color: $blg
+		color: #000
 	a
 		display: inline-block
 		line-height: 1
-		text-decoration: underline
-		&:hover
-			color: $bll 
 .el__row-title
 	margin-bottom: 15px
 	+fn
 	font-size: 20px
 	font-weight: 700
-	color: $blg
+	color: #000
 	line-height: 1.1
 .el__row
 	margin-bottom: 10px
@@ -263,7 +202,7 @@ a
 	width: 140px
 	margin-right: 20px
 	text-align: right
-	color: $blg
+	color: #000
 .el__row-left_social
 	padding-top: 5px
 .el__row-right
@@ -278,36 +217,24 @@ a
 		li
 			position: relative
 			margin-top: 15px
-			padding-left: 15px
-			&:before
-				content: ""
-				position: absolute
-				top: 6px
-				left: 0
-				width: 5px
-				height: 5px
-				background: $blg
-				border-radius: 50%
 		& + p
 			margin-top: 10px
 	>a
 		display: inline-block
-		text-decoration: underline
 		line-height: 1
-		&:hover
-			color: $bll 
 	.social
 		a
 			&:hover
-				background: #FFF
+				background: #000
 .el__added
 	margin-top: 25px
 	a
 		display: inline-block
 		border-bottom: 1px solid
-		color: $bld
+		color: #000
 		line-height: 1
 .el__contacts
+	margin-top: 30px
 	+clr
 .el__contacts-right
 	float: right
@@ -320,96 +247,7 @@ a
 .el__contacts-left
 	display: table
 	.el__row-title
-		color: $btn
-.el__action
-	position: relative
-	margin: 10px -20px -15px
-	padding: 15px 20px
-	background: $bll
-	&.el__action_invert
-		margin: 0 0 20px
-		background: $bg
-		.el__action-link
-			color: $btn
-			&:hover
-				color: $btnh
-				.el__ico-save
-					+sp(save-bl-h)
-				.el__ico-print
-					+s(print-bl-h)
-				.el__ico-edit
-					+s(edit-h)
-				.el__ico-reload
-					+s(reload-h)
-				.el__ico-hide
-					+s(hide-h)
-				.el__ico-remove
-					+s(remove-bigger-h)
-		.el__ico-save
-			+s(save-bl)
-		.el__ico-print
-			+s(print-bl)
-		.el__ico-edit
-			+s(edit)
-		.el__ico-reload
-			+s(reload)
-		.el__ico-hide
-			+s(hide)
-		.el__ico-remove
-			+s(remove-bigger)
-.el__action-link
-	display: inline-block
-	margin-left: 35px
-	color: #FFF
-	font-size: 0
-	line-height: 1
-	vertical-align: middle
-	&:first-child
-		margin: 0
-	&:hover
-		span
-			text-decoration: underline
-	&.is-active
-		.el__ico-fav
-			+s(fav-a)
-		.el__ico-like
-			+s(like-a)
-	i, span
-		display: inline-block
-		vertical-align: middle
-	i
-		margin-right: 7px
-	span
-		padding-top: 3px
-		font-size: 13px
-	.el__ico-fav
-		top: -3px
-		+s(fav-white)
-	.el__ico-new-window
-		+s(new-window-white)
-	.el__ico-save
-		+s(save-white)
-	.el__ico-print
-		+s(print-white)
-	.el__ico-like
-		+s(like-white)
-.el__map
-	a
-		display: inline-block
-		&:hover
-			span
-				color: $bll
-				text-decoration: underline 
-	span, i
-		display: inline-block
-		vertical-align: middle
-	span
-		color: $btn
-	i
-		position: relative
-		top: -1px
-		margin-right: 5px
-		+s(marker)
+		color: #000
 .el__company
 	float: right
 	width: 230px
@@ -429,8 +267,8 @@ a
 	width: 230px
 	margin-left: 20px
 	padding: 20px
-	background: $ava
-	color: #fff
+	background: #000
+	color: #000
 	.edit
 		position: absolute
 		top: 20px
@@ -438,22 +276,19 @@ a
 	.ava
 		float: none
 		margin: 0 0 10px
-		border-color: $bg
+		border-color: #000
 	.h
-		color: #fff
+		color: #000
 .el__details-about
 	margin-bottom: 15px
 	padding-bottom: 15px
-	border-bottom: 1px solid #a4ceda
+	border-bottom: 1px solid #000
 .el__details-contacts
+	list-style: none
 	li
 		margin-top: 5px
 		&:first-child
 			margin: 0
-	a
-		text-decoration: underline
-		&:hover
-			color: $btnh 
 	.social
 		display: inline-block
 		margin-left: 3px
@@ -461,19 +296,20 @@ a
 .el__counter
 	font-size: 15px
 	font-weight: 700
-	color: $btn  
+	color: #000  
 	
 .ava
 	float: left
 	width: 44px
 	height: 44px
 	margin-right: 20px
-	border: 3px solid $ava
+	border: 3px solid #000
 	font-size: 0
 	text-align: center
 	img
 		max-width: 100%
 		max-height: 100%
+		+gray
 	&.ava_big
 		float: none
 		width: 130px

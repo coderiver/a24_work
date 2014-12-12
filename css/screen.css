@@ -201,13 +201,13 @@ a:hover { text-decoration: underline; }
 .btn-file:hover .btn { background: #005973; }
 .btn-file input { position: absolute; top: 0; right: 0; font-size: 40px; opacity: 0; cursor: pointer; }
 
-.btn { height: 40px; padding: 0 20px; background: #17748f; border-radius: 4px; font-family: "PT Sans Narrow", Arial, sans-serif; font-size: 20px; color: white; }
+.btn { height: 40px; padding: 0 20px 2px; background: #17748f; border-radius: 4px; font-family: "PT Sans Narrow", Arial, sans-serif; font-size: 20px; color: white; }
 .btn:hover { background: #005973; }
 .btn.is-disable { background: #17748f; opacity: 0.3; cursor: default; }
 .btn.btn_wide { width: 100%; }
-.btn.btn_load { padding: 0 30px; }
+.btn.btn_load { padding: 0 30px 2px; }
 .btn.btn_white { background: white; color: #17748f; }
-.btn.btn_small { height: 30px; padding: 0 10px; font-family: "PT Sans", Arial, sans-serif; font-size: 13px; }
+.btn.btn_small { height: 30px; padding: 0 10px 1px; font-family: "PT Sans", Arial, sans-serif; font-size: 13px; }
 .btn.btn_fs16 { font-size: 16px; }
 .btn.btn_send { display: block; margin-top: 30px; }
 .btn .btn__plus { position: relative; top: 1px; display: inline-block; margin-right: 6px; background: url('../img/icons-sbdd3bd2646.png') 0 -2186px no-repeat; width: 15px; height: 15px; }
@@ -636,6 +636,7 @@ a:hover { text-decoration: underline; }
 .el .el__row-right ul + p, .el .el__row-content ul + p { margin-top: 10px; }
 .el .el__row-right > a, .el .el__row-content > a { display: inline-block; text-decoration: underline; line-height: 1; }
 .el .el__row-right > a:hover, .el .el__row-content > a:hover { color: #3aaaca; }
+.el .el__row-right .social, .el .el__row-content .social { white-space: nowrap; }
 .el .el__row-right .social a:hover, .el .el__row-content .social a:hover { background: white; }
 .el .el__added { margin-top: 25px; }
 .el .el__added a { display: inline-block; border-bottom: 1px solid; color: #007292; line-height: 1; }
@@ -915,7 +916,7 @@ a:hover { text-decoration: underline; }
 .serv .serv__content { margin-bottom: 20px; color: #17748f; line-height: 1.4; }
 .serv .serv__content ul { margin-bottom: 10px; font-size: 0; }
 .serv .serv__content ul li { display: inline-block; position: relative; width: 50%; padding: 0 20px; font-weight: 700; font-size: 13px; vertical-align: top; }
-.serv .serv__content ul li:before { content: ""; position: absolute; top: 5px; left: 0; width: 5px; height: 5px; background: #70a8b8; border-radius: 50%; }
+.serv .serv__content ul li:before { content: ""; position: absolute; top: 6px; left: 0; width: 5px; height: 5px; background: #70a8b8; border-radius: 50%; }
 .serv .serv__footer { *zoom: 1; }
 .serv .serv__footer:after { content: " "; display: table; clear: both; }
 .serv .serv__footer .btn { float: right; width: 93px; padding: 0; }
