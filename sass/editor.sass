@@ -6,20 +6,24 @@ body
 	border: 1px solid #8dc2d1
 	font-family: "PT Sans", Arial, sans-serif 
 	font-size: 16px
+	&:before, &:after
+		content: ""
+		position: fixed
+		left: 0
+		right: 0
+		height: 2px
+		background: #3aaaca
+	&:before
+		top: -1px
+	&:after
+		bottom: -1px 
 	&:focus
 		border-color: #3aaaca
 		box-shadow: 0 0 0 1px #3aaaca inset
-		&:before, &:after
-			content: ""
-			position: fixed
-			left: 0
-			right: 0
-			height: 2px
-			background: #3aaaca
 		&:before
-			top: 0
+			top: 0px
 		&:after
-			bottom: 0 
+			bottom: 0px 
 	ul
 		padding-left: 10px
 		li

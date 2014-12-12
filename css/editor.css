@@ -1,9 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic);
 body { margin: 0; padding: 10px; border: 1px solid #8dc2d1; font-family: "PT Sans", Arial, sans-serif; font-size: 16px; }
+body:before, body:after { content: ""; position: fixed; left: 0; right: 0; height: 2px; background: #3aaaca; }
+body:before { top: -1px; }
+body:after { bottom: -1px; }
 body:focus { border-color: #3aaaca; box-shadow: 0 0 0 1px #3aaaca inset; }
-body:focus:before, body:focus:after { content: ""; position: fixed; left: 0; right: 0; height: 2px; background: #3aaaca; }
-body:focus:before { top: 0; }
-body:focus:after { bottom: 0; }
+body:focus:before { top: 0px; }
+body:focus:after { bottom: 0px; }
 body ul { padding-left: 10px; }
 body ul li { position: relative; margin-bottom: 5px; padding-left: 17px; list-style-type: none; }
 body ul li:before { content: ""; position: absolute; top: 7px; left: 0; width: 5px; height: 5px; background: #8dc2d1; border-radius: 50%; }

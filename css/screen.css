@@ -645,7 +645,7 @@ a:hover { text-decoration: underline; }
 .el .el__contacts-right { float: right; width: 225px; margin-left: 40px; }
 .el .el__contacts-right .btn { width: 100%; }
 .el .el__a42 { padding: 10px 20px 0 0; }
-.el .el__contacts-left { display: table; }
+.el .el__contacts-left { overflow: hidden; }
 .el .el__contacts-left .el__row-title { color: #17748f; }
 .el .el__action { position: relative; margin: 10px -20px -15px; padding: 15px 20px; background: #3aaaca; }
 .el .el__action.el__action_invert { margin: 0 0 20px; background: #e5f9ff; }
