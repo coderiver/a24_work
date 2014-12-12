@@ -531,8 +531,9 @@ a
 				&:before
 					left: auto
 					right: -42px
-					border-width: 55px 0 0 40px
+					border-width: 56px 0 0 40px
 					border-color: transparent transparent transparent $bll
+					box-shadow: -1px 1px 0 0 $bll
 				& + .search__type
 					width: 50%
 					padding-left: 45px
@@ -540,13 +541,15 @@ a
 			margin: 0
 			padding: 12px 18px 9px
 			background: $bll
+			box-shadow: 0 1px 0 0 $bll
 			z-index: 4
 			&:before
 				content: ""
 				position: absolute
 				top: -2px
 				left: -42px
-				+arr(40,55,$bll,br)
+				+arr(40,56,$bll,br)
+				box-shadow: 1px 1px 0 0 $bll
 			.search__title
 				margin-top: -2px
 				font-size: 30px
