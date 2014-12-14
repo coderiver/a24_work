@@ -1,6 +1,7 @@
 head.ready(function() {
 
     var body = $('body'),
+        html = $('html'),
         search = $('.js-search'),
         search_type = search.find('.search__type'),
         search_title = search.find('.search__title'),
@@ -381,10 +382,12 @@ head.ready(function() {
         var popup = $(this).data('popup');
         $('.' + popup).fadeIn();
         body.addClass('no-scroll');
+        html.addClass('no-scroll');
     });
     popup_close.on('click', function () {
         popup.fadeOut();
         body.removeClass('no-scroll');
+        html.removeClass('no-scroll');
         return false;
     });
 
