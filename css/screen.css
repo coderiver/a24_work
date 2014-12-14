@@ -31,6 +31,8 @@ body.no-scroll { overflow: hidden; }
 
 button, input, textarea { font-family: "PT Sans", Arial, sans-serif; font-size: 13px; }
 
+textarea { -webkit-appearance: none; }
+
 button { background: none; }
 
 a { text-decoration: none; color: #007292; }
@@ -733,7 +735,7 @@ a:hover { text-decoration: underline; }
 .share .share__close { position: absolute; top: 20px; right: 20px; background: url('../img/icons-sbdd3bd2646.png') 0 -1795px no-repeat; width: 17px; height: 17px; }
 .share .share__close:hover { background-position: 0 -1483px; }
 
-.popup { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(23, 116, 143, 0.1); text-align: center; font-size: 0; overflow: auto; z-index: 999; }
+.popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(23, 116, 143, 0.1); text-align: center; font-size: 0; z-index: 999; }
 .popup:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
 .popup.popup_remove .popup__in { width: 300px; }
 .popup .popup__in { position: relative; display: inline-block; width: 520px; padding: 18px 20px 25px; background: white; box-shadow: 0 0 27px rgba(23, 116, 143, 0.35); vertical-align: middle; font-size: 13px; text-align: left; }
