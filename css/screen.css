@@ -26,7 +26,7 @@ html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: 
 * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-html.no-scroll { overflow: hidden; }
+html.touch.no-scroll { overflow: hidden; }
 
 body { min-width: 1020px; font-family: "PT Sans", Arial, sans-serif; font-size: 13px; line-height: 1.3; }
 body.no-scroll { overflow: hidden; }
@@ -1042,7 +1042,7 @@ a:hover { text-decoration: underline; }
 .tabs .tabs__head:after { content: " "; display: table; clear: both; }
 .tabs .tabs__list { float: left; }
 .tabs .tabs__list li { float: left; }
-.tabs .tabs__list li.is-active a { background: #3aaaca; color: white; font-weight: 700; text-decoration: none; cursor: default; }
+.tabs .tabs__list li.is-active a { background: #3aaaca; box-shadow: 0 1px 0 0 #3aaaca; color: white; font-weight: 700; text-decoration: none; cursor: default; }
 .tabs .tabs__list a { display: block; padding: 12px 20px; color: #3aaaca; }
 .tabs .tabs__list a:hover { background: #e5f9ff; color: #17748f; }
 

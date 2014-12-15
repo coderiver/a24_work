@@ -230,16 +230,16 @@
 							<div class="field field_range">
 								<div class="field__in">
 									<div class="field__text">от</div>
-									<input class="input input_w85" type="text">
+									<input class="input input_w85 js-input-1" type="text">
 									<div class="field__text">до</div>
-									<input class="input input_w85" type="text">
+									<input class="input input_w85 js-input-1" type="text">
 									<div class="field__text">руб./месяц</div>
 								</div>
 							</div>
 						</div>
 						<div class="form__column">
 							<!-- checkbox -->
-							<label class="checkbox checkbox_mt8"><input type="checkbox" checked=""><span class="checkbox__in">по договоренности</span></label>
+							<label class="checkbox checkbox_mt8"><input class="js-disable-input" type="checkbox" data-input="js-input-1"><span class="checkbox__in">по договоренности</span></label>
 						</div>
 					</div>
 					<!-- field -->
@@ -347,7 +347,7 @@
 </div>
 <!-- popup -->
 <div class="popup popup_is-resume">
-	<div class="popup__in">
+	<div class="popup__in js-popup-in">
 		<button class="popup__close js-popup-close"></button>
 		<div class="popup__title">Откликнуться на вакансию</div>
 		<!-- field -->
@@ -380,7 +380,7 @@
 </div>
 <!-- popup -->
 <div class="popup popup_no-resume">
-	<div class="popup__in">
+	<div class="popup__in js-popup-in">
 		<button class="popup__close js-popup-close"></button>
 		<div class="popup__title">Откликнуться на вакансию</div>
 		<!-- field -->
