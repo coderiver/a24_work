@@ -44,7 +44,8 @@ head.ready(function() {
         lang_list = $('.js-lang-list'),
         template_thesis = $('.js-thesis-template'),
         thesis_list = $('.js-thesis-list'),
-        popup_trigger = $('.js-popup-trigger');
+        popup_trigger = $('.js-popup-trigger'),
+        serv_acco = $('.js-serv-acco');
 
     // ie9 placeholder
     if (fields.length) {
@@ -348,6 +349,20 @@ head.ready(function() {
         };
     }
     services();
+
+    // services accordeon
+    serv_acco.on('click', function () {
+        if ($(this).hasClass('is-active')) {
+            $(this).removeClass('is-active');
+            $(this).next().hide();
+        }
+        else {
+            serv_acco.removeClass('is-active');
+            serv_acco.next().hide();
+            $(this).addClass('is-active');
+            $(this).next().show();
+        }
+    });
 
     // remove disable state on button
     remove_disable.keyup(function () {

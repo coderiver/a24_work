@@ -1393,6 +1393,8 @@
 		+s(icq)
 
 .serv
+	&.serv_mb40
+		margin-bottom: 40px
 	.serv__item
 		margin-bottom: 20px
 	.serv__title
@@ -1480,6 +1482,58 @@
 				color: $blg
 				font-weight: 700
 				cursor: pointer
+	.serv__info
+		padding: 10px 0
+	.serv__article
+		line-height: 1.6
+		p
+			margin-bottom: 10px 
+		blockquote
+			margin-bottom: 20px
+			color: $blg
+		ul
+			font-size: 0
+			li
+				display: inline-block
+				position: relative
+				width: 50%
+				padding: 0 20px
+				margin-bottom: 10px
+				font-size: 13px
+				vertical-align: top
+				&:before
+					content: ""
+					position: absolute
+					top: 6px
+					left: 0
+					width: 5px
+					height: 5px
+					background: $blg
+					border-radius: 50%
+		img
+			margin-bottom: 20px
+			vertical-align: top
+	.serv__acco-item
+		margin-bottom: 20px
+	.serv__acco-title
+		&.is-active
+			span
+				color: $blg 
+		span
+			display: inline-block
+			border-bottom: 2px dashed
+			+fn
+			font-size: 20px
+			font-weight: 700
+			color: #007292
+			line-height: 1
+			cursor: pointer
+			&:hover
+				color: $blg
+	.serv__acco-in
+		display: none
+		padding-top: 10px
+		color: $btnh 
 
 .cart
 	display: none

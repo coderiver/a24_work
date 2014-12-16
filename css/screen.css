@@ -911,6 +911,7 @@ a:hover { text-decoration: underline; }
 
 .link-icq i { background: url('../img/icons-sbdd3bd2646.png') 0 -559px no-repeat; width: 17px; height: 18px; }
 
+.serv.serv_mb40 { margin-bottom: 40px; }
 .serv .serv__item { margin-bottom: 20px; }
 .serv .serv__title a { display: block; padding: 10px 20px; background: #70a8b8; line-height: 1.1; }
 .serv .serv__title a:hover { background: #17748f; }
@@ -931,6 +932,19 @@ a:hover { text-decoration: underline; }
 .serv .serv__months label > input { position: absolute; top: 0; left: 0; visibility: hidden; }
 .serv .serv__months label > input:checked + span { background: #17748f; color: white; }
 .serv .serv__months label > span { display: block; line-height: 40px; background: white; text-align: center; color: #70a8b8; font-weight: 700; cursor: pointer; }
+.serv .serv__info { padding: 10px 0; }
+.serv .serv__article { line-height: 1.6; }
+.serv .serv__article p { margin-bottom: 10px; }
+.serv .serv__article blockquote { margin-bottom: 20px; color: #70a8b8; }
+.serv .serv__article ul { font-size: 0; }
+.serv .serv__article ul li { display: inline-block; position: relative; width: 50%; padding: 0 20px; margin-bottom: 10px; font-size: 13px; vertical-align: top; }
+.serv .serv__article ul li:before { content: ""; position: absolute; top: 6px; left: 0; width: 5px; height: 5px; background: #70a8b8; border-radius: 50%; }
+.serv .serv__article img { margin-bottom: 20px; vertical-align: top; }
+.serv .serv__acco-item { margin-bottom: 20px; }
+.serv .serv__acco-title.is-active span { color: #70a8b8; }
+.serv .serv__acco-title span { display: inline-block; border-bottom: 2px dashed; font-family: "PT Sans Narrow", Arial, sans-serif; font-size: 20px; font-weight: 700; color: #007292; line-height: 1; cursor: pointer; }
+.serv .serv__acco-title span:hover { color: #70a8b8; }
+.serv .serv__acco-in { display: none; padding-top: 10px; color: #005973; }
 
 .cart { display: none; }
 .cart .cart__in { padding: 15px 20px 30px; background: #17748f; }
