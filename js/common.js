@@ -391,13 +391,13 @@ head.ready(function() {
         html.removeClass('no-scroll');
         return false;
     });
-    $(document).on('click', function () {
+    $(document).on('click touchstart', function () {
         popup.fadeOut();
         body.removeClass('no-scroll');
         html.removeClass('no-scroll');
         //return false;
     });
-    body.on('click', '.js-popup-in', function (event) {
+    body.on('click touchstart', '.js-popup-in', function (event) {
         event.stopPropagation();
     });
 

@@ -293,7 +293,7 @@ a:hover { text-decoration: underline; }
 .field .field__link:hover { color: #3aaaca; }
 
 .jHtmlArea { position: relative; }
-.jHtmlArea, .jHtmlArea iframe { width: 480px !important; }
+.jHtmlArea, .jHtmlArea iframe { width: 480px !important; height: 100px !important; }
 .jHtmlArea iframe { display: block; position: relative; z-index: 2; }
 .jHtmlArea .ToolBar { position: absolute; top: -39px; right: 0; width: auto !important; font-size: 0; text-align: center; }
 .jHtmlArea .ToolBar li { display: inline-block; margin-left: -1px; border: 1px solid #8dc2d1; vertical-align: top; }
@@ -510,7 +510,7 @@ a:hover { text-decoration: underline; }
 .newwork .newwork__title, .newwork .btn { display: inline-block; width: 230px; vertical-align: middle; }
 .newwork .newwork__title { margin-right: 20px; font-size: 13px; color: #007292; }
 .newwork .btn { padding-top: 1px; }
-.newwork .btn i { position: relative; top: -2px; display: inline-block; margin-left: 10px; background: url('../img/icons-sbdd3bd2646.png') 0 -165px no-repeat; width: 64px; height: 32px; vertical-align: middle; }
+.newwork .btn i { display: inline-block; margin-left: 10px; background: url('../img/icons-sbdd3bd2646.png') 0 -165px no-repeat; width: 64px; height: 32px; vertical-align: middle; }
 
 .vote .vote__title { margin-bottom: 20px; font-family: "PT Sans Narrow", Arial, sans-serif; font-size: 20px; font-weight: 700; color: #007292; line-height: 1.1; }
 .vote .vote__title a { color: #007292; }
