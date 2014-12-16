@@ -397,20 +397,16 @@ head.ready(function() {
         var popup = $(this).data('popup');
         $('.' + popup).fadeIn();
         body.addClass('no-scroll');
-        html.addClass('no-scroll');
         event.stopPropagation();
     });
     popup_close.on('click', function () {
         popup.fadeOut();
         body.removeClass('no-scroll');
-        html.removeClass('no-scroll');
         return false;
     });
     $(document).on('click touchstart', function () {
         popup.fadeOut();
         body.removeClass('no-scroll');
-        html.removeClass('no-scroll');
-        //return false;
     });
     body.on('click touchstart', '.js-popup-in', function (event) {
         event.stopPropagation();
