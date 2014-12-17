@@ -396,21 +396,44 @@ head.ready(function() {
     popup_trigger.on('click', function (event) {
         var popup = $(this).data('popup');
         $('.' + popup).fadeIn();
-        body.addClass('no-scroll');
+        // toggle
+        toggleBodyScroll();
         event.stopPropagation();
     });
     popup_close.on('click', function () {
+        // toggle
+        toggleBodyScroll();
         popup.fadeOut();
-        body.removeClass('no-scroll');
         return false;
     });
     $(document).on('click touchstart', function () {
-        popup.fadeOut();
-        body.removeClass('no-scroll');
+        if (body.hasClass('no-scroll')) {
+            // toggle
+            toggleBodyScroll();
+            popup.fadeOut();
+        };
     });
     body.on('click touchstart', '.js-popup-in', function (event) {
         event.stopPropagation();
     });
+
+    var toggleBodyScroll = function() {
+        body.toggleClass('no-scroll');
+        if (body.hasClass('no-scroll')) {
+            var posTop = -$(document).scrollTop();
+            body.css({
+                position : 'fixed',
+                top      : posTop
+            });
+        } else {
+            var scrollPos = -body.offset().top;
+            body.css({
+                position : '',
+                top      : ''
+            });
+            $(window).scrollTop(scrollPos);
+        }
+    };
 
     // input decimal
     input_decimal.keyup(function () {
