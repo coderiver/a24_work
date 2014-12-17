@@ -485,7 +485,7 @@ a:hover { text-decoration: underline; }
 
 .articles { margin-bottom: 30px; }
 .articles .articles__slider { margin-bottom: 25px; }
-.articles .articles__item { display: block; overflow: hidden; }
+.articles .articles__item { display: block; width: 100%; overflow: hidden; }
 .articles .articles__item:hover { text-decoration: none; }
 .articles .articles__item:hover .articles__title { color: #005973; text-decoration: underline; }
 .articles .articles__pic { float: left; width: 230px; margin-right: 20px; font-size: 0; }

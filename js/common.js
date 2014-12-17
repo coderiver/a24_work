@@ -160,6 +160,8 @@ head.ready(function() {
                     slider_caption = slider_this.find('.slider__caption');
             slider_list.cycle({
                 timeout: 0,
+                swipe: true,
+                swipeFx: 'scrollHorz',
                 fx: 'scrollHorz',
                 prev: slider_prev,
                 next: slider_next,
