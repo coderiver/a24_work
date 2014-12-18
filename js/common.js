@@ -452,6 +452,7 @@ head.ready(function() {
         popup.fadeOut();
         return false;
     });
+    // 
     $(document).on('click touchstart', function () {
         if (body.hasClass('no-scroll')) {
             // toggle
@@ -459,7 +460,7 @@ head.ready(function() {
             popup.fadeOut();
         };
     });
-    body.on('click touchstart', '.js-popup-in', function (event) {
+    body.on('click', '.js-popup-in', function (event) {
         event.stopPropagation();
     });
 
