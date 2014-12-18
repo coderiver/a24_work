@@ -806,7 +806,7 @@ a
 	&.is-disable
 		.field__text
 			color: #d4d4d4
-		.input
+		.input, .textarea
 			border-color: #d4d4d4
 			color: #d4d4d4
 	&.field_social
@@ -1056,8 +1056,10 @@ a
 		top: 38px
 		left: 0
 		right: 0
+		max-height: 300px
 		border: 2px solid $bll
 		background: #FFF
+		overflow: auto
 		li
 			padding: 10px
 			&:hover
@@ -1065,16 +1067,30 @@ a
 				color: $btn
 
 .period
+	&.is-disable
+		.period__text
+			color: #d4d4d4
+		.select__head
+			border-color: #d4d4d4
+			color: #d4d4d4
+			&:after
+				+sp(select-arr-d)
 	.period__text, .select
 		display: inline-block
 		vertical-align: middle
 	.period__text
-		padding-top: 1px
+		line-height: 40px
 		color: $btn
 	.select
+		width: 106px
 		margin-left: 5px
+		&.is-chousen
+			.select__head
+				font-size: 13px
+		& + .select
+			width: 83px
 	.select__head
-		padding: 0 41px 0 5px
+		padding: 0 36px 0 10px
 
 .action-wrap
 	font-size: 0

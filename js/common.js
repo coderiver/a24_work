@@ -18,10 +18,8 @@ head.ready(function() {
         slider = $('.js-slider'),
         fields = $('input, textarea'),
         remove_disable = $('.js-remove-disable'),
-        disable_input = $('.js-disable-input'),
         popup_close = $('.js-popup-close'),
         popup = $('.popup'),
-        input_decimal = $('.js-input-decimal'),
         input_file = $('.js-input-file'),
         input_date = $('.js-input-date'),
         rating = $('.js-rating'),
@@ -51,6 +49,13 @@ head.ready(function() {
     if (fields.length) {
         fields.placeholder();
     };
+
+    // enter only decimal
+    body.on('keyup', '.js-input-decimal-only', function () { 
+      var value = $(this).val(),
+          value = value.replace(/[^0-9]/g,'');
+      $(this).val(value);
+    });
 
     // search
     search_title.on('click', function () {
@@ -119,7 +124,7 @@ head.ready(function() {
 
     //select
     var el = $('.js-select');
-    body.on('click', '.select__head', function(){
+    body.on('click', '.js-select .select__head', function(){
         if ($(this).parent().hasClass('is-open')) {
             $(this).parent().removeClass('is-open');
             $(this).next().hide();
@@ -382,7 +387,7 @@ head.ready(function() {
     });
 
     // disable input
-    disable_input.change(function () {
+    body.on('change', '.js-disable-input', function () {
         var input = $(this).data('input'),
             el = $('.' + input);
         el.parents('.field').toggleClass('is-disable');
@@ -392,6 +397,14 @@ head.ready(function() {
         else {
             el.attr('disabled', 'disabled');
         }
+    });
+
+    // disable period
+    body.on('change', '.js-disable-period', function () {
+        var period = $(this).data('period'),
+            el = $(this).parent().prev();
+        el.toggleClass('is-disable');
+        el.find('.select').toggleClass('js-select');
     });
 
     // popup
@@ -438,7 +451,7 @@ head.ready(function() {
     };
 
     // input decimal
-    input_decimal.keyup(function () {
+    body.on('keyup', '.js-input-decimal', function () {
         var value = $(this).val(),
             value = value.replace(/\s+/g, ''),
             value = value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
