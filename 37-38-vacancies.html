@@ -181,7 +181,7 @@
 										<!-- action-wrap -->
 										<div class="action-wrap">
 											<button class="action action_download"></button>
-											<button class="action action_comm"></button>
+											<button class="action action_comm js-popup-trigger" data-popup="js-popup-respond"></button>
 											<button class="action action_remove js-popup-trigger" data-popup="js-popup-remove"></button>
 										</div>
 										<div class="respond__price">25 000 – 30 000 р.</div>
@@ -210,7 +210,7 @@
 										<!-- action-wrap -->
 										<div class="action-wrap">
 											<button class="action action_download"></button>
-											<button class="action action_comm"></button>
+											<button class="action action_comm js-popup-trigger" data-popup="js-popup-respond"></button>
 											<button class="action action_remove js-popup-trigger" data-popup="js-popup-remove"></button>
 										</div>
 										<div class="respond__price">Договорная</div>
@@ -274,6 +274,7 @@
 			<button class="btn js-validate-btn is-disable" disabled="">Ответить</button>
 		</div>
 	</form>
+	<div class="popup__overlay js-popup-close"></div>
 </div>
 <!-- popup -->
 <div class="popup popup_remove js-popup-remove">
@@ -287,6 +288,7 @@
 			<button class="btn">Не удалять</button>
 		</div>
 	</div>
+	<div class="popup__overlay js-popup-close"></div>
 </div>
 <!-- load scripts -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>

@@ -135,16 +135,16 @@
 				<div class="h h_big">Создать резюме</div>
 				<!-- steps -->
 				<div class="steps">
-					<div class="steps__nav">
-						<a class="js-step-nav" href="#"><span>1</span><span>Личные данные</span></a>
-						<a class="js-step-nav" href="#"><span>2</span><span>Пожелания к&nbsp;работе</span></a>
-						<a class="js-step-nav" href="#"><span>3</span><span>Опыт работы</span></a>
-						<a class="js-step-nav" href="#"><span>4</span><span>Образование</span></a>
-						<a class="js-step-nav" href="#"><span>5</span><span>Навыки и&nbsp;интересы</span></a>
-						<a class="js-step-nav" href="#"><span>6</span><span>Предпросмотр и&nbsp;настройки</span></a>
-					</div>
+					<ul class="steps__nav">
+						<li class="js-step-nav is-active"><span>1</span><span>Личные данные</span></li>
+						<li class="js-step-nav"><span>2</span><span>Пожелания к&nbsp;работе</span></li>
+						<li class="js-step-nav"><span>3</span><span>Опыт работы</span></li>
+						<li class="js-step-nav"><span>4</span><span>Образование</span></li>
+						<li class="js-step-nav"><span>5</span><span>Навыки и&nbsp;интересы</span></li>
+						<li class="js-step-nav"><span>6</span><span>Предпросмотр и&nbsp;настройки</span></li>
+					</ul>
 					<div class="steps__items">
-						<div class="step__item js-step-item">
+						<div class="step__item js-step-item" style="display: block;">
 							<!-- form -->
 							<div class="form">
 								<!-- h -->
@@ -274,7 +274,7 @@
 										<div class="field">
 											<div class="field__label">ICQ</div>
 											<div class="field__in">
-												<input class="input input_w315" type="text" value="">
+												<input class="input input_w315 js-input-decimal-only" type="text" value="">
 											</div>
 										</div>
 										<!-- h -->
@@ -399,7 +399,7 @@
 										<!-- field -->
 										<div class="field">
 											<!-- select -->
-											<div class="select js-select">
+											<div class="select js-select js-select-profession">
 												<div class="select__head">Добыча сырья</div>
 												<ul class="select__list">
 													<li>Шашлычник</li>
@@ -409,63 +409,65 @@
 												<input class="select__value" type="hidden">
 											</div>
 										</div>
-										<!-- field -->
-										<div class="field">
-											<div class="field__label">Выбор сферы деятельности</div>
-										</div>
-										<div class="form__layout form__layout_border">
-											<div class="form__column form__column_w260">
-												<!-- field -->
-												<div class="field">
-													<!-- checkbox -->
-													<label class="checkbox"><input type="checkbox" checked=""><span class="checkbox__in">Маркшейдер</span></label>
-												</div>
-												<!-- field -->
-												<div class="field">
-													<!-- checkbox -->
-													<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Газ</span></label>
-												</div>
-												<!-- field -->
-												<div class="field">
-													<!-- checkbox -->
-													<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Нефть</span></label>
-												</div>
-												<!-- field -->
-												<div class="field">
-													<!-- checkbox -->
-													<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Управление предприятием</span></label>
-												</div>
-												<!-- field -->
-												<div class="field">
-													<!-- checkbox -->
-													<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Геологоразведка</span></label>
-												</div>
+										<div class="form__profession js-form-profession">
+											<!-- field -->
+											<div class="field">
+												<div class="field__label">Выбор сферы деятельности</div>
 											</div>
-											<div class="form__column form__column_w180">
-												<!-- field -->
-												<div class="field">
-													<!-- checkbox -->
-													<label class="checkbox"><input type="checkbox" checked=""><span class="checkbox__in">Руда</span></label>
+											<div class="form__layout form__layout_border">
+												<div class="form__column form__column_w260">
+													<!-- field -->
+													<div class="field">
+														<!-- checkbox -->
+														<label class="checkbox"><input type="checkbox" checked=""><span class="checkbox__in">Маркшейдер</span></label>
+													</div>
+													<!-- field -->
+													<div class="field">
+														<!-- checkbox -->
+														<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Газ</span></label>
+													</div>
+													<!-- field -->
+													<div class="field">
+														<!-- checkbox -->
+														<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Нефть</span></label>
+													</div>
+													<!-- field -->
+													<div class="field">
+														<!-- checkbox -->
+														<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Управление предприятием</span></label>
+													</div>
+													<!-- field -->
+													<div class="field">
+														<!-- checkbox -->
+														<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Геологоразведка</span></label>
+													</div>
 												</div>
-												<!-- field -->
-												<div class="field">
-													<!-- checkbox -->
-													<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Начальный уровень</span></label>
-												</div>
-												<!-- field -->
-												<div class="field">
-													<!-- checkbox -->
-													<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Бурение</span></label>
-												</div>
-												<!-- field -->
-												<div class="field">
-													<!-- checkbox -->
-													<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Инженер</span></label>
-												</div>
-												<!-- field -->
-												<div class="field">
-													<!-- checkbox -->
-													<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Уголь</span></label>
+												<div class="form__column form__column_w180">
+													<!-- field -->
+													<div class="field">
+														<!-- checkbox -->
+														<label class="checkbox"><input type="checkbox" checked=""><span class="checkbox__in">Руда</span></label>
+													</div>
+													<!-- field -->
+													<div class="field">
+														<!-- checkbox -->
+														<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Начальный уровень</span></label>
+													</div>
+													<!-- field -->
+													<div class="field">
+														<!-- checkbox -->
+														<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Бурение</span></label>
+													</div>
+													<!-- field -->
+													<div class="field">
+														<!-- checkbox -->
+														<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Инженер</span></label>
+													</div>
+													<!-- field -->
+													<div class="field">
+														<!-- checkbox -->
+														<label class="checkbox"><input type="checkbox"><span class="checkbox__in">Уголь</span></label>
+													</div>
 												</div>
 											</div>
 										</div>

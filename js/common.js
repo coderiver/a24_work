@@ -55,20 +55,16 @@ head.ready(function() {
     };
 
     // steps
-    step_nav.on('click', function () {
-        var index = $(this).index();
-        step_nav.removeClass('is-active');
-        $(this).addClass('is-active');
-        step_item.hide();
-        step_item.eq(index).show();
-        return false;
-    }).first().trigger('click');
     step_prev.on('click', function () {
-        $('.js-step-nav.is-active').prev().trigger('click');
+        $('.js-step-nav.is-active').removeClass('is-active').prev().addClass('is-active');
+        $(this).parents('.js-step-item').hide();
+        $(this).parents('.js-step-item').prev().show();
         return false;
     });
     step_next.on('click', function () {
-        $('.js-step-nav.is-active').next().trigger('click');
+        $('.js-step-nav.is-active').removeClass('is-active').next().addClass('is-active');
+        $(this).parents('.js-step-item').hide();
+        $(this).parents('.js-step-item').next().show();
         return false;
     });
 
@@ -175,6 +171,9 @@ head.ready(function() {
         $(this).parent().parent().addClass('is-chousen');
         // validate
         validate_select(el);
+        if ($(this).parent().parent().hasClass('js-select-profession')) {
+            $('.js-form-profession').show();
+        };
     });
     body.on('click', '.js-select', function(event){
         event.stopPropagation();
@@ -446,22 +445,11 @@ head.ready(function() {
         event.stopPropagation();
         return false;
     });
-    popup_close.on('click', function () {
+    popup_close.on('click touchstart', function () {
         // toggle
         toggleBodyScroll();
         popup.fadeOut();
         return false;
-    });
-    // 
-    $(document).on('click touchstart', function () {
-        if (body.hasClass('no-scroll')) {
-            // toggle
-            toggleBodyScroll();
-            popup.fadeOut();
-        };
-    });
-    body.on('click', '.js-popup-in', function (event) {
-        event.stopPropagation();
     });
 
     var toggleBodyScroll = function() {
@@ -544,7 +532,6 @@ head.ready(function() {
             el_btn.removeClass('is-disable');
             el_btn.removeAttr('disabled');
         }
-        
     }
     function validate_textarea () {
         var el_textarea = $('.js-validate-textarea'),
