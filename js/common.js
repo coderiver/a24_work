@@ -69,6 +69,15 @@ head.ready(function() {
             scrollTop: 0
         }, 500);
     });
+    $(window).scroll(function () {
+        var scroll_top = $(window).scrollTop();
+        if (scroll_top > 300) {
+            up.show();
+        }
+        else {
+            up.hide();
+        }
+    });
 
     // vote
     vote_btn.on('click', function () {

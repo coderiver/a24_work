@@ -78,7 +78,7 @@ a:hover { text-decoration: underline; }
 
 .rub.rub.rub { padding-left: 0; vertical-align: baseline; }
 
-.up { position: fixed; right: 0; bottom: 0; height: 40px; padding: 0 25px; background: #009bc7; font-size: 0; z-index: 99; }
+.up { display: none; position: fixed; right: 0; bottom: 0; height: 40px; padding: 0 25px; background: #009bc7; font-size: 0; z-index: 99; }
 .up:hover { background: #005973; }
 .up i, .up span { display: inline-block; }
 .up i { margin-right: 10px; background: url('../img/icons-se8740e63b8.png') 0 -1738px no-repeat; width: 13px; height: 14px; }
