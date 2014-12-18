@@ -1103,13 +1103,14 @@ a:hover { text-decoration: underline; }
 .respond .respond__comm { background: url('../img/icons-se8740e63b8.png') 0 -1327px no-repeat; width: 15px; height: 15px; }
 .respond .respond__remove { background: url('../img/icons-se8740e63b8.png') 0 -1529px no-repeat; width: 12px; height: 12px; }
 
-.steps { margin-bottom: 30px; font-size: 0; text-align: center; }
-.steps li { position: relative; display: inline-block; width: 16.666%; padding: 0 10px; vertical-align: top; }
-.steps li:before { content: ""; position: absolute; top: 13px; left: 0; right: 0; height: 2px; background: #3aaaca; }
-.steps li.is-active span { font-weight: bold; color: #3aaaca; }
-.steps li.is-active span:first-child { background: #3aaaca; color: white; }
-.steps li span { position: relative; display: block; text-align: center; font-size: 13px; color: #70a8b8; z-index: 2; }
-.steps li span:first-child { display: inline-block; width: 28px; height: 28px; margin-bottom: 15px; border: 2px solid #3aaaca; border-radius: 50%; background: white; font-size: 15px; color: #3aaaca; line-height: 24px; vertical-align: top; }
+.steps .steps__nav { margin-bottom: 30px; font-size: 0; text-align: center; }
+.steps .steps__nav a { position: relative; display: inline-block; width: 16.666%; padding: 0 10px; vertical-align: top; text-decoration: none; }
+.steps .steps__nav a:before { content: ""; position: absolute; top: 13px; left: 0; right: 0; height: 2px; background: #3aaaca; }
+.steps .steps__nav a.is-active span { font-weight: bold; color: #3aaaca; }
+.steps .steps__nav a.is-active span:first-child { background: #3aaaca; color: white; }
+.steps .steps__nav a span { position: relative; display: block; text-align: center; font-size: 13px; color: #70a8b8; z-index: 2; }
+.steps .steps__nav a span:first-child { display: inline-block; width: 28px; height: 28px; margin-bottom: 15px; border: 2px solid #3aaaca; border-radius: 50%; background: white; font-size: 15px; color: #3aaaca; line-height: 24px; vertical-align: top; }
+.steps .step__item { display: none; }
 
 .mylists { position: relative; padding: 20px; margin-bottom: 30px; background: #70a8b8; }
 .mylists:before { content: ""; position: absolute; top: 8px; left: -20px; width: 0px; height: 0px; border-style: solid; border-width: 20px 20px 20px 0; border-color: transparent #70a8b8 transparent transparent; }

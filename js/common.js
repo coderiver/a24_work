@@ -43,12 +43,40 @@ head.ready(function() {
         template_thesis = $('.js-thesis-template'),
         thesis_list = $('.js-thesis-list'),
         popup_trigger = $('.js-popup-trigger'),
-        serv_acco = $('.js-serv-acco');
+        serv_acco = $('.js-serv-acco'),
+        step_nav = $('.js-step-nav'),
+        step_item = $('.js-step-item'),
+        step_prev = $('.js-step-prev'),
+        step_next = $('.js-step-next');
 
     // ie9 placeholder
     if (fields.length) {
         fields.placeholder();
     };
+
+    // steps
+    step_nav.on('click', function () {
+        var index = $(this).index();
+        step_nav.removeClass('is-active');
+        $(this).addClass('is-active');
+        step_item.hide();
+        step_item.eq(index).show();
+        return false;
+    }).first().trigger('click');
+    step_prev.on('click', function () {
+        $('.js-step-nav.is-active').prev().trigger('click');
+        return false;
+    });
+    step_next.on('click', function () {
+        $('.js-step-nav.is-active').next().trigger('click');
+        return false;
+    });
+
+    // input toggle
+    body.on('change', '.js-input-toggle', function () {
+        var el = $(this).data('toggle');
+        $('.' + el).toggle();
+    });
 
     // enter only decimal
     body.on('keyup', '.js-input-decimal-only', function () { 
@@ -95,9 +123,7 @@ head.ready(function() {
         event.stopPropagation();
         var item = $(this).parents('.el__item'),
                 text_show = 'развернуть',
-                text_hide = 'свернуть',
-                el_open = $('.el__item.is-open'),
-                el_hot_open = $('.el__item_hot.is-open');
+                text_hide = 'свернуть';
         if (item.hasClass('el__item_hot')) {
             item.toggleClass('is-hot');
         }
@@ -105,16 +131,11 @@ head.ready(function() {
             $(this).find('span').text(text_show);
         }
         else {
-            $(this).addClass('is-active');
-            item.addClass('is-open');
-            item.find('.el__in').show();
             $(this).find('span').text(text_hide);
         }
-        el_open.removeClass('is-open');
-        el_open.find('.el__in').hide();
-        el_open.find('.el__toggle button').removeClass('is-active');
-        el_open.find('.el__toggle button span').text(text_show);
-        el_hot_open.addClass('is-hot');
+        $(this).toggleClass('is-active');
+        item.toggleClass('is-open');
+        item.find('.el__in').toggle();
     });
     sv_title.on('click', function (event) {
         event.stopPropagation();
@@ -423,6 +444,7 @@ head.ready(function() {
         // toggle
         toggleBodyScroll();
         event.stopPropagation();
+        return false;
     });
     popup_close.on('click', function () {
         // toggle

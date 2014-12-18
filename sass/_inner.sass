@@ -1953,49 +1953,53 @@
 		+s(remove-bigger)
 
 .steps
-	margin-bottom: 30px
-	font-size: 0
-	text-align: center
-	li
-		position: relative
-		display: inline-block
-		width: 16.666%
-		padding: 0 10px
-		vertical-align: top
-		&:before
-			content: ""
-			position: absolute
-			top: 13px
-			left: 0
-			right: 0
-			height: 2px
-			background: $bll
-		&.is-active
-			span
-				font-weight: bold
-				color: $bll
-				&:first-child
-					background: $bll
-					color: #FFF
-		span
+	.steps__nav
+		margin-bottom: 30px
+		font-size: 0
+		text-align: center
+		a
 			position: relative
-			display: block
-			text-align: center
-			font-size: 13px
-			color: $blg
-			z-index: 2
-			&:first-child
-				display: inline-block
-				width: 28px
-				height: 28px
-				margin-bottom: 15px
-				border: 2px solid $bll
-				border-radius: 50%
-				background: #FFF
-				font-size: 15px
-				color: $bll
-				line-height: 24px
-				vertical-align: top
+			display: inline-block
+			width: 16.666%
+			padding: 0 10px
+			vertical-align: top
+			text-decoration: none
+			&:before
+				content: ""
+				position: absolute
+				top: 13px
+				left: 0
+				right: 0
+				height: 2px
+				background: $bll
+			&.is-active
+				span
+					font-weight: bold
+					color: $bll
+					&:first-child
+						background: $bll
+						color: #FFF
+			span
+				position: relative
+				display: block
+				text-align: center
+				font-size: 13px
+				color: $blg
+				z-index: 2
+				&:first-child
+					display: inline-block
+					width: 28px
+					height: 28px
+					margin-bottom: 15px
+					border: 2px solid $bll
+					border-radius: 50%
+					background: #FFF
+					font-size: 15px
+					color: $bll
+					line-height: 24px
+					vertical-align: top
+	.step__item
+		display: none
 
 .mylists
 	position: relative
