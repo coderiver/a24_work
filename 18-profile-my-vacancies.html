@@ -150,7 +150,7 @@
 								<div class="responce__item">
 									<div class="responce__head">
 										<!-- action -->
-										<button class="action action_remove"></button>
+										<button class="action action_remove js-popup-trigger" data-popup="js-popup-remove"></button>
 										<div class="responce__salary">35 000 р.</div>
 										<!-- h -->
 										<div class="h h_mb5"><a href="#">Бухгалтер</a></div>
@@ -166,7 +166,7 @@
 								<div class="responce__item">
 									<div class="responce__head">
 										<!-- action -->
-										<button class="action action_remove"></button>
+										<button class="action action_remove js-popup-trigger" data-popup="js-popup-remove"></button>
 										<div class="responce__salary">35 000 р.</div>
 										<!-- h -->
 										<div class="h h_mb5"><a href="#">Бухгалтер</a></div>
@@ -188,63 +188,18 @@
 	</div>
 </div>
 <!-- popup -->
-<div class="popup popup_is-resume">
+<div class="popup popup_remove js-popup-remove">
 	<div class="popup__in js-popup-in">
 		<button class="popup__close js-popup-close"></button>
-		<div class="popup__title">Откликнуться на вакансию</div>
-		<!-- field -->
-		<div class="field">
-			<div class="field__label">Ваше резюме</div>
-			<div class="field__in">
-				<!-- select -->
-				<div class="select js-select">
-					<div class="select__head">Продавец-консультант</div>
-					<ul class="select__list">
-						<li>Шашлычник</li>
-						<li>Наладчик машин и автоматических линий</li>
-						<li>Младший обмотчик</li>
-					</ul>
-					<input class="select__value" type="hidden">
-				</div>
-			</div>
-		</div>
-		<!-- field -->
-		<div class="field">
-			<div class="field__label">Сопроводительное письмо</div>
-			<div class="field__in">
-				<textarea class="textarea"></textarea>
-			</div>
-		</div>
-		<div class="btn-center">
-			<button class="btn is-disable" disabled="">Отправить резюме</button>
+		<div class="popup__title">Удаление</div>
+		<div class="popup__content">Вы действительно хотите удалить вакансию?</div>
+		<!-- btn-justify -->
+		<div class="btn-justify">
+			<button class="btn">Удалить</button>
+			<button class="btn">Не удалять</button>
 		</div>
 	</div>
-</div>
-<!-- popup -->
-<div class="popup popup_no-resume">
-	<div class="popup__in js-popup-in">
-		<button class="popup__close js-popup-close"></button>
-		<div class="popup__title">Откликнуться на вакансию</div>
-		<!-- field -->
-		<div class="field">
-			<div class="field__label">Чтобы откликнуться на вакансию, создайте резюме</div>
-			<div class="field__in">
-				<div class="btn-center">
-					<button class="btn">Создать резюме</button>
-				</div>
-			</div>
-		</div>
-		<!-- field -->
-		<div class="field">
-			<div class="field__label">Сопроводительное письмо</div>
-			<div class="field__in">
-				<textarea class="textarea"></textarea>
-			</div>
-		</div>
-		<div class="btn-center">
-			<button class="btn is-disable" disabled="">Отправить резюме</button>
-		</div>
-	</div>
+	<div class="popup__overlay js-popup-close"></div>
 </div>
 <!-- load scripts -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>

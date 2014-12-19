@@ -911,10 +911,6 @@
 													</div>
 												</div>
 											</div>
-											<div class="form__footer">
-												<button class="btn js-step-prev"><i class="btn__arr-left"></i>Назад</button>
-												<button class="btn js-step-next">Сохранить и перейти к следующему шагу</button>
-											</div>
 										</div>
 									</div>
 									<div class="form__summary">
@@ -922,6 +918,13 @@
 											<span class="form__summary-label">Общий указанный опыт работы</span>
 											<strong class="form__summary-text">7 лет 9 месяцев</strong>
 										</div>
+									</div>
+								</div>
+								<!-- center -->
+								<div class="l-center">
+									<div class="form__footer">
+										<button class="btn js-step-prev"><i class="btn__arr-left"></i>Назад</button>
+										<button class="btn js-step-next">Сохранить и перейти к следующему шагу</button>
 									</div>
 								</div>
 							</div>
@@ -1456,19 +1459,18 @@
 								</div>
 								<div class="form__footer form__footer_mt10">
 									<button class="btn js-step-prev"><i class="btn__arr-left"></i>Назад</button>
-									<button class="btn js-step-next">Сохранить и опубликовать резюме</button>
+									<a class="btn" href="#">Сохранить и опубликовать резюме</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	</div>
 </div>
 <!-- popup -->
-<div class="popup popup_is-resume">
+<div class="popup popup_is-resume js-popup-vacancy">
 	<div class="popup__in js-popup-in">
 		<button class="popup__close js-popup-close"></button>
 		<div class="popup__title">Откликнуться на вакансию</div>
@@ -1499,9 +1501,10 @@
 			<button class="btn is-disable" disabled="">Отправить резюме</button>
 		</div>
 	</div>
+	<div class="popup__overlay js-popup-close"></div>
 </div>
 <!-- popup -->
-<div class="popup popup_no-resume">
+<div class="popup popup_no-resume js-popup-sv">
 	<div class="popup__in js-popup-in">
 		<button class="popup__close js-popup-close"></button>
 		<div class="popup__title">Откликнуться на вакансию</div>
@@ -1525,6 +1528,7 @@
 			<button class="btn is-disable" disabled="">Отправить резюме</button>
 		</div>
 	</div>
+	<div class="popup__overlay js-popup-close"></div>
 </div>
 <!-- load scripts -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>

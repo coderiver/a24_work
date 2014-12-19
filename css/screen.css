@@ -203,6 +203,8 @@ a:hover { text-decoration: underline; }
 .btn-file:hover .btn { background: #005973; }
 .btn-file input { position: absolute; top: 0; right: 0; font-size: 40px; opacity: 0; cursor: pointer; }
 
+a.btn { display: inline-block; text-decoration: none; color: white; line-height: 38px; vertical-align: top; }
+
 .btn { height: 40px; padding: 0 20px 2px; background: #17748f; border-radius: 4px; font-family: "PT Sans Narrow", Arial, sans-serif; font-size: 20px; color: white; }
 .btn:hover { background: #005973; }
 .btn.is-disable { background: #17748f; opacity: 0.3; cursor: default; }
@@ -235,6 +237,8 @@ a:hover { text-decoration: underline; }
 .form .form__footer .btn { margin-right: 20px; }
 .form .form__footer a { text-decoration: underline; }
 .form .form__footer a:hover { color: #3aaaca; }
+.form .form__footer .btn { text-decoration: none; }
+.form .form__footer .btn:hover { color: white; }
 .form .form__footer_mt10 { margin-top: 10px; }
 .form .form__experiance { position: absolute; top: 77px; right: 0; bottom: 118px; width: 230px; border-left: 2px solid #8dc2d1; }
 .form .form__experiance:before { content: ""; display: inline-block; height: 100%; vertical-align: bottom; }
@@ -695,7 +699,7 @@ a:hover { text-decoration: underline; }
 .el .el__section .el__date { float: none; width: auto; margin: 0 0 20px; }
 .el .el__section .el__info { padding-bottom: 10px; border: none; }
 .el .el__details { position: relative; float: right; width: 230px; margin-left: 20px; padding: 20px; background: #8dc2d1; color: white; }
-.el .el__details:before { content: ""; position: absolute; top: 20px; left: -20px; width: 0px; height: 0px; border-style: solid; border-width: 20px 20px 20px 0; border-color: transparent #8dc2d1 transparent transparent; }
+.el .el__details:before { content: ""; position: absolute; top: 20px; left: -19px; width: 0px; height: 0px; border-style: solid; border-width: 20px 20px 20px 0; border-color: transparent #8dc2d1 transparent transparent; }
 .el .el__details .edit { position: absolute; top: 20px; right: 20px; }
 .el .el__details .ava { float: none; margin: 0 0 10px; border-color: #e5f9ff; }
 .el .el__details .h { color: white; }

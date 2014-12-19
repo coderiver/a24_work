@@ -199,7 +199,7 @@
 					<div class="form__footer">
 						<button class="btn">Сохранить изменения</button>
 						<button class="btn">Отмена</button>
-						<a href="#">Удалить аккаунт</a>
+						<a class="js-popup-trigger" data-popup="js-popup-remove" href="#">Удалить аккаунт</a>
 					</div>
 				</div>
 			</div>
@@ -207,7 +207,7 @@
 	</div>
 </div>
 <!-- popup -->
-<div class="popup popup_is-resume">
+<div class="popup popup_is-resume js-popup-vacancy">
 	<div class="popup__in js-popup-in">
 		<button class="popup__close js-popup-close"></button>
 		<div class="popup__title">Откликнуться на вакансию</div>
@@ -238,9 +238,10 @@
 			<button class="btn is-disable" disabled="">Отправить резюме</button>
 		</div>
 	</div>
+	<div class="popup__overlay js-popup-close"></div>
 </div>
 <!-- popup -->
-<div class="popup popup_no-resume">
+<div class="popup popup_no-resume js-popup-sv">
 	<div class="popup__in js-popup-in">
 		<button class="popup__close js-popup-close"></button>
 		<div class="popup__title">Откликнуться на вакансию</div>
@@ -264,6 +265,21 @@
 			<button class="btn is-disable" disabled="">Отправить резюме</button>
 		</div>
 	</div>
+	<div class="popup__overlay js-popup-close"></div>
+</div>
+<!-- popup -->
+<div class="popup popup_remove js-popup-remove">
+	<div class="popup__in js-popup-in">
+		<button class="popup__close js-popup-close"></button>
+		<div class="popup__title">Удаление</div>
+		<div class="popup__content">Вы действительно хотите удалить резюме?</div>
+		<!-- btn-justify -->
+		<div class="btn-justify">
+			<button class="btn">Удалить</button>
+			<button class="btn">Не удалять</button>
+		</div>
+	</div>
+	<div class="popup__overlay js-popup-close"></div>
 </div>
 <!-- load scripts -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>

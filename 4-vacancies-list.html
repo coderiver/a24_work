@@ -177,7 +177,7 @@
 			<div class="l-column l-column_three">
 				<!-- title -->
 				<div class="title">
-					<div class="title__in">Найдено 11 787 резюме</div>
+					<div class="title__in">Найдено 11 787 вакансий</div>
 					<div class="title__ico"><i class="title__ico-res"></i></div>
 				</div>
 				<!-- center -->
@@ -270,7 +270,7 @@
 								</div>
 								<div class="el__contacts">
 									<div class="el__contacts-right js-no-print">
-										<button class="btn">Предложить вакансию</button>
+										<button class="btn js-popup-trigger" data-popup="js-popup-vacancy">Откликнуться</button>
 										<div class="el__a42">Пожалуйста, сообщите соискателю, что нашли резюме на a42.ru <a href="#">:)</a></div>
 									</div>
 									<div class="el__contacts-left">
@@ -390,7 +390,7 @@
 								</div>
 								<div class="el__contacts">
 									<div class="el__contacts-right js-no-print">
-										<button class="btn">Предложить вакансию</button>
+										<button class="btn js-popup-trigger" data-popup="js-popup-vacancy">Откликнуться</button>
 										<div class="el__a42">Пожалуйста, сообщите соискателю, что нашли резюме на a42.ru <a href="#">:)</a></div>
 									</div>
 									<div class="el__contacts-left">
@@ -453,7 +453,7 @@
 	</div>
 </div>
 <!-- popup -->
-<div class="popup popup_is-resume">
+<div class="popup popup_is-resume js-popup-vacancy">
 	<div class="popup__in js-popup-in">
 		<button class="popup__close js-popup-close"></button>
 		<div class="popup__title">Откликнуться на вакансию</div>
@@ -484,9 +484,10 @@
 			<button class="btn is-disable" disabled="">Отправить резюме</button>
 		</div>
 	</div>
+	<div class="popup__overlay js-popup-close"></div>
 </div>
 <!-- popup -->
-<div class="popup popup_no-resume">
+<div class="popup popup_no-resume js-popup-sv">
 	<div class="popup__in js-popup-in">
 		<button class="popup__close js-popup-close"></button>
 		<div class="popup__title">Откликнуться на вакансию</div>
@@ -510,6 +511,7 @@
 			<button class="btn is-disable" disabled="">Отправить резюме</button>
 		</div>
 	</div>
+	<div class="popup__overlay js-popup-close"></div>
 </div>
 <!-- load scripts -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
