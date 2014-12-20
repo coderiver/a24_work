@@ -1119,7 +1119,7 @@ a.btn { display: inline-block; text-decoration: none; color: white; line-height:
 .steps .step__item { display: none; }
 
 .mylists { position: relative; padding: 20px; margin-bottom: 30px; background: #70a8b8; }
-.mylists:before { content: ""; position: absolute; top: 8px; left: -20px; width: 0px; height: 0px; border-style: solid; border-width: 20px 20px 20px 0; border-color: transparent #70a8b8 transparent transparent; }
+.mylists:before { content: ""; position: absolute; top: 8px; left: -19px; width: 0px; height: 0px; border-style: solid; border-width: 20px 20px 20px 0; border-color: transparent #70a8b8 transparent transparent; }
 .mylists .mylists__add, .mylists .mylists__item { overflow: hidden; }
 .mylists .mylists__add button, .mylists .mylists__item button { float: right; }
 .mylists .mylists__add a, .mylists .mylists__add span, .mylists .mylists__item a, .mylists .mylists__item span { display: table; color: white; }
