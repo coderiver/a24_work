@@ -12,7 +12,7 @@
 <!-- wrapper -->
 <div class="wrapper">
 	<!-- up -->
-	<button class="up js-up"><i></i><span>Наверх</span></button>
+	<button class="up js-up"><i class="icon icon-arrow-top-big"></i><span>Наверх</span></button>
 	<!-- header -->
 	<header class="header">
 		<!-- topper -->
@@ -71,10 +71,10 @@
 				<div class="social">
 					<div class="social__title">Будем дружить!</div>
 					<div class="social__list">
-						<a href="#"><i class="social__vk"></i></a>
-						<a href="#"><i class="social__fb"></i></a>
-						<a href="#"><i class="social__tw"></i></a>
-						<a href="#"><i class="social__ok"></i></a>
+						<a href="#"><i class="icon icon-soc-vk"></i></a>
+						<a href="#"><i class="icon icon-soc-fb"></i></a>
+						<a href="#"><i class="icon icon-soc-tw"></i></a>
+						<a href="#"><i class="icon icon-soc-ok"></i></a>
 					</div>
 				</div>
 				<div class="header__title">Работа в Кемеровской области</div>
@@ -116,8 +116,8 @@
 						<li><a href="mailto:gerasimov@a42.ru">gerasimov@a42.ru</a></li>
 						<li>+7 923 123-45-78</li>
 						<li>+7 (383) 304-00-00</li>
-						<li><a class="link-skype" href="#"><i></i><span>gerasimov</span></a></li>
-						<li><a class="link-icq" href="#"><i></i><span>123-456-789</span></a></li>
+						<li><a class="link-skype" href="#"><i class="icon icon-skype"></i><span>gerasimov</span></a></li>
+						<li><a class="link-icq" href="#"><i class="icon icon-icq"></i><span>123-456-789</span></a></li>
 					</ul>
 					<div class="manager__number">Ваш персональный номер: <strong>12829</strong></div>
 				</div>
@@ -140,7 +140,7 @@
 							<ul class="company__info-list">
 								<li>
 									<!-- add -->
-									<button class="add"><span>добавить</span><i></i></button>
+									<button class="add"><span>добавить</span><i class="icon icon-plus-border"></i></button>
 									<a href="#">Мои вакансии</a>
 								</li>
 								<li><a href="#">Избранные резюме</a></li>
@@ -161,7 +161,7 @@
 			</div>
 			<div class="l-column l-column_two">
 				<!-- form -->
-				<div class="form">
+				<form class="form js-form-validate">
 					<!-- h -->
 					<div class="h h_big h_mb5">Моя компания</div>
 					<div class="form__text">Заполните описание вашей компании, чтобы улучшить её привлекательность и количество отликов</div>
@@ -171,7 +171,7 @@
 					<div class="field">
 						<div class="field__label">Название (бренд)</div>
 						<div class="field__in">
-							<input class="input" type="text" value="">
+							<input class="input js-form-validate-input" type="text" value="">
 						</div>
 					</div>
 					<!-- field -->
@@ -189,8 +189,8 @@
 						<div class="field__label">Город</div>
 						<div class="field__in">
 							<!-- select -->
-							<div class="select js-select is-chousen">
-								<div class="select__head">Київ</div>
+							<div class="select js-select js-form-validate-select">
+								<div class="select__head">не выбран</div>
 								<ul class="select__list">
 									<li>Шашлычник</li>
 									<li>Наладчик машин и автоматических линий</li>
@@ -205,7 +205,7 @@
 						<div class="field__label">Сфера деятельности</div>
 						<div class="field__in">
 							<!-- select -->
-							<div class="select js-select">
+							<div class="select js-select js-form-validate-select">
 								<div class="select__head">не выбрана</div>
 								<ul class="select__list">
 									<li>Шашлычник</li>
@@ -222,7 +222,7 @@
 						<div class="field__in">
 							<!-- editor -->
 							<div class="editor">
-								<textarea class="textarea js-textarea-editor"></textarea>
+								<textarea class="textarea js-textarea-editor js-form-validate-input"></textarea>
 							</div>
 						</div>
 					</div>
@@ -243,47 +243,6 @@
 					</div>
 					<!-- h -->
 					<div class="h">Контактная информация</div>
-					<!-- template for contacts -->
-					<div class="js-template-contacts" style="display: none;">
-						<!-- fieldset -->
-						<div class="fieldset js-contacts-item">
-							<!-- field -->
-							<div class="field">
-								<div class="field__label">Телефон</div>
-								<div class="field__in">
-									<input class="input input_w150 js-input-decimal-only" type="text" value="">
-								</div>
-							</div>
-							<!-- field -->
-							<div class="field">
-								<div class="field__label">Адрес</div>
-								<div class="field__in">
-									<textarea class="textarea textarea_h100"></textarea>
-								</div>
-							</div>
-							<!-- field -->
-							<div class="field">
-								<div class="field__label">Электронная почта</div>
-								<div class="field__in">
-									<input class="input" type="text" value="">
-								</div>
-							</div>
-							<div class="form__layout">
-								<div class="form__column">
-									<button class="add js-contacts-add">
-										<i></i>
-										<span>Добавить контактные данные</span>
-									</button>
-								</div>
-								<div class="form__column">
-									<button class="del js-contacts-del">
-										<i></i>
-										<span>Удалить контактные данные</span>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
 					<div class="js-contacts">
 						<!-- fieldset -->
 						<div class="fieldset">
@@ -291,14 +250,14 @@
 							<div class="field">
 								<div class="field__label">Телефон</div>
 								<div class="field__in">
-									<input class="input input_w150 js-input-decimal-only" type="text" value="">
+									<input class="input input_w150 js-input-decimal-only js-form-validate-input" type="text" value="">
 								</div>
 							</div>
 							<!-- field -->
 							<div class="field">
 								<div class="field__label">Адрес</div>
 								<div class="field__in">
-									<textarea class="textarea textarea_h100"></textarea>
+									<textarea class="textarea textarea_h100 js-form-validate-input"></textarea>
 								</div>
 							</div>
 							<!-- field -->
@@ -311,7 +270,7 @@
 							<div class="form__layout">
 								<div class="form__column">
 									<button class="add js-contacts-add">
-										<i></i>
+										<i class="icon icon-plus-border"></i>
 										<span>Добавить контактные данные</span>
 									</button>
 								</div>
@@ -319,7 +278,49 @@
 						</div>
 					</div>
 					<div class="form__footer">
-						<button class="btn js-contacts-add">Сохранить изменения</button>
+						<button class="btn js-form-validate-btn" type="submit">Сохранить изменения</button>
+					</div>
+					<div class="form__error-msg js-form-validate-msg">Заполните обязательные поля</div>
+				</form>
+				<!-- template for contacts -->
+				<div class="js-template-contacts" style="display: none;">
+					<!-- fieldset -->
+					<div class="fieldset js-contacts-item">
+						<!-- field -->
+						<div class="field">
+							<div class="field__label">Телефон</div>
+							<div class="field__in">
+								<input class="input input_w150 js-input-decimal-only js-form-validate-input" type="text" value="">
+							</div>
+						</div>
+						<!-- field -->
+						<div class="field">
+							<div class="field__label">Адрес</div>
+							<div class="field__in">
+								<textarea class="textarea textarea_h100 js-form-validate-input"></textarea>
+							</div>
+						</div>
+						<!-- field -->
+						<div class="field">
+							<div class="field__label">Электронная почта</div>
+							<div class="field__in">
+								<input class="input" type="text" value="">
+							</div>
+						</div>
+						<div class="form__layout">
+							<div class="form__column">
+								<button class="add js-contacts-add">
+									<i class="icon icon-plus-border"></i>
+									<span>Добавить контактные данные</span>
+								</button>
+							</div>
+							<div class="form__column">
+								<button class="del js-contacts-del">
+									<i class="icon icon-minus-border"></i>
+									<span>Удалить контактные данные</span>
+								</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -329,7 +330,7 @@
 <!-- popup -->
 <div class="popup popup_is-resume js-popup-vacancy">
 	<div class="popup__in js-popup-in">
-		<button class="popup__close js-popup-close"></button>
+		<button class="popup__close js-popup-close"><i class="icon icon-close"></i></button>
 		<div class="popup__title">Откликнуться на вакансию</div>
 		<!-- field -->
 		<div class="field">
@@ -363,7 +364,7 @@
 <!-- popup -->
 <div class="popup popup_no-resume js-popup-sv">
 	<div class="popup__in js-popup-in">
-		<button class="popup__close js-popup-close"></button>
+		<button class="popup__close js-popup-close"><i class="icon icon-close"></i></button>
 		<div class="popup__title">Откликнуться на вакансию</div>
 		<!-- field -->
 		<div class="field">

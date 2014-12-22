@@ -1,38 +1,38 @@
 // # SHORT HOWTO
 // ## Sprites
-//     .whatever
-//          +sized-sprite($icons, coderiver) //or
+//		 .whatever
+//					+sized-sprite($icons, coderiver) //or
 // 			+s(codedby) //gets default value for spritemap as $icons
 // ### animation example
-//     +include keyframes(rotate)
-//        from
-//           +rotate(0)
-//        to
-//           +rotate(360)
+//		 +include keyframes(rotate)
+//				from
+//					 +rotate(0)
+//				to
+//					 +rotate(360)
 // ## animation usage
-//     body:hover
-// 	    +animation(rotate 200s linear infinite)
+//		 body:hover
+// 			+animation(rotate 200s linear infinite)
 // ## animations easing, see easings.net for full list and examples, tnx @ai
-//     transition: all 1.2s ceaser($ease-in)
+//		 transition: all 1.2s ceaser($ease-in)
 // ## gradient example
-//     +background-image(linear-gradient(#232323, #5c5c5c));
-//     +g(#232323, #5c5c5c);
-//	   horizontal
-//     +gh(#232323, #5c5c5c);
+//		 +background-image(linear-gradient(#232323, #5c5c5c));
+//		 +g(#232323, #5c5c5c);
+//		 horizontal
+//		 +gh(#232323, #5c5c5c);
 // ## making bw-images
-//     img
+//		 img
 //			@extend %gray
 // ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
-//     +min-screen(320)
+//		 +min-screen(320)
 //			display: none
 // +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
 //
 // ## use cycles
-//     @for $i from 1 through 3
-//       .item-#{$i}
+//		 @for $i from 1 through 3
+//			 .item-#{$i}
 //			width: 2em * $i;
-//     @each $s in a,b,c
-// 	    	#{$s}
+//		 @each $s in a,b,c
+// 				#{$s}
 //				display: none
 // ## fonts
 // Save fonts to /css/fonts, after that write (eot, woff, ttf):
@@ -72,6 +72,219 @@ $ava: #8dc2d1
 	line-height: 1.1
 	a
 		color: $bld
+		
+// icons
+@font-face
+	font-family: 'icomoon'
+	src: url('fonts/icomoon.eot?mpcqb7')
+	src: url('fonts/icomoon.eot?#iefixmpcqb7') format("embedded-opentype"), url('fonts/icomoon.woff?mpcqb7') format("woff"), url('fonts/icomoon.ttf?mpcqb7') format("truetype"), url('fonts/icomoon.svg?mpcqb7#icomoon') format("svg")
+	font-weight: normal
+	font-style: normal
+
+
+[class^="icon-"], [class*=" icon-"]
+	font-family: 'icomoon'
+	speak: none
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	text-transform: none
+	line-height: 1
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+.icon-arr-left:before
+	content: "\e602"
+
+.icon-arr-down:before
+	content: "\e600"
+
+.icon-arr-left-big:before
+	content: "\e601"
+
+.icon-arr-right-big:before
+	content: "\e603"
+
+.icon-arr-right:before
+	content: "\e604"
+
+.icon-arr-top:before
+	content: "\e605"
+
+.icon-arrow-down-small:before
+	content: "\e606"
+
+.icon-arrow-top-big:before
+	content: "\e607"
+
+.icon-arrow-top:before
+	content: "\e608"
+
+.icon-case:before
+	content: "\e609"
+
+.icon-change:before
+	content: "\e60a"
+
+.icon-check:before
+	content: "\e60b"
+
+.icon-checkbox:before
+	content: "\e60c"
+
+.icon-clock:before
+	content: "\e60d"
+
+.icon-close:before
+	content: "\e60e"
+
+.icon-comment:before
+	content: "\e60f"
+
+.icon-del:before
+	content: "\e610"
+
+.icon-download:before
+	content: "\e611"
+
+.icon-email:before
+	content: "\e612"
+
+.icon-favorite:before
+	content: "\e613"
+
+.icon-female:before
+	content: "\e614"
+
+.icon-hide:before
+	content: "\e615"
+
+.icon-icq:before
+	content: "\e616"
+
+.icon-like:before
+	content: "\e617"
+
+.icon-list-decimal:before
+	content: "\e618"
+
+.icon-list-dots:before
+	content: "\e619"
+
+.icon-male:before
+	content: "\e61a"
+
+.icon-marker:before
+	content: "\e61b"
+
+.icon-minus-border:before
+	content: "\e61c"
+
+.icon-minus:before
+	content: "\e61d"
+
+.icon-plus-border:before
+	content: "\e61e"
+
+.icon-plus:before
+	content: "\e61f"
+
+.icon-print:before
+	content: "\e620"
+
+.icon-reload:before
+	content: "\e621"
+
+.icon-skype:before
+	content: "\e622"
+
+.icon-soc-fb:before
+	content: "\e623"
+
+.icon-soc-ok:before
+	content: "\e624"
+
+.icon-soc-tw:before
+	content: "\e625"
+
+.icon-soc-vk:before
+	content: "\e626"
+
+.icon-title-arrows:before
+	content: "\e627"
+
+.icon-title-cart:before
+	content: "\e628"
+
+.icon-title-case:before
+	content: "\e629"
+
+.icon-title-finger:before
+	content: "\e62a"
+
+.icon-title-goal:before
+	content: "\e62b"
+
+.icon-title-letter:before
+	content: "\e62c"
+
+.icon-title-list-mod:before
+	content: "\e62d"
+
+.icon-title-list:before
+	content: "\e62e"
+
+.icon-title-ok:before
+	content: "\e62f"
+
+.icon-title-plus:before
+	content: "\e630"
+
+.icon-title-star:before
+	content: "\e631"
+
+.icon-title-tie:before
+	content: "\e632"
+
+.icon-title-top:before
+	content: "\e633"
+
+.icon-title-voice:before
+	content: "\e634"
+
+.icon-title-world:before
+	content: "\e635"
+
+.icon-window:before
+	content: "\e636"
+
+.icon-soc-vk
+	color: #527498 
+.icon-soc-tw
+	color: #55ACEE 
+.icon-soc-vk,
+.icon-soc-tw
+	font-size: 11px
+.icon-soc-fb
+	font-size: 13px
+	color: #48649f 
+.icon-soc-ok
+	font-size: 16px
+	color: #f4810f 
+.icon-favorite,
+.icon-window,
+.icon-print,
+.icon-download,
+.icon-like,
+.icon-change,
+.icon-reload,
+.icon-hide,
+.icon-del
+	font-size: 15px
+.icon-female,
+.icon-male
+	font-size: 44px
+	color: $ava 
 
 html
 
@@ -214,19 +427,20 @@ a
 	padding: 0 25px
 	background: $bl
 	font-size: 0
+	color: #fff 
 	z-index: 99
 	&:hover
 		background: $btnh
-	i, span
-		display: inline-block
 	i
+		position: relative
+		top: -1px
 		margin-right: 10px
-		+s(arr-top)
+		font-size: 14px
 	span
+		display: inline-block
 		+fn
 		font-size: 20px
 		font-weight: 700
-		color: #fff
 
 .bg
 	&.bg_main
@@ -455,14 +669,17 @@ a
 			a
 				width: 20px
 				height: 20px
-				border: 1px solid #fff
+				border: 1px solid #fff 
 				&:hover
 					background: transparent
 					border-color: #fff
-		.social__vk
-			+s(vk-small)
-		.social__fb
-			+s(fb-small)
+		.icon-soc-vk,
+		.icon-soc-fb
+			color: #FFF 
+		.icon-soc-vk
+			font-size: 9px
+		.icon-soc-fb
+			font-size: 11px
 	.social__title, .social__list
 		display: inline-block
 		vertical-align: top
@@ -491,14 +708,6 @@ a
 		i
 			display: inline-block
 			vertical-align: middle
-	.social__vk
-		+s(vk)
-	.social__fb
-		+s(fb)
-	.social__tw
-		+s(tw)
-	.social__ok
-		+s(ok)
 	.el__row-right &
 		position: relative
 		top: -7px
@@ -598,14 +807,13 @@ a
 			background: #fff
 			border-color: $btn
 			color: $btn
-			i
-				+s(plus-h)
 		i, span
 			display: inline-block
 			vertical-align: middle
 		i
 			margin-right: 7px
-			+s(plus)
+			font-size: 10px
+			font-weight: 700 
 		span
 			font-size: 13px
 			font-weight: 700
@@ -685,16 +893,14 @@ a
 	&.btn_send
 		display: block
 		margin-top: 30px
-	.btn__plus
-		position: relative
-		top: 1px
-		display: inline-block
+	.icon-plus
 		margin-right: 6px
-		+s(btn-plus)
-	.btn__arr-left
+		font-size: 15px
+		font-weight: 700 
+	.icon-arr-left-big
 		display: inline-block
 		margin: 0 10px 0 -6px
-		+s(btn-arr-left)
+		font-size: 17px 
 
 .form
 	position: relative
@@ -797,8 +1003,11 @@ a
 			color: #3aaaca
 			font-size: 20px
 			line-height: 1
-	.form__profession
+	.form__profession, .form__error-msg
 		display: none
+	.form__error-msg
+		margin-top: 20px
+		color: #CA151C 
 
 .fieldset
 	margin-bottom: 35px
@@ -839,14 +1048,6 @@ a
 			i
 				display: inline-block
 				vertical-align: middle
-		.field__vk
-			+s(vk)
-		.field__fb
-			+s(fb)
-		.field__tw
-			+s(tw)
-		.field__ok
-			+s(ok)
 		.input
 			padding: 0 12px 0 40px
 	&.field_list
@@ -896,6 +1097,8 @@ a
 				margin-top: 8px
 		.form__layout
 			margin-top: 15px
+		.form-error
+			display: none
 	.field__text
 		display: inline-block
 		margin-left: 7px
@@ -952,10 +1155,10 @@ a
 			vertical-align: middle
 	.orderedlist
 		&:after
-			+s(list-number)
+			+svg(list-decimal,25,25)
 	.unorderedlist
 		&:after
-			+s(list-dots)
+			+svg(list-dots,25,25)
 
 .file
 	position: relative
@@ -1000,6 +1203,10 @@ a
 	&:focus
 		border-color: $bll
 		box-shadow: 0 0 0 1px $bll inset
+	&.is-error
+		border-color: #ca151c
+		&:focus
+			box-shadow: 0 0 0 1px #ca151c inset
 .input
 	height: 40px
 	padding: 0 12px
@@ -1027,6 +1234,9 @@ a
 	cursor: pointer
 	font-size: 16px
 	+nosel
+	&.is-error
+		.select__head
+			border-color: #ca151c
 	&.is-open
 		z-index: 998
 		.select__head
@@ -1042,7 +1252,7 @@ a
 				background: $bll
 			&:after
 				top: 14px
-				+s(select-arr-a)
+				+svg(arr-top,13,9)
 	&.is-chousen
 		.select__head
 			font-size: 16px
@@ -1063,7 +1273,7 @@ a
 			position: absolute
 			top: 15px
 			right: 11px
-			+s(select-arr)
+			+svg(arr-down,13,9)
 	.select__list
 		display: none
 		position: absolute
@@ -1088,7 +1298,7 @@ a
 			border-color: #d4d4d4
 			color: #d4d4d4
 			&:after
-				+sp(select-arr-d)
+				+svg(arr-down-gray,13,10)
 	.period__text, .select
 		display: inline-block
 		vertical-align: middle
@@ -1111,34 +1321,14 @@ a
 .action
 	margin-left: 20px
 	vertical-align: middle
+	font-size: 0
+	color: $blg
+	&:hover
+		color: $bl 
+	.icon
+		font-size: 15px
 	&:first-child
 		margin: 0
-	&.action_remove
-		+s(remove-bigger)
-		&:hover
-			+s(remove-bigger-h)
-	&.action_reload
-		+s(reload)
-		&:hover
-			+s(reload-h)
-	&.action_hide
-		+s(hide)
-		&:hover
-			+s(hide-h)
-	&.action_comm
-		+s(comm)
-		&:hover
-			+s(comm-h)
-	&.action_download
-		+s(download)
-		&:hover
-			+s(download-h)
-	&.action_check
-		+s(check)
-	&.action_edit
-		+s(edit)
-		&:hover
-			+s(edit-h)
 
 .add, .del
 	color: $blg
@@ -1158,21 +1348,9 @@ a
 		line-height: 1
 		font-size: 13px
 	i
+		font-size: 16px
 		& + span
 			margin: 0 0 0 7px 
-		
-.add
-	i
-		+s(add)
-	&:hover
-		i
-			+sp(add-h)
-.del
-	i
-		+s(del)
-	&:hover
-		i
-			+s(del-h)
 
 .edit
 	height: 30px
@@ -1186,16 +1364,16 @@ a
 		display: inline-block
 		vertical-align: top
 	i
+		position: relative
+		top: 1px
 		margin-right: 10px
-		+s(edit)
+		font-size: 14px
 	span
 		font-size: 13px
 	&:hover
 		color: $btn
 		span
 			text-decoration: underline
-		i
-			+s(edit-h)
 
 .title
 	position: relative
@@ -1214,15 +1392,9 @@ a
 		overflow: hidden
 	.title__ico
 		float: right
-		width: 26px
-		height: 26px
-		border-radius: 50%
-		border: 2px solid $bl
-		+vertical
-		i
-			position: relative
-			display: inline-block
-			vertical-align: middle
+		.icon
+			font-size: 26px
+			color: $bl 
 	.title__in
 		float: left
 		margin-right: 8px
@@ -1232,43 +1404,6 @@ a
 		line-height: 1.1
 		letter-spacing: -.5px
 		+smooth
-	.title__ico-star,
-	.title__ico-letter,
-	.title__ico-top,
-	.title__ico-target,
-	.title__ico-hand,
-	.title__ico-serv
-		top: -1px
-	.title__ico-star
-		+s(title-star)
-	.title__ico-letter
-		+s(title-letter)
-	.title__ico-rhomb
-		+s(title-rhomb)
-	.title__ico-top
-		+s(title-top)
-	.title__ico-target
-		+s(title-target)
-	.title__ico-list
-		+s(title-list)
-	.title__ico-ok
-		+s(title-ok)
-	.title__ico-news
-		+s(title-news)
-	.title__ico-plus
-		+s(title-plus)
-	.title__ico-res
-		+s(title-res)
-	.title__ico-portfolio
-		+s(title-portfolio)
-	.title__ico-hand
-		+s(title-hand)
-	.title__ico-world
-		+s(title-world)
-	.title__ico-serv
-		+s(title-serv)
-	.title__ico-cart
-		+s(title-cart)
 
 .radio
 	position: relative
@@ -1350,7 +1485,8 @@ a
 				position: absolute
 				top: 6px
 				left: 4px
-				+s(checkbox)
+				+svg(checkbox,16,13)
+				color: $btn 
 	.checkbox__in
 		display: block
 		padding: 5px 0 3px 33px

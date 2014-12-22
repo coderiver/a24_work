@@ -12,7 +12,7 @@
 <!-- wrapper -->
 <div class="wrapper">
 	<!-- up -->
-	<button class="up js-up"><i></i><span>Наверх</span></button>
+	<button class="up js-up"><i class="icon icon-arrow-top-big"></i><span>Наверх</span></button>
 	<!-- header -->
 	<header class="header">
 		<!-- topper -->
@@ -71,10 +71,10 @@
 				<div class="social">
 					<div class="social__title">Будем дружить!</div>
 					<div class="social__list">
-						<a href="#"><i class="social__vk"></i></a>
-						<a href="#"><i class="social__fb"></i></a>
-						<a href="#"><i class="social__tw"></i></a>
-						<a href="#"><i class="social__ok"></i></a>
+						<a href="#"><i class="icon icon-soc-vk"></i></a>
+						<a href="#"><i class="icon icon-soc-fb"></i></a>
+						<a href="#"><i class="icon icon-soc-tw"></i></a>
+						<a href="#"><i class="icon icon-soc-ok"></i></a>
 					</div>
 				</div>
 				<div class="header__title">Работа в Кемеровской области</div>
@@ -120,7 +120,7 @@
 					<ul class="prof__list">
 						<li>
 							<!-- add -->
-							<button class="add"><span>добавить</span><i></i></button>
+							<button class="add"><span>добавить</span><i class="icon icon-plus-border"></i></button>
 							<a href="#">Мои резюме</a>
 						</li>
 						<li><a href="#">Избранные вакансии</a></li>
@@ -146,7 +146,7 @@
 					<div class="steps__items">
 						<div class="step__item js-step-item" style="display: block;">
 							<!-- form -->
-							<div class="form">
+							<div class="form js-form js-form-validate">
 								<!-- h -->
 								<div class="h">Персональные данные</div>
 								<!-- field -->
@@ -159,7 +159,7 @@
 										<!-- field -->
 										<div class="field">
 											<div class="field__in">
-												<input class="input" type="text">
+												<input class="input js-form-validate-input" type="text">
 											</div>
 										</div>
 									</div>
@@ -174,14 +174,14 @@
 										<div class="field">
 											<div class="field__label">Имя</div>
 											<div class="field__in">
-												<input class="input" type="text">
+												<input class="input js-form-validate-input" type="text">
 											</div>
 										</div>
 										<!-- field -->
 										<div class="field">
 											<div class="field__label">Отчество</div>
 											<div class="field__in">
-												<input class="input" type="text">
+												<input class="input js-form-validate-input" type="text">
 											</div>
 										</div>
 										<div class="form__layout">
@@ -294,7 +294,7 @@
 												<label class="field__in">
 													<input class="input" type="text" placeholder="">
 													<span class="field__network">
-														<i class="field__vk"></i>
+														<i class="icon icon-soc-vk"></i>
 													</span>
 												</label>
 											</div>
@@ -305,7 +305,7 @@
 												<label class="field__in">
 													<input class="input" type="text" placeholder="">
 													<span class="field__network">
-														<i class="field__tw"></i>
+														<i class="icon icon-soc-tw"></i>
 													</span>
 												</label>
 											</div>
@@ -318,7 +318,7 @@
 												<label class="field__in">
 													<input class="input" type="text" placeholder="">
 													<span class="field__network">
-														<i class="field__fb"></i>
+														<i class="icon icon-soc-fb"></i>
 													</span>
 												</label>
 											</div>
@@ -329,7 +329,7 @@
 												<label class="field__in">
 													<input class="input" type="text" placeholder="">
 													<span class="field__network">
-														<i class="field__ok"></i>
+														<i class="icon icon-soc-ok"></i>
 													</span>
 												</label>
 											</div>
@@ -362,7 +362,7 @@
 									<div class="l-column l-column_two">
 										<!-- field -->
 										<div class="field">
-											<button class="add js-add-socials"><i></i><span>Добавить социальную сеть</span></button>
+											<button class="add js-add-socials"><i class="icon icon-plus-border"></i><span>Добавить социальную сеть</span></button>
 										</div>
 										<!-- h -->
 										<div class="h">Прикрепить резюме</div>
@@ -373,15 +373,17 @@
 											<div class="file__title js-input-file-val">или перетащить файл в эту область</div>
 										</div>
 										<div class="form__footer">
-											<button class="btn js-step-next">Сохранить и перейти к следующему шагу</button>
+											<button class="btn js-form-validate-btn js-form-validate-next">Сохранить и перейти к следующему шагу</button>
+											<button class="btn js-step-next" style="display: none;">Сохранить и перейти к следующему шагу</button>
 										</div>
+										<div class="form__error-msg js-form-validate-msg">Заполните обязательные поля</div>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="step__item js-step-item">
 							<!-- form -->
-							<div class="form">
+							<div class="form js-form-validate">
 								<!-- center -->
 								<div class="l-center">
 									<div class="l-column l-column_two">
@@ -391,7 +393,7 @@
 										<div class="field">
 											<div class="field__label">Желаемая должность</div>
 											<div class="field__in">
-												<input class="input" type="text">
+												<input class="input js-form-validate-input" type="text">
 											</div>
 										</div>
 										<!-- h -->
@@ -531,9 +533,11 @@
 											<label class="checkbox"><input type="checkbox" checked=""><span class="checkbox__in">Готов к переезду в другой город</span></label>
 										</div>
 										<div class="form__footer">
-											<button class="btn js-step-prev"><i class="btn__arr-left"></i>Назад</button>
-											<button class="btn js-step-next">Сохранить и перейти к следующему шагу</button>
+											<button class="btn js-step-prev"><i class="icon-arr-left-big"></i>Назад</button>
+											<button class="btn js-form-validate-btn js-form-validate-next">Сохранить и перейти к следующему шагу</button>
+											<button class="btn js-step-next" style="display: none;">Сохранить и перейти к следующему шагу</button>
 										</div>
+										<div class="form__error-msg js-form-validate-msg">Заполните обязательные поля</div>
 									</div>
 								</div>
 							</div>
@@ -721,13 +725,13 @@
 															<div class="form__layout">
 																<div class="form__column">
 																	<button class="add js-work-place-add">
-																		<i></i>
+																		<i class="icon icon-plus-border"></i>
 																		<span>Добавить место работы</span>
 																	</button>
 																</div>
 																<div class="form__column">
 																	<button class="del js-work-place-del">
-																		<i></i>
+																		<i class="icon icon-minus-border"></i>
 																		<span>Удалить место работы</span>
 																	</button>
 																</div>
@@ -902,7 +906,7 @@
 															<div class="form__layout">
 																<div class="form__column">
 																	<button class="add js-work-place-add">
-																		<i></i>
+																		<i class="icon icon-plus-border"></i>
 																		<span>Добавить место работы</span>
 																	</button>
 																</div>
@@ -923,7 +927,7 @@
 								<!-- center -->
 								<div class="l-center">
 									<div class="form__footer">
-										<button class="btn js-step-prev"><i class="btn__arr-left"></i>Назад</button>
+										<button class="btn js-step-prev"><i class="icon-arr-left-big"></i>Назад</button>
 										<button class="btn js-step-next">Сохранить и перейти к следующему шагу</button>
 									</div>
 								</div>
@@ -1037,11 +1041,11 @@
 												<div class="form__layout">
 													<div class="form__column">
 														<!-- add -->
-														<button class="add js-study-add"><i></i><span>Добавить учебное заведение</span></button>
+														<button class="add js-study-add"><i class="icon icon-plus-border"></i><span>Добавить учебное заведение</span></button>
 													</div>
 													<div class="form__column">
 														<!-- del -->
-														<button class="del js-study-del"><i></i><span>Удалить учебное заведение</span></button>
+														<button class="del js-study-del"><i class="icon icon-minus-border"></i><span>Удалить учебное заведение</span></button>
 													</div>
 												</div>
 											</div>
@@ -1132,13 +1136,13 @@
 											<div class="form__layout">
 												<div class="form__column">
 													<!-- add -->
-													<button class="add js-study-add"><i></i><span>Добавить учебное заведение</span></button>
+													<button class="add js-study-add"><i class="icon icon-plus-border"></i><span>Добавить учебное заведение</span></button>
 												</div>
 											</div>
 										</div>
 										<div class="js-study-list"></div>
 										<div class="form__footer">
-											<button class="btn js-step-prev"><i class="btn__arr-left"></i>Назад</button>
+											<button class="btn js-step-prev"><i class="icon-arr-left-big"></i>Назад</button>
 											<button class="btn js-step-next">Сохранить и перейти к следующему шагу</button>
 										</div>
 									</div>
@@ -1216,11 +1220,11 @@
 												<div class="form__layout">
 													<div class="form__column">
 														<!-- add -->
-														<button class="add js-lang-add"><i></i><span>Добавить иностранный язык</span></button>
+														<button class="add js-lang-add"><i class="icon icon-plus-border"></i><span>Добавить иностранный язык</span></button>
 													</div>
 													<div class="form__column">
 														<!-- del -->
-														<button class="del js-lang-del"><i></i><span>Удалить иностранный язык</span></button>
+														<button class="del js-lang-del"><i class="icon icon-minus-border"></i><span>Удалить иностранный язык</span></button>
 													</div>
 												</div>
 											</div>
@@ -1266,7 +1270,7 @@
 											<div class="form__layout">
 												<div class="form__column">
 													<!-- add -->
-													<button class="add js-lang-add"><i></i><span>Добавить иностранный язык</span></button>
+													<button class="add js-lang-add"><i class="icon icon-plus-border"></i><span>Добавить иностранный язык</span></button>
 												</div>
 											</div>
 										</div>
@@ -1301,7 +1305,7 @@
 											</div>
 										</div>
 										<div class="form__footer">
-											<button class="btn js-step-prev"><i class="btn__arr-left"></i>Назад</button>
+											<button class="btn js-step-prev"><i class="icon-arr-left-big"></i>Назад</button>
 											<button class="btn js-step-next">Сохранить и перейти к следующему шагу</button>
 										</div>
 									</div>
@@ -1316,7 +1320,7 @@
 									<div class="el__layout">
 										<div class="el__details">
 											<!-- edit -->
-											<button class="edit"><i></i><span>Изменить</span></button>
+											<button class="edit"><i class="icon icon-change"></i><span>Изменить</span></button>
 											<!-- ava -->
 											<div class="ava">
 												<img src="http://placehold.it/38x38" alt="">
@@ -1334,8 +1338,8 @@
 												<li>Соцсети:
 													<div class="social social_small">
 														<div class="social__list">
-															<a href="#"><i class="social__vk"></i></a>
-															<a href="#"><i class="social__fb"></i></a>
+															<a href="#"><i class="icon icon-soc-vk"></i></a>
+															<a href="#"><i class="icon icon-soc-fb"></i></a>
 														</div>
 													</div>
 												</li>
@@ -1349,7 +1353,7 @@
 													</div>
 													<div class="el__row-right">
 														<!-- edit -->
-														<button class="edit"><i></i><span>Изменить</span></button>
+														<button class="edit"><i class="icon icon-change"></i><span>Изменить</span></button>
 													</div>
 												</div>
 												<div class="el__row">
@@ -1376,7 +1380,7 @@
 													</div>
 													<div class="el__row-right">
 														<!-- edit -->
-														<button class="edit"><i></i><span>Изменить</span></button>
+														<button class="edit"><i class="icon icon-change"></i><span>Изменить</span></button>
 													</div>
 												</div>
 												<div class="el__row">
@@ -1409,7 +1413,7 @@
 													</div>
 													<div class="el__row-right">
 														<!-- edit -->
-														<button class="edit"><i></i><span>Изменить</span></button>
+														<button class="edit"><i class="icon icon-change"></i><span>Изменить</span></button>
 													</div>
 												</div>
 												<div class="el__row">
@@ -1432,7 +1436,7 @@
 													</div>
 													<div class="el__row-right">
 														<!-- edit -->
-														<button class="edit"><i></i><span>Изменить</span></button>
+														<button class="edit"><i class="icon icon-change"></i><span>Изменить</span></button>
 													</div>
 												</div>
 												<div class="el__row">
@@ -1458,7 +1462,7 @@
 									</div>
 								</div>
 								<div class="form__footer form__footer_mt10">
-									<button class="btn js-step-prev"><i class="btn__arr-left"></i>Назад</button>
+									<button class="btn js-step-prev"><i class="icon-arr-left-big"></i>Назад</button>
 									<a class="btn" href="#">Сохранить и опубликовать резюме</a>
 								</div>
 							</div>
@@ -1472,7 +1476,7 @@
 <!-- popup -->
 <div class="popup popup_is-resume js-popup-vacancy">
 	<div class="popup__in js-popup-in">
-		<button class="popup__close js-popup-close"></button>
+		<button class="popup__close js-popup-close"><i class="icon icon-close"></i></button>
 		<div class="popup__title">Откликнуться на вакансию</div>
 		<!-- field -->
 		<div class="field">
@@ -1506,7 +1510,7 @@
 <!-- popup -->
 <div class="popup popup_no-resume js-popup-sv">
 	<div class="popup__in js-popup-in">
-		<button class="popup__close js-popup-close"></button>
+		<button class="popup__close js-popup-close"><i class="icon icon-close"></i></button>
 		<div class="popup__title">Откликнуться на вакансию</div>
 		<!-- field -->
 		<div class="field">

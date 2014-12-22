@@ -54,20 +54,6 @@ head.ready(function() {
         fields.placeholder();
     };
 
-    // steps
-    step_prev.on('click', function () {
-        $('.js-step-nav.is-active').removeClass('is-active').prev().addClass('is-active');
-        $(this).parents('.js-step-item').hide();
-        $(this).parents('.js-step-item').prev().show();
-        return false;
-    });
-    step_next.on('click', function () {
-        $('.js-step-nav.is-active').removeClass('is-active').next().addClass('is-active');
-        $(this).parents('.js-step-item').hide();
-        $(this).parents('.js-step-item').next().show();
-        return false;
-    });
-
     // input toggle
     body.on('change', '.js-input-toggle', function () {
         var el = $(this).data('toggle');
@@ -174,6 +160,9 @@ head.ready(function() {
         if ($(this).parent().parent().hasClass('js-select-profession')) {
             $('.js-form-profession').show();
         };
+        if ($(this).parent().parent().hasClass('has-error')) {
+            $(this).parent().parent().removeClass('has-error');
+        };
     });
     body.on('click', '.js-select', function(event){
         event.stopPropagation();
@@ -242,7 +231,7 @@ head.ready(function() {
                         });
                         var cart_item = '<div class="cart__item js-cart-item">' +
                                             '<div class="cart__row">'+
-                                                '<div class="cart__sum"><span class="js-cart-money">' + price + '</span><button class="cart__del js-cart-del"></button></div>'+
+                                                '<div class="cart__sum"><span class="js-cart-money">' + price + '</span><button class="cart__del js-cart-del"><i class="icon icon-del"></i></button></div>'+
                                                 '<div class="cart__title">' + title + ' × ' + month + ' мес.</div>'+
                                             '</div>'+
                                         '</div>';
@@ -255,7 +244,7 @@ head.ready(function() {
                     } else {
                         var cart_item = '<div class="cart__item js-cart-item">' +
                                             '<div class="cart__row">'+
-                                                '<div class="cart__sum">' + price + '<button class="cart__del js-cart-del"></button></div>'+
+                                                '<div class="cart__sum">' + price + '<button class="cart__del js-cart-del"><i class="icon icon-del"></i></button></div>'+
                                                 '<div class="cart__title">' + title + '</div>'+
                                             '</div>'+
                                         '</div>';
@@ -295,11 +284,11 @@ head.ready(function() {
                             '<div class="cart__title js-cart-title">' + servmore_type + '</div>'+
                         '</div>'+
                         '<div class="cart__row">'+
-                            '<div class="cart__sum"><span class="js-cart-money">' + servmore_price + '</span><button class="cart__del js-cart-del" data-button="js-servmore-buy-' + el + '"></button></div>'+
+                            '<div class="cart__sum"><span class="js-cart-money">' + servmore_price + '</span><button class="cart__del js-cart-del" data-button="js-servmore-buy-' + el + '"><i class="icon icon-del"></i></button></div>'+
                             '<div class="cart__value">'+
-                                '<button class="cart__minus js-cart-minus"></button>'+
+                                '<button class="cart__minus js-cart-minus"><i class="icon icon-minus-border"></i></button>'+
                                 '<div class="cart__value-in"><span class="js-cart-value">1</span> шт.</div>'+
-                                '<button class="cart__plus js-cart-plus"></button>'+
+                                '<button class="cart__plus js-cart-plus"><i class="icon icon-plus-border"></i></button>'+
                             '</div>'+
                         '</div>'+
                     '</div>');
@@ -613,9 +602,11 @@ head.ready(function() {
     body.on('click', '.js-contacts-add', function () {
         var item = template_contacts.html();
         contacts.append(item);
+        return false;
     });
     body.on('click', '.js-contacts-del', function () {
         $(this).parents('.js-contacts-item').remove();
+        return false;
     });
 
     // print
@@ -658,6 +649,82 @@ head.ready(function() {
     body.on('click', '.js-thesis-del', function () {
         $(this).parents('.js-thesis-item').remove();
     });
+
+    // experiance
+    function exp () {
+        var total = $('.js-exp-total'),
+            years = $('.js-exp-years'),
+            months = $('.js-exp-months');
+    }
     
+    // form validate
+    body.on('click', '.js-form-validate-btn', function () {
+        var form = $(this).parents('.js-form-validate'),
+            input = form.find('.js-form-validate-input'),
+            select = form.find('.js-form-validate-select'),
+            msg = form.find('.js-form-validate-msg');
+        if (input.length) {
+            input.each(function () {
+                if ($(this).val() == '') {
+                    $(this).addClass('is-error');
+                }
+                else {
+                    $(this).removeClass('is-error');
+                }
+            });
+        };
+        if (select.length) {
+            select.each(function () {
+                if (!$(this).hasClass('is-chousen')) {
+                    $(this).addClass('is-error');
+                }
+                else {
+                    $(this).removeClass('is-error');
+                }
+            });
+            if ($('.js-form-validate-input.is-error').length && $('.js-form-validate-select.is-error').length) {
+                msg.show();
+                $(this).removeClass('is-valid');
+                return false;
+            }
+            else {
+                msg.hide();
+                $(this).addClass('is-valid');
+                if ($(this).hasClass('js-form-validate-next')) {
+                    $(this).next().trigger('click');
+                };
+                return true;
+            }
+        }
+        else {
+            if ($('.js-form-validate-input.is-error').length) {
+                msg.show();
+                $(this).removeClass('is-valid');
+                return false;
+            }
+            else {
+                msg.hide();
+                $(this).addClass('is-valid');
+                if ($(this).hasClass('js-form-validate-next')) {
+                    $(this).next().trigger('click');
+                };
+                return true;
+            }
+        }
+    })
+
+    // steps
+    step_prev.on('click', function () {
+        $('.js-step-nav.is-active').removeClass('is-active').prev().addClass('is-active');
+        $(this).parents('.js-step-item').hide();
+        $(this).parents('.js-step-item').prev().show();
+        return false;
+    });
+    step_next.on('click', function () {
+        $('.js-step-nav.is-active').removeClass('is-active').next().addClass('is-active');
+        $(this).parents('.js-step-item').hide();
+        $(this).parents('.js-step-item').next().show();
+        return false;
+    });
 
 });

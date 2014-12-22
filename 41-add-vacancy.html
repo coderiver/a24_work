@@ -12,7 +12,7 @@
 <!-- wrapper -->
 <div class="wrapper">
 	<!-- up -->
-	<button class="up js-up"><i></i><span>Наверх</span></button>
+	<button class="up js-up"><i class="icon icon-arrow-top-big"></i><span>Наверх</span></button>
 	<!-- header -->
 	<header class="header">
 		<!-- topper -->
@@ -71,10 +71,10 @@
 				<div class="social">
 					<div class="social__title">Будем дружить!</div>
 					<div class="social__list">
-						<a href="#"><i class="social__vk"></i></a>
-						<a href="#"><i class="social__fb"></i></a>
-						<a href="#"><i class="social__tw"></i></a>
-						<a href="#"><i class="social__ok"></i></a>
+						<a href="#"><i class="icon icon-soc-vk"></i></a>
+						<a href="#"><i class="icon icon-soc-fb"></i></a>
+						<a href="#"><i class="icon icon-soc-tw"></i></a>
+						<a href="#"><i class="icon icon-soc-ok"></i></a>
 					</div>
 				</div>
 				<div class="header__title">Работа в Кемеровской области</div>
@@ -116,8 +116,8 @@
 						<li><a href="mailto:gerasimov@a42.ru">gerasimov@a42.ru</a></li>
 						<li>+7 923 123-45-78</li>
 						<li>+7 (383) 304-00-00</li>
-						<li><a class="link-skype" href="#"><i></i><span>gerasimov</span></a></li>
-						<li><a class="link-icq" href="#"><i></i><span>123-456-789</span></a></li>
+						<li><a class="link-skype" href="#"><i class="icon icon-skype"></i><span>gerasimov</span></a></li>
+						<li><a class="link-icq" href="#"><i class="icon icon-icq"></i><span>123-456-789</span></a></li>
 					</ul>
 					<div class="manager__number">Ваш персональный номер: <strong>12829</strong></div>
 				</div>
@@ -140,7 +140,7 @@
 							<ul class="company__info-list">
 								<li>
 									<!-- add -->
-									<button class="add"><span>добавить</span><i></i></button>
+									<button class="add"><span>добавить</span><i class="icon icon-plus-border"></i></button>
 									<a href="#">Мои вакансии</a>
 								</li>
 								<li><a href="#">Избранные резюме</a></li>
@@ -163,7 +163,7 @@
 				<!-- h -->
 				<div class="h h_big">Разместить вакансию</div>
 				<!-- form -->
-				<div class="form">
+				<form class="form js-form-validate">
 					<!-- field -->
 					<div class="field field_radio-ml25">
 						<div class="field__label">Тип вакансии</div>
@@ -182,7 +182,7 @@
 					<div class="field">
 						<div class="field__label">Название (бренд)</div>
 						<div class="field__in">
-							<input class="input" type="text">
+							<input class="input js-form-validate-input" type="text">
 						</div>
 					</div>
 					<!-- field -->
@@ -201,7 +201,7 @@
 					<div class="field">
 						<div class="field__label">Должность</div>
 						<div class="field__in">
-							<input class="input" type="text">
+							<input class="input js-form-validate-input" type="text">
 						</div>
 					</div>
 					<!-- field -->
@@ -337,10 +337,11 @@
 						</div>
 					</div>
 					<div class="form__footer">
-						<button class="btn">Опубликовать</button>
+						<button class="btn js-form-validate-btn" type="submit">Опубликовать</button>
 						<button class="btn">Сохранить как черновик</button>
 					</div>
-				</div>
+					<div class="form__error-msg js-form-validate-msg">Заполните обязательные поля</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -348,7 +349,7 @@
 <!-- popup -->
 <div class="popup popup_is-resume js-popup-vacancy">
 	<div class="popup__in js-popup-in">
-		<button class="popup__close js-popup-close"></button>
+		<button class="popup__close js-popup-close"><i class="icon icon-close"></i></button>
 		<div class="popup__title">Откликнуться на вакансию</div>
 		<!-- field -->
 		<div class="field">
@@ -382,7 +383,7 @@
 <!-- popup -->
 <div class="popup popup_no-resume js-popup-sv">
 	<div class="popup__in js-popup-in">
-		<button class="popup__close js-popup-close"></button>
+		<button class="popup__close js-popup-close"><i class="icon icon-close"></i></button>
 		<div class="popup__title">Откликнуться на вакансию</div>
 		<!-- field -->
 		<div class="field">
