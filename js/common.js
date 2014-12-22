@@ -47,7 +47,11 @@ head.ready(function() {
         step_nav = $('.js-step-nav'),
         step_item = $('.js-step-item'),
         step_prev = $('.js-step-prev'),
-        step_next = $('.js-step-next');
+        step_next = $('.js-step-next'),
+        exp_total = $('.js-exp-total'),
+        exp_years = $('.js-exp-years'),
+        exp_months = $('.js-exp-months'),
+        year_months = 12;
 
     // ie9 placeholder
     if (fields.length) {
@@ -594,6 +598,9 @@ head.ready(function() {
     });
     body.on('click', '.js-work-place-del', function () {
         $(this).parents('.js-work-place-item').remove();
+        // experiance common
+        experiance_common();
+
     });
 
     // mycomp toggle
@@ -656,63 +663,63 @@ head.ready(function() {
 
     // experiance
     function experiance(el) {
-        var year_months = 12,
-            total = $('.js-exp-total'),
-            years = $('.js-exp-years'),
-            years_current = years.html(),
-            years_current = parseInt(years_current),
-            months = $('.js-exp-months'),
-            months_current = months.html(),
-            months_current = parseInt(months_current) + years_current*year_months,
-            this_parent = el.parent().parent(),
+        var this_parent = el.parent().parent(),
             period = this_parent.parents('.js-exp-period'),
             counter = this_parent.data('counter');
-            if (counter == '1') {
-                month_from = el.data('number');
-                // total
-                experiance_total();
-            };
-            if (counter == '2') {
-                year_from = el.text();
-                // total
-                experiance_total();
-            };
-            if (counter == '3') {
-                month_to = el.data('number');
-                // total
-                experiance_total();
-            };
-            if (counter == '4') {
-                year_to = el.text();
-                // total
-                experiance_total();
-            };
-            function experiance_total () {
-                var select_length = period.find('.js-exp-select').length,
-                    select_length_act = period.find('.js-exp-select.is-chousen').length;
-                if (select_length == select_length_act) {
-                    total.show();
-                    var total_year_from = parseInt(year_from),
-                        total_year_to = parseInt(year_to),
-                        total_month_from = parseInt(month_from),
-                        total_month_to = parseInt(month_to),
-                        total_years = total_year_to - total_year_from,
-                        total_months = total_month_to - total_month_from,
-                        total_sum = 0;
-                    
-                        total_sum = total_years*year_months + total_months + months_current;
-                    
-                    if (total_sum > 0) {
-                        years.html(Math.floor(total_sum/year_months));
-                        months.html(total_sum%year_months);
-                    }
-                    else {
-                        years.html('0');
-                        months.html('0');
-                    }
-                }; 
-                
-            }
+        if (counter == '1') {
+            month_from = el.data('number');
+            // total
+            experiance_total();
+        };
+        if (counter == '2') {
+            year_from = el.text();
+            // total
+            experiance_total();
+        };
+        if (counter == '3') {
+            month_to = el.data('number');
+            // total
+            experiance_total();
+        };
+        if (counter == '4') {
+            year_to = el.text();
+            // total
+            experiance_total();
+        };
+        function experiance_total () {
+            var select_length = period.find('.js-exp-select').length,
+                select_length_act = period.find('.js-exp-select.is-chousen').length;
+            if (select_length == select_length_act) {
+                exp_total.show();
+                var total_year_from = parseInt(year_from),
+                    total_year_to = parseInt(year_to),
+                    total_month_from = parseInt(month_from),
+                    total_month_to = parseInt(month_to),
+                    total_years = total_year_to - total_year_from,
+                    total_months = total_month_to - total_month_from;
+                    total_sum = total_years*year_months + total_months;
+                if (total_sum > 0) {
+                    period.attr('data-months', total_sum);
+                    // experiance common
+                    experiance_common();
+                }
+                else {
+                    exp_years.html('0');
+                    exp_months.html('0');
+                }
+            }; 
+        }
+    }
+    function experiance_common () {
+        var common = 0;
+        $('.js-exp').find('.js-exp-period').each(function () {
+            var data_months = $(this).attr('data-months'),
+                data_months = parseInt(data_months);
+            common += data_months;
+            return common;
+        });
+        exp_years.html(Math.floor(common/year_months));
+        exp_months.html(common%year_months);
     }
     
     // form validate

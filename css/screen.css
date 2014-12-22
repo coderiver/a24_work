@@ -214,7 +214,7 @@ a:hover { text-decoration: underline; }
 .bg.bg_main { margin: -65px 0 25px; padding-top: 65px; background: #e5f9ff; }
 .bg.bg_direction { position: relative; padding: 20px 0 10px; background: #8dc2d1; }
 .bg.bg_direction:before, .bg.bg_direction:after { content: ""; position: absolute; top: 0; bottom: 0; width: 2000px; background: #8dc2d1; }
-.bg.bg_direction:before { left: -2000px; }
+.bg.bg_direction:before { left: -1998px; }
 .bg.bg_direction:after { right: -1998px; }
 .bg.bg_direction .l-column { position: relative; z-index: 2; }
 .bg.bg_footer { padding: 30px 0; background: #e5f9ff; }
