@@ -370,7 +370,7 @@ a.btn { display: inline-block; text-decoration: none; color: white; line-height:
 .form .form__text { color: #17748f; }
 .form * + .h { margin-top: 35px; }
 .form .h_big + .h { margin-top: 0; }
-.form .form__summary { position: absolute; top: 82px; right: 0; bottom: 108px; width: 230px; border-left: 2px solid #8fc2d0; padding-left: 20px; }
+.form .form__summary { display: none; position: absolute; top: 82px; right: 0; bottom: 108px; width: 230px; border-left: 2px solid #8fc2d0; padding-left: 20px; }
 .form .form__summary .form__summary-in { position: absolute; bottom: 0; left: 0; right: 0; height: auto; padding-left: 20px; }
 .form .form__summary .form__summary-label { display: block; margin-bottom: 10px; color: #17748f; }
 .form .form__summary .form__summary-text { color: #3aaaca; font-size: 20px; line-height: 1; }

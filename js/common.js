@@ -155,13 +155,17 @@ head.ready(function() {
         $(this).parent().hide();
         $(this).parent().parent().removeClass('is-open');
         $(this).parent().parent().addClass('is-chousen');
-        // validate
-        validate_select(el);
         if ($(this).parent().parent().hasClass('js-select-profession')) {
             $('.js-form-profession').show();
         };
         if ($(this).parent().parent().hasClass('has-error')) {
             $(this).parent().parent().removeClass('has-error');
+        };
+        // validate
+        validate_select(el);
+        // exp
+        if ($(this).parent().parent().hasClass('js-exp-select')) {
+            experiance($(this));
         };
     });
     body.on('click', '.js-select', function(event){
@@ -651,10 +655,64 @@ head.ready(function() {
     });
 
     // experiance
-    function exp () {
-        var total = $('.js-exp-total'),
+    function experiance(el) {
+        var year_months = 12,
+            total = $('.js-exp-total'),
             years = $('.js-exp-years'),
-            months = $('.js-exp-months');
+            years_current = years.html(),
+            years_current = parseInt(years_current),
+            months = $('.js-exp-months'),
+            months_current = months.html(),
+            months_current = parseInt(months_current) + years_current*year_months,
+            this_parent = el.parent().parent(),
+            period = this_parent.parents('.js-exp-period'),
+            counter = this_parent.data('counter');
+            if (counter == '1') {
+                month_from = el.data('number');
+                // total
+                experiance_total();
+            };
+            if (counter == '2') {
+                year_from = el.text();
+                // total
+                experiance_total();
+            };
+            if (counter == '3') {
+                month_to = el.data('number');
+                // total
+                experiance_total();
+            };
+            if (counter == '4') {
+                year_to = el.text();
+                // total
+                experiance_total();
+            };
+            function experiance_total () {
+                var select_length = period.find('.js-exp-select').length,
+                    select_length_act = period.find('.js-exp-select.is-chousen').length;
+                if (select_length == select_length_act) {
+                    total.show();
+                    var total_year_from = parseInt(year_from),
+                        total_year_to = parseInt(year_to),
+                        total_month_from = parseInt(month_from),
+                        total_month_to = parseInt(month_to),
+                        total_years = total_year_to - total_year_from,
+                        total_months = total_month_to - total_month_from,
+                        total_sum = 0;
+                    
+                        total_sum = total_years*year_months + total_months + months_current;
+                    
+                    if (total_sum > 0) {
+                        years.html(Math.floor(total_sum/year_months));
+                        months.html(total_sum%year_months);
+                    }
+                    else {
+                        years.html('0');
+                        months.html('0');
+                    }
+                }; 
+                
+            }
     }
     
     // form validate
@@ -682,7 +740,7 @@ head.ready(function() {
                     $(this).removeClass('is-error');
                 }
             });
-            if ($('.js-form-validate-input.is-error').length && $('.js-form-validate-select.is-error').length) {
+            if (form.find('.js-form-validate-input.is-error').length && $('.js-form-validate-select.is-error').length) {
                 msg.show();
                 $(this).removeClass('is-valid');
                 return false;
@@ -697,7 +755,7 @@ head.ready(function() {
             }
         }
         else {
-            if ($('.js-form-validate-input.is-error').length) {
+            if (form.find('.js-form-validate-input.is-error').length) {
                 msg.show();
                 $(this).removeClass('is-valid');
                 return false;
