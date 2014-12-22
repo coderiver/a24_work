@@ -723,11 +723,28 @@ head.ready(function() {
             msg = form.find('.js-form-validate-msg');
         if (input.length) {
             input.each(function () {
-                if ($(this).val() == '') {
-                    $(this).addClass('is-error');
+                if ($(this).hasClass('js-form-validate-input-email')) {
+                    if ($(this).val() == '') {
+                        $(this).addClass('is-error');
+                    }
+                    else {
+                        var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+                        if (filter.test($(this).val())) {
+                            $(this).removeClass('is-error');
+                        }
+                        else {
+                            $(this).addClass('is-error');
+                        }
+                    }
                 }
                 else {
-                    $(this).removeClass('is-error');
+                    if ($(this).val() == '') {
+                        $(this).addClass('is-error');
+                        
+                    }
+                    else {
+                        $(this).removeClass('is-error');
+                    }
                 }
             });
         };
