@@ -603,7 +603,6 @@ head.ready(function() {
         $(this).parents('.js-work-place-item').remove();
         // experiance common
         experiance_common();
-
     });
 
     // mycomp toggle
@@ -697,8 +696,6 @@ head.ready(function() {
             var select_length = period.find('.js-exp-select').length,
                 select_length_act = period.find('.js-exp-select.is-chousen').length;
             if (select_length == select_length_act) {
-                // show total info
-                exp_total.show();
                 // 
                 var total_months_from = '',
                     total_months_to = '',
@@ -729,9 +726,13 @@ head.ready(function() {
                     period.attr('data-months', common_months);
                     // experiance common
                     experiance_common();
+                    // show total info
+                    exp_total.show();
                 }
                 else {
                     period.attr('data-months', 0);
+                    // show total info
+                    exp_total.hide();
                 }
             }; 
         }
