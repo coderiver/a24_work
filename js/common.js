@@ -171,6 +171,7 @@ head.ready(function() {
         validate_select(el);
         // exp
         if ($(this).parent().parent().hasClass('js-exp-select')) {
+            // exp
             experiance($(this));
         };
     });
