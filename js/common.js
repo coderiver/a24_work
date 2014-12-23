@@ -50,7 +50,9 @@ head.ready(function() {
         step_next = $('.js-step-next'),
         exp_total = $('.js-exp-total'),
         exp_years = $('.js-exp-years'),
+        exp_years_text = $('.js-exp-years-text'),
         exp_months = $('.js-exp-months'),
+        exp_months_text = $('.js-exp-months-text'),
         year_months = 12;
 
     // ie9 placeholder
@@ -667,45 +669,68 @@ head.ready(function() {
             period = this_parent.parents('.js-exp-period'),
             counter = this_parent.data('counter');
         if (counter == '1') {
-            month_from = el.data('number');
-            // total
+            var month_from = el.data('number');
+            this_parent.attr('data-months', month_from);
+            // experiance total
             experiance_total();
         };
         if (counter == '2') {
-            year_from = el.text();
-            // total
+            var year_from = el.text();
+            this_parent.attr('data-months', year_from);
+            // experiance total
             experiance_total();
         };
         if (counter == '3') {
-            month_to = el.data('number');
-            // total
+            var month_to = el.data('number');
+            this_parent.attr('data-months', month_to);
+            // experiance total
             experiance_total();
         };
         if (counter == '4') {
-            year_to = el.text();
-            // total
+            var year_to = el.text();
+            this_parent.attr('data-months', year_to);
+            // experiance total
             experiance_total();
         };
         function experiance_total () {
             var select_length = period.find('.js-exp-select').length,
                 select_length_act = period.find('.js-exp-select.is-chousen').length;
             if (select_length == select_length_act) {
+                // show total info
                 exp_total.show();
-                var total_year_from = parseInt(year_from),
-                    total_year_to = parseInt(year_to),
-                    total_month_from = parseInt(month_from),
-                    total_month_to = parseInt(month_to),
-                    total_years = total_year_to - total_year_from,
-                    total_months = total_month_to - total_month_from;
-                    total_sum = total_years*year_months + total_months;
-                if (total_sum > 0) {
-                    period.attr('data-months', total_sum);
+                // 
+                var total_months_from = '',
+                    total_months_to = '',
+                    total_year_from = '',
+                    total_year_to = '';
+                period.find('.js-exp-select').each(function () {
+                    var each_counter = $(this).data('counter');
+                    if (each_counter == '1') {
+                        total_months_from = $(this).attr('data-months'),
+                        total_months_from = parseInt(total_months_from);
+                    };
+                    if (each_counter == '2') {
+                        total_year_from = $(this).attr('data-months'),
+                        total_year_from = parseInt(total_year_from);
+                    };
+                    if (each_counter == '3') {
+                        total_months_to = $(this).attr('data-months'),
+                        total_months_to = parseInt(total_months_to);
+                    };
+                    if (each_counter == '4') {
+                        total_year_to = $(this).attr('data-months'),
+                        total_year_to = parseInt(total_year_to);
+                    };
+                });
+                var common_years = total_year_to - total_year_from,
+                    common_months = common_years*year_months + (total_months_to - total_months_from);
+                if (common_months > 0) {
+                    period.attr('data-months', common_months);
                     // experiance common
                     experiance_common();
                 }
                 else {
-                    exp_years.html('0');
-                    exp_months.html('0');
+                    period.attr('data-months', 0);
                 }
             }; 
         }
@@ -713,13 +738,36 @@ head.ready(function() {
     function experiance_common () {
         var common = 0;
         $('.js-exp').find('.js-exp-period').each(function () {
-            var data_months = $(this).attr('data-months'),
-                data_months = parseInt(data_months);
-            common += data_months;
-            return common;
+            var attr = $(this).attr('data-months');
+            if (typeof attr !== typeof undefined && attr !== false) {
+                var data_months = $(this).attr('data-months'),
+                    data_months = parseInt(data_months);
+                common += data_months;
+                return common;
+            }
         });
-        exp_years.html(Math.floor(common/year_months));
-        exp_months.html(common%year_months);
+        var common_years_val = Math.floor(common/year_months),
+            common_months_val = common%year_months,
+            common_years_text = year_text(common_years_val,"год","года","лет"),
+            common_months_text = month_text(common_months_val,"месяц","месяца","месяцев");
+
+        exp_years.html(common_years_val);
+        exp_years_text.html(common_years_text);
+        exp_months.html(common_months_val);
+        exp_months_text.html(common_months_text);
+    }
+    function year_text(n, var1, var2, var3) {
+        n = Math.abs(n) % 100;
+        n1 = n % 10;
+        if (n > 10 && n < 20) {return var3};
+        if (n1 > 1 && n1 < 5) {return var2};
+        if (n1 == 1) {return var1};
+        return var3;
+    }
+    function month_text(n, var1, var2, var3) {
+        if (n == 1) {return var1};
+        if (n > 1 && n < 5) {return var2};
+        return var3;
     }
     
     // form validate
