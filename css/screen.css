@@ -206,7 +206,7 @@ a:hover { text-decoration: underline; }
 
 .rub.rub.rub { padding-left: 0; vertical-align: baseline; }
 
-.up { display: none; position: fixed; right: 0; bottom: 0; height: 40px; padding: 0 25px; background: #009bc7; font-size: 0; color: white; z-index: 99; }
+.up { display: none; position: fixed; right: 0; bottom: 0; height: 40px; padding: 0 25px; background: #009bc7; font-size: 0; color: white; z-index: 999; }
 .up:hover { background: #005973; }
 .up i { position: relative; top: -1px; margin-right: 10px; font-size: 14px; }
 .up span { display: inline-block; font-family: "PT Sans Narrow", Arial, sans-serif; font-size: 20px; font-weight: 700; }
@@ -817,7 +817,7 @@ a.btn { display: inline-block; text-decoration: none; color: white; line-height:
 .share .share__close:hover { color: #17748f; }
 .share .share__close .icon { font-size: 17px; }
 
-.popup { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(23, 116, 143, 0.1); text-align: center; font-size: 0; overflow: auto; z-index: 999; }
+.popup { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(23, 116, 143, 0.1); text-align: center; font-size: 0; overflow: auto; z-index: 9999; }
 .popup:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
 .popup.popup_remove .popup__in { width: 300px; }
 .popup .popup__in { position: relative; display: inline-block; width: 520px; padding: 18px 20px 25px; background: white; box-shadow: 0 0 27px rgba(23, 116, 143, 0.35); vertical-align: middle; font-size: 13px; text-align: left; z-index: 4; }

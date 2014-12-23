@@ -752,11 +752,26 @@ head.ready(function() {
             common_months_val = common%year_months,
             common_years_text = year_text(common_years_val,"год","года","лет"),
             common_months_text = month_text(common_months_val,"месяц","месяца","месяцев");
-
         exp_years.html(common_years_val);
         exp_years_text.html(common_years_text);
         exp_months.html(common_months_val);
         exp_months_text.html(common_months_text);
+        if (common_years_val <= 0) {
+            exp_years.hide();
+            exp_years_text.hide();
+        }
+        else {
+            exp_years.show();
+            exp_years_text.show();
+        }
+        if (common%year_months == 0 ) {
+            exp_months.hide();
+            exp_months_text.hide();
+        }
+        else {
+            exp_months.show();
+            exp_months_text.show();
+        }
     }
     function year_text(n, var1, var2, var3) {
         n = Math.abs(n) % 100;
